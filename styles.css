@@ -1,0 +1,70 @@
+:root {
+  --blue: rgb(6, 89, 231);
+  --darkblue: rgb(10, 41, 94);
+  --lightblue: rgb(67, 127, 232);
+  --white: rgb(255, 255, 255);
+  --black: rgb(0, 0, 0);
+  --grey: rgb(154, 155, 164);
+  --orange: rgb(231, 126, 6);
+}
+
+button {
+  background-color: var(--darkblue);
+  width: 7em;
+  height: 4em;
+}
+
+button:hover {
+  background-color: var(--lightblue);
+}
+
+.container {
+  position: relative;
+  text-align: center;
+}
+/* Homepage Text */
+.text-block {
+  width: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: var(--white);
+  background-color: rgba(0, 0, 0, 0.595);
+  transform: translate(-50%, -50%);
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 100%;
+}
+
+.nav {
+  height: 60%px;
+  width: auto;
+  text-align: center;
+  font-size: larger;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  margin-left: -10px;
+  margin-top: -10px;
+  margin-right: -10px;
+  background-color: var(--grey);
+}
+
+.home, .instructors, .programs, .schedule, .contact, .faq, .gallery, .comp{
+  color: var(--white);
+  text-align: center;
+  font-size: 14px;
+}
+.home-image {
+  max-width: 95%;
+}
+.logo {
+  max-height: 50%;
+  float: left;
+  padding-left: 15px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 60px;
+  padding: 10%;
+}
