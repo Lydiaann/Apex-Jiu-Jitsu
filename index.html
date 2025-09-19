@@ -34,126 +34,99 @@
                 Teens & Adults right here in Sterling!</h4>
             </div>
             <div>
-              <a class="cta-button" href="index.html" !important id="openFormBtn">TRY A FREE CLASS TODAY!
+              <a class="cta-button" href="index.html" id="openFormBtn" type="button">TRY A FREE CLASS TODAY!
               </a>
             </div>
           </div>
-<br><br>
-          <!-- <section class="home-pg-form">
-            <form action="/action_page.php">
-              <lable for="fname">First Name</lable>
-              <input type="text" id="fname" name="firstname" placeholder="First Name">
-              <lable for="lname">Last Name</lable>
-              <input type="text" id="lname" name="lastname" placeholder="Last Name">
-              <label for="subject">Subject</label>
-              <textarea id="subject" name="subject" placeholder="Ask us anything!" style="height: 200px">              </textarea>
-              <input type="submit" value="Submit">
-            </form>
-            </section> -->
+          <br>
+          <br>
 
-          <a href="#" id="openForm">Open Form</a>
+                      <!-- The Popup Form -->
+            <div id="formModal" class="modal">
+              <div class="modal-content">
+                <span class="close">&times;</span>
 
-          <!-- The Popup Form -->
-          <div id="formModal" class="modal">
-            <div class="modal-content">
-              <span class="close">&times;</span>
+                <form id="signupForm" action="index.php" method="post">
+                  <label for="fname">First Name</label>
+                  <input type="text" id="firstname" name="firstname" required placeholder="First Name">
 
-              <form action="/action_page.php">
-                <label for="fname">First Name</label>
-                <input type="text" id="fname" name="firstname" required placeholder="First Name">
+                  <label for="lname">Last Name</label>
+                  <input type="text" id="lastname" name="lastname" required placeholder="Last Name">
 
-                <label for="lname">Last Name</label>
-                <input type="text" id="lname" name="lastname" required placeholder="Last Name">
+                  <label for="phone">Phone</label>
+                  <input type="text" id="phone" name="phone" required placeholder="(###) ### - ###">
 
-                <label for="phone">Phone</label>
-                <input type="text" id="phone" name="phone" required placeholder="(###) ### - ###">
+                  <label for="email">Email*</label>
+                  <input type="email" id="email" name="email" required placeholder="example@domain.com"><br><br><br>
 
-                <lable for="email">Email*</lable>
-                <input type="email" id="email" name="email" required placeholder="example@domain.com"><br><br><br>
+                  <label for="options">Areas of interest (Select all that apply)</label><br>
+                  <input type="checkbox" id="adultsjj" name="adultsJiuJitsu">
+                  <label for="adultsjj">Adult Jiu Jitsu</label><br>
 
+                  <input type="checkbox" id="teensjj" name="teensJiuJitsu">
+                  <label for="teensjj">Teen Jiu Jitsu (age 14+)</label><br>
 
-                <label for="options">Area's of interest ( Select all that apply)</label><br>
-                
-                <input type="checkbox" id="adultsjj" name="adultsJiuJitsu">
-                <label for="adultsjj">Adult Jiu Jitsu</label><br>
+                  <input type="checkbox" id="kidsjj" name="kidsJiuJitsu">
+                  <label for="kidsjj">Kids Jiu Jitsu (age 7 - 13)</label><br>
 
-                <input type="checkbox" id="teensjj" name="teensJiuJitsu">
-                <label for="teensjj">Teen Jiu Jitsu (age 14+)</label><br>
+                  <input type="checkbox" id="youngjj" name="youngJiuJitsu">
+                  <label for="youngjj">Youngsters Jiu Jitsu (age 3-6)</label><br>
 
-                <input type="checkbox" id="kidsjj" name="kidsJiuJitsu">
-                <label for="kidsjj">Kids Jiu Jitsu (age 7 - 13) </label><br>
+                  <input type="checkbox" id="mma" name="MMA">
+                  <label for="mma">Intro to MMA</label><br>
 
-                <input type="checkbox" id="youngjj" name="youngJiuJitsu">
-                <label for="youngjj">Youngsters Jiu Jitsu (age 3-6)</label><br>
+                  <input type="checkbox" id="boxing" name="Boxing">
+                  <label for="boxing">Adult & Teen Boxing</label><br>
 
-                <input type="checkbox" id="mma" name="MMA">
-                <label for="mma">Intro to MMA</label><br>
+                  <input type="checkbox" id="bombo" name="Sombo">
+                  <label for="sombo">Sombo</label><br><br>
 
-                <input type="checkbox" id="boxing" name="Boxing">
-                <label for="boxing">Adult & Teen Boxing</label><br>
+                  <label for="subject">Voice your concerns and questions below...</label>
+                  <textarea id="subject" name="subject" placeholder="Ask us anything!"></textarea>
 
-                <input type="checkbox" id="bombo" name="Sombo">
-                <label for="sombo">Sombo</label><br>
+                  <input type="checkbox" id="sms" name="SMS">
+                  <label for="sms">I Consent to Receive SMS Notifications...</label><br><br>
 
+                  <input type="checkbox" id="marketing" name="Marketing">
+                  <label for="marketing">I agree to receive Marketing and Promotional messages...</label><br><br>
 
+                  <input type="submit" value="Submit">
+                </form>
 
-                <br>
-                <br>
-              <label for="subject">Voice your concerns and questions below...</label>
-              <textarea id="subject" name="subject" placeholder="Ask us anything!"></textarea>
-
-              <input type="checkbox" id="sms" name="SMS">
-              <lable for=sms>I Consent to Receive SMS Notifications and Alerts from Apex Jiu-Jitsu. 
-              Frequency varies. Message & data rates may apply. Text HELP to (571) 605-1985 for assistance, 
-               reply STOP to unsubscribe.
-              </lable>
-              <br>
-              <br>
-              <input type="checkbox" id="marketing" name="Marketing">
-              <lable for="marketing">I agree to receive Marketing and Promotional messages from Apex Jiu-Jitsu at the phone number provided above.
-              This agreement isn't a condition of any purchase. Msg & data rates may apply, message frequencies vary. 
-              Text HELP to (571) 605-1985 for assistance, reply STOP to unsubscribe.
-              </lable>
-              <br>
-              <br>
-                <input type="submit" value="Submit">
-              </form>
+                <!-- Confirmation message -->
+                <div id="confirmation" style="display:none; margin-top:15px; font-weight:bold;"></div>
+              </div>
             </div>
-          </div>
 
-          <script>
-            const modal = document.getElementById("formModal");
-            const openBtn = document.getElementById("openFormBtn");
-            const closeBtn = document.querySelector(".close");
+            <!-- JAVASCRIPT for form -->
+            <script>
+              document.addEventListener("DOMContentLoaded", function() {
+                const modal = document.getElementById("formModal");
+                const openBtn = document.getElementById("openFormBtn");
+                const closeBtn = document.querySelector(".close");
 
-            // Open form when CTA button is clicked
-            openBtn.onclick = function(e) {
-              e.preventDefault();
-              modal.style.display = "block";
-            };
+                // Open modal (prevent <a> from navigating)
+                openBtn.onclick = (e) => {
+                  e.preventDefault();
+                  modal.style.display = "block";
+                  openBtn.style.display = "none"; // hide button while modal is open
+                };
 
-            // Close form when X is clicked
-            closeBtn.onclick = function() {
-              modal.style.display = "none";
-              openBtn.style.display = "inline-block";
-            };
+                // Close modal via ×
+                closeBtn.onclick = () => {
+                  modal.style.display = "none";
+                  openBtn.style.display = "inline-block"; // show button again
+                };
 
-            // Close when clicking outside the form
-            window.onclick = function(e) {
-              if (e.target === modal) {
-                modal.style.display = "none";
-                openBtn.style.display= "inline-block"
-              }
-            };
-
-            openBtn.onclick = function(e) {
-              e.preventDefault();
-            modal.style.display = "block";
-            openBtn.style.display = "none"; // hide the button after click
-          };
-
-          </script>
-
+                // Close modal by clicking outside
+                window.onclick = (e) => {
+                  if (e.target == modal) {
+                    modal.style.display = "none";
+                    openBtn.style.display = "inline-block"; // show button again
+                  }
+                };
+              });
+              </script>
 
 
       </body>
