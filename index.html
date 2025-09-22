@@ -7,15 +7,15 @@
      <link rel="stylesheet" href="styles.css">     
      </head>
       <nav class="nav"> 
-        <a href="index.html"><img src="images/logo.jpg" class="logo" ></a>
-        <button class="home" href="index.html">Home</button>
-        <button class="instructors" href="index.html">Instructors</button>
-        <button class="programs" href="index.html">Programs</button>
-        <button class="schedule" href="index.html">Schedule</button>
-        <button class="contact" href="index.html">Contact</button>
-        <button class="comp" href="index.html">Champions</button>
-        <button class="gallery" href="index.html">Gallery</button>
-        <button class="faq" href="index.html">FAQ</button>
+        <img src="images/logo.jpg" class="logo" >
+        <a class="home" href="index.html">Home</button>
+        <a class="instructors" href="instructors.html">Instructors</a>
+        <a class="programs" href="programs.html">Programs</a>
+        <a class="schedule" href="schedule.html">Schedule</a>
+        <a class="contact" href="contact.html">Contact</a>
+        <a class="comp" href="champ.html">Champions</a>
+        <a class="gallery" href="gallery.html">Gallery</a>
+        <a class="faq" href="faq.html">FAQ</a>
       </nav>
         <header> 
       
@@ -24,7 +24,7 @@
           <div class="container">
             <img src="images/IMG_6424.jpg" class="home-image" alt="Group Photo at APEX Sterling">
               <div class="text-block"> 
-                <h1> APEX JIU JITSU & MMA</h1>
+                <h1 class="intro">APEX JIU JITSU & MMA</h1>
             </div>
             <div class="top-container">
               <p> The #1 Jiu Jitsu Academy in Sterling, VA.</p>
@@ -45,7 +45,8 @@
             <div id="formModal" class="modal">
               <div class="modal-content">
                 <span class="close">&times;</span>
-
+                
+                <!-- <iframe src="form.php"></iframe> -->
                 <form id="signupForm" action="index.php" method="post">
                   <label for="fname">First Name</label>
                   <input type="text" id="firstname" name="firstname" required placeholder="First Name">
@@ -54,7 +55,7 @@
                   <input type="text" id="lastname" name="lastname" required placeholder="Last Name">
 
                   <label for="phone">Phone</label>
-                  <input type="text" id="phone" name="phone" required placeholder="(###) ### - ###">
+                  <input type="text" id="phone" name="phone" required placeholder="(###) ### - ####">
 
                   <label for="email">Email*</label>
                   <input type="email" id="email" name="email" required placeholder="example@domain.com"><br><br><br>
@@ -100,32 +101,91 @@
 
             <!-- JAVASCRIPT for form -->
             <script>
-              document.addEventListener("DOMContentLoaded", function() {
-                const modal = document.getElementById("formModal");
-                const openBtn = document.getElementById("openFormBtn");
-                const closeBtn = document.querySelector(".close");
+              // document.addEventListener("DOMContentLoaded", function() {
+              //   const modal = document.getElementById("formModal");
+              //   const openBtn = document.getElementById("openFormBtn");
+              //   const closeBtn = document.querySelector(".close");
 
-                // Open modal (prevent <a> from navigating)
-                openBtn.onclick = (e) => {
-                  e.preventDefault();
-                  modal.style.display = "block";
-                  openBtn.style.display = "none"; // hide button while modal is open
-                };
+              //   // Open modal (prevent <a> from navigating)
+              //   openBtn.onclick = (e) => {
+              //     e.preventDefault();
+              //     modal.style.display = "block";
+              //     openBtn.style.display = "none"; // hide button while modal is open
+              //   };
 
-                // Close modal via ×
-                closeBtn.onclick = () => {
+              //   // Close modal via ×
+              //   closeBtn.onclick = () => {
+              //     modal.style.display = "none";
+              //     openBtn.style.display = "inline-block"; // show button again
+              //   };
+
+              //   // Close modal by clicking outside
+              //   window.onclick = (e) => {
+              //     if (e.target == modal) {
+              //       modal.style.display = "none";
+              //       openBtn.style.display = "inline-block"; // show button again
+              //     }
+              //   };
+              // });
+            
+            document.addEventListener("DOMContentLoaded", function() {
+              const modal = document.getElementById("formModal");
+              const openBtn = document.getElementById("openFormBtn");
+              const closeBtn = document.querySelector(".close");
+              const form = document.getElementById("signupForm");
+              const confirmationDiv = document.getElementById("confirmation");
+
+              // Open modal
+              openBtn.onclick = (e) => {
+                e.preventDefault();
+                modal.style.display = "block";
+                openBtn.style.display = "none";
+              };
+
+              // Close modal via ×
+              closeBtn.onclick = () => {
+                modal.style.display = "none";
+                openBtn.style.display = "inline-block";
+              };
+
+              // Close modal by clicking outside
+              window.onclick = (e) => {
+                if (e.target == modal) {
                   modal.style.display = "none";
-                  openBtn.style.display = "inline-block"; // show button again
-                };
+                  openBtn.style.display = "inline-block";
+                }
+              };
 
-                // Close modal by clicking outside
-                window.onclick = (e) => {
-                  if (e.target == modal) {
-                    modal.style.display = "none";
-                    openBtn.style.display = "inline-block"; // show button again
-                  }
-                };
-              });
+              // Handle form submission via AJAX
+              form.onsubmit = (e) => {
+                e.preventDefault(); // prevent default form submit
+                
+                const formData = new FormData(form);
+                
+                fetch("index.php", {
+                  method: "POST",
+                  body: formData
+                })
+                .then(res => res.text())
+                .then(data => {
+                  // Show success/error message
+                  confirmationDiv.style.display = "block";
+                  confirmationDiv.innerText = data;
+                  
+                  // Optionally, close modal after success
+                  modal.style.display = "none";
+                  
+                  // Reset form if needed
+                  // form.reset();
+                })
+                .catch(error => {
+                  console.error("Error:", error);
+                  confirmationDiv.style.display = "block";
+                  confirmationDiv.innerText = "An error occurred.";
+                });
+              };
+            });
+
               </script>
 
 
