@@ -1,26 +1,32 @@
 :root {
-  --blue: rgb(6, 89, 231);
-  --darkblue: rgb(10, 41, 94);
+  --blue: rgb(25, 109, 255);
+  --darkblue: rgb(0, 33, 130);
   --lightblue: rgb(67, 127, 232);
   --white: rgb(255, 255, 255);
   --black: rgb(0, 0, 0);
   --grey: rgb(154, 155, 164);
-  --orange: rgb(231, 126, 6);
+  --orange: rgb(188, 100, 0);
+  --lightorange: rgb(255, 209, 122);
 }
 html {
   background-color: var(--black);
 }
 /* Navigation buttons */
-button {
-  background-color: var(--darkblue);
-  width: 7em;
+a {
+  /* background-color: var(--darkblue); */
+  border: solid 3px var(--orange);
+  width: 11em;
   height: 4em;
   cursor: pointer;
-  border-radius: 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 10px;
+  color: var(--white);
+  font-weight: bolder;
 }
 /* mouse over to change color */
-button:hover {
-  background-color: var(--lightblue);
+a:hover {
+  background-color: var(--darkblue);
   transform: scale(1.1);
 }
 
@@ -72,7 +78,7 @@ button:hover {
   height: 100%;
 }
 /* 'APEX JIU JITSU & MMA  */
-h1 {
+.intro {
   font-weight: bolder;
   text-align: center;
   font-size: 5em;
@@ -80,6 +86,19 @@ h1 {
   text-shadow:2px 2px var(--black);
   /* background-color: rgba(0, 0, 0, 0.595); */
 }
+
+.top-page-intros {
+  text-align: center;
+  font-size: 4em;
+  color: var(--blue);
+}
+.top-page-intros2 {
+  text-align: center;
+  font-size: 18px;
+  color: var(--white);
+  font-weight: lighter;
+}
+
 /* navigation bar */
 .nav {
   height: 60%;
@@ -95,11 +114,13 @@ h1 {
   background-color: var(--black);
 }
 /* links on nav bar */
-.home, .instructors, .programs, .schedule, .contact, .faq, .gallery, .comp{
+.home .instructors .programs .schedule .contact .faq .gallery .comp{
   color: var(--white);
   text-align: center;
   font-size: 14px;
+  margin: 10px;
 }
+
 /* Large group image */
 .home-image {
   width: 100%;
@@ -113,6 +134,7 @@ h1 {
   max-height: 20%;
   float: left;
   padding-left: 15px;
+
 }
 /* for the p text below */
 .top-container {
@@ -232,3 +254,32 @@ input[type=submit] {
   cursor: pointer;
 }
 
+.programs-table {
+  color: var(--white);
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+.programs-heading {
+  color: var(--white);
+  font-size: 3em;
+}
+caption {
+  color: var(--white);
+}
+
+li {
+  color: var(--white);
+}
+
+
+.quicklink {
+  color: var(--orange);
+  border: none;
+  padding: 2px;
+  text-decoration: underline;
+}
+
+.quicklink:hover {
+  background-color: var(--lightblue);
+}
