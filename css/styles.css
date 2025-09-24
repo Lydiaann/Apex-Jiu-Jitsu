@@ -142,7 +142,6 @@ a:hover {
 .nav-links {
   display: none;
   flex-direction: column;
-
   position: absolute;
   top: 100%;  /* appear below navbar */
   left: 10px;
