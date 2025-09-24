@@ -13,8 +13,6 @@ html {
 }
 /* Navigation buttons */
 a {
-  /* background-color: var(--white); */
-  /* border: solid 3px var(--orange); */
   width: 8em;
   height: 2em;
   cursor: pointer;
@@ -24,6 +22,7 @@ a {
   color: var(--white);
   font-weight: bolder;
 }
+
 /* mouse over to change color */
 a:hover {
   background-color: var(--lightblue);
@@ -176,15 +175,12 @@ a:hover {
     border-radius: 6px;
   }
 
-
 /* Large group image */
 .home-image {
   width: 100%;
   /* max-width: 100%; */
   opacity: 80%;
 }
-
-
 
 /* for the p text below */
 .top-container {
