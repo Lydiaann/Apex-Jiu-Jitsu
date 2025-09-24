@@ -1,0 +1,288 @@
+:root {
+  --blue: rgb(25, 109, 255);
+  --darkblue: rgb(0, 33, 130);
+  --lightblue: rgb(67, 127, 232);
+  --white: rgb(255, 255, 255);
+  --black: rgb(0, 0, 0);
+  --grey: rgb(154, 155, 164);
+  --orange: rgb(188, 100, 0);
+  --lightorange: rgb(241, 229, 59);
+}
+html {
+  background-color: var(--black);
+}
+/* Navigation buttons */
+a {
+  /* background-color: var(--white); */
+  /* border: solid 3px var(--orange); */
+  width: 11em;
+  height: 4em;
+  cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 10px;
+  color: var(--white);
+  font-weight: bolder;
+}
+/* mouse over to change color */
+a:hover {
+  background-color: var(--lightblue);
+  transform: scale(1.1);
+}
+
+.cta-button {
+  z-index: 99999;
+  flex-wrap: wrap;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 15px;
+  color: var(--black);
+  font-weight: bold;
+  width: 25%;
+  height: auto;
+  border-radius: 15px;
+  font-size: 18px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2%;
+  position: relative;
+  background-color: var(--lightorange);
+}
+
+ .cta-button:hover {
+  z-index: 99999;
+  cursor: pointer;
+  transform: scale(1.1);
+  /* background-image: linear-gradient(to right, rgba(38, 0, 255, 0.8), rgba(255, 102, 0, 0.8)); */
+ }
+
+/* container for the group pic and text on top of pic  */
+.container {
+  position: relative;
+  text-align: center;
+}
+
+/* Div for 'APEX JIU JITSU & MMA */
+.text-block {
+  width: 90%;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  color: var(--white);
+  opacity: 95%;
+  transform: translate(-50%, -50%);
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 100%;
+}
+/* 'APEX JIU JITSU & MMA  */
+.intro {
+  font-weight: bolder;
+  text-align: center;
+  font-size: 5em;
+  padding: 10%;
+  text-shadow:2px 2px var(--black);
+  /* background-color: rgba(0, 0, 0, 0.595); */
+}
+
+.top-page-intros {
+  text-align: center;
+  font-size: 4em;
+  color: var(--blue);
+}
+.top-page-intros2 {
+  text-align: center;
+  font-size: 18px;
+  color: var(--white);
+  font-weight: lighter;
+}
+
+/* navigation menu */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--black);
+  /* padding: 12px 16px; */
+  position: relative; /* anchors dropdown */
+}
+/* links */
+.nav-links a{
+  color: var(--white);
+  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
+  border: solid 2px var(--white);
+  /* margin: 0 5px; */
+  text-decoration: none;
+}
+#menu-toggle {
+  display: none;
+}
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: var(--white);
+  background: none;
+  border: 0;
+  border: none;
+  cursor: pointer;
+}
+
+/* Large group image */
+.home-image {
+  width: 100%;
+  /* max-width: 100%; */
+  opacity: 80%;
+}
+
+/* upper left corner image */
+.logo {
+  width: 155px;
+  max-height: 50px;
+  float: left;
+  padding-left: 15px;
+
+}
+/* for the p text below */
+.top-container {
+  padding-top: 10%;
+  max-width: 40%;
+  position: absolute;
+  float: left;
+  top: 37%;
+  left: 33%;
+  font-size: 2.552vw;
+}
+
+/* The #1 jj academy text */
+p {
+  color: white;
+  z-index: 9999;
+  text-align: left;
+  margin-top: -220px;
+  margin-left: -100px;
+  padding-left: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-shadow:2px 2px var(--darkblue);
+}
+
+.middle-container {
+  padding-top: 10%;
+  max-width: 30%;
+  position: absolute;
+  float: left;
+  top: 50%;
+  /* left: 10%; */
+  font-size: 2.552vw;
+}
+
+h4 {
+  color: white;
+  z-index: 9999;
+
+}
+/* Form */
+input[type=text], input[type=email], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background: var(--blue);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+} 
+
+ input[type=submit]:hover {
+  background-color: var(--lightblue);
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999; /* stays above everything */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+/* The form box */
+.modal-content {
+  background-color: #f2f2f2;
+  margin: 8% auto;
+  padding: 40px;
+  border-radius: 15px;
+  width: 70%;
+  height: 500px;
+  max-width: 700px;
+  border: 3px var(--black);
+  height: fit-content;
+}
+/* Close button */
+.close {
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+/* For programs page */
+.programs-table {
+  color: var(--white);
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+.programs-heading {
+  color: var(--white);
+  font-size: 3em;
+}
+caption {
+  color: var(--white);
+}
+
+li {
+  color: var(--white);
+}
+
+.quicklink {
+  color: var(--orange);
+  border: none;
+  padding: 2px;
+  text-decoration: underline;
+}
+
+.quicklink:hover {
+  background-color: var(--lightblue);
+}
+
+/*For  Instructors page */
+.coach-img-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 5em;
+}
+
+.coach-img-container .coach-img-content {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1;
+  width: 100%;
+  /* padding: 20px; */
+}
