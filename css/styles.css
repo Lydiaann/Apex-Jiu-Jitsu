@@ -15,8 +15,8 @@ html {
 a {
   /* background-color: var(--white); */
   /* border: solid 3px var(--orange); */
-  width: 11em;
-  height: 4em;
+  width: 8em;
+  height: 2em;
   cursor: pointer;
   border-radius: 5px;
   text-decoration: none;
@@ -100,35 +100,83 @@ a:hover {
 
 /* navigation menu */
 .nav {
+  position: relative;        /* anchor absolute children */
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start; /* hamburger sits on left */
   background: var(--black);
-  /* padding: 12px 16px; */
-  position: relative; /* anchors dropdown */
+  padding: 10px;
+  height: 40px;
 }
-/* links */
-.nav-links a{
-  color: var(--white);
-  text-align: center;
-  font-size: 14px;
-  cursor: pointer;
-  border: solid 2px var(--white);
-  /* margin: 0 5px; */
-  text-decoration: none;
-}
+
 #menu-toggle {
   display: none;
 }
+
 .hamburger {
-  display: none;
   font-size: 28px;
   color: var(--white);
-  background: none;
-  border: 0;
-  border: none;
   cursor: pointer;
+  z-index: 2;  /* always above logo */
+  position: relative;
+  font-size: 26px;
+  cursor: pointer;
+  user-select: none;
+  padding: 8px 10px;         /* larger hit area */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
+
+
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 155px;
+  max-height: 70px;
+  pointer-events: none; /* so it won’t block clicks */
+}
+
+
+.nav-links {
+  display: none;
+  flex-direction: column;
+  background-color: #333;
+  position: absolute;
+  top: 100%;  /* appear below navbar */
+  left: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  flex-direction: column;
+}
+
+
+/* links */
+.nav-links a {
+  margin: 3px 0;
+  color: var(--white);
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  display: block;
+  border: 1px solid var(--white); /* thinner border */
+  border-radius: 4px;             /* softer edges */
+  padding: 4px 10px; 
+  text-decoration: none;
+  background-color: var(--black);
+  z-index: 2;
+}
+
+#menu-toggle:checked ~ .nav-links {
+  display: flex;
+}
+
+#menu-toggle:checked + .hamburger {
+    background: rgba(255,255,255,0.03);
+    border-radius: 6px;
+  }
+
 
 /* Large group image */
 .home-image {
@@ -137,14 +185,8 @@ a:hover {
   opacity: 80%;
 }
 
-/* upper left corner image */
-.logo {
-  width: 155px;
-  max-height: 50px;
-  float: left;
-  padding-left: 15px;
 
-}
+
 /* for the p text below */
 .top-container {
   padding-top: 10%;

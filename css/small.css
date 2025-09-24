@@ -2,8 +2,18 @@
 /* ===== Responsive hamburger ===== */
 @media only screen and (max-width: 1025px) {
   .hamburger {
-    display: block;
-    margin-left: auto;
+  font-size: 28px;
+  color: var(--white);
+  cursor: pointer;
+  z-index: 2;  /* always above logo */
+  position: relative;
+  font-size: 26px;
+  cursor: pointer;
+  user-select: none;
+  padding: 8px 10px;         /* larger hit area */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   }
 
   .nav-links {
@@ -20,22 +30,28 @@
   }
 
   .nav-links a {
-    /* padding: 12px; */
-    /* border-top: 1px solid #333; */
-    float: right;
-    background-color: var(--black); /* Make each link solid */
-    color: var(--white);
-    display: block;
-    
+  margin: 3px 0;
+  color: var(--white);
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  display: block;
+  border: 1px solid var(--white); /* thinner border */
+  border-radius: 4px;             /* softer edges */
+  padding: 4px 10px; 
+  text-decoration: none;
+  background-color: var(--black);
+  z-index: 2;
   }
 
   /* show menu when checkbox is checked */
-  #menu-toggle:checked + .hamburger + .nav-links {
+  #menu-toggle:checked ~ .nav-links {
     display: flex;
-    padding-left: 30%;
-  
   }
-
+  #menu-toggle:checked + .hamburger {
+    background: rgba(255,255,255,0.03);
+    border-radius: 6px;
+  }
   .logo {
     display: inline;
   }
