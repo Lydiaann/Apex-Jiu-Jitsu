@@ -1,6 +1,17 @@
 
 /* ===== Responsive hamburger ===== */
 @media only screen and (max-width: 1025px) {
+
+  .nav {
+  position: relative;        /* anchor absolute children */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* hamburger sits on left */
+  background: var(--black);
+  padding: 10px;
+  height: 40px;
+  }
+
   .hamburger {
   font-size: 28px;
   color: var(--white);
