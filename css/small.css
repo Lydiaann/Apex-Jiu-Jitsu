@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start; /* hamburger sits on left */
-  background: var(--black);
+  /* background: var(--black); */
   padding: 10px;
   height: 40px;
   }
@@ -34,7 +34,7 @@
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: var(--black);
+    /* background-color: var(--black); */
     height: 12px;
     z-index: 99999;
     
@@ -44,7 +44,7 @@
   margin: 3px 0;
   color: var(--white);
   text-align: center;
-  font-size: 16px;
+  font-size: 28px;
   cursor: pointer;
   display: block;
   border: 1px solid var(--white); /* thinner border */
@@ -157,7 +157,7 @@
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: var(--black);
+    /* background-color: var(--black); */
     height: 12px;
     z-index: 99999;
     
@@ -167,14 +167,14 @@
   margin: 3px 0;
   color: var(--white);
   text-align: center;
-  font-size: 12px;
+  font-size: 25px;
   cursor: pointer;
   display: block;
   border: 1px solid var(--white); /* thinner border */
   border-radius: 4px;             /* softer edges */
   padding: 4px 10px; 
   text-decoration: none;
-  background-color: var(--black);
+  /* background-color: var(--black); */
   z-index: 2;
   }
 
@@ -240,7 +240,7 @@
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: var(--black);
+    /* background-color: var(--black); */
     height: 12px;
     z-index: 99999;
     
@@ -250,7 +250,7 @@
   margin: 3px 0;
   color: var(--white);
   text-align: center;
-  font-size: 8px;
+  font-size: 20px;
   cursor: pointer;
   display: block;
   border: 1px solid var(--white); /* thinner border */
