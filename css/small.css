@@ -1,7 +1,6 @@
 
 /* ===== Responsive hamburger ===== */
-@media only screen and (max-width: 1025px) {
-
+@media only screen and (max-width: 1080px) {
   .nav {
   position: relative;        /* anchor absolute children */
   display: flex;
@@ -36,48 +35,185 @@
     border-radius: 6px;
   }
   .logo {
+    margin-top: 15px;
     display: block;
+    height: 100px;
+    width: auto;
   }
  
   .home-image {
     display: none;
   }
-  .top-container {
+  .tagline {
     display: none;
   }
 
   /* H4 sentence: "Get your completed guide... */
-  .middle-container {
-    display: none;
-    width: 95vw;       /* viewport width */
-    max-width: 95vw;   /* prevent shrinking */
-    margin: 0;          /* remove gaps */
+  h4 {
+  display: none;
+  }
+
+  .text-block {
+    width: 90%;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    color: var(--white);
+    opacity: 95%;
+    transform: translate(-50%, -50%);
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 100%;
+  }
+  .container {
+    position: relative;
+    text-align: center;
+  }
+
+  .top-container {
+  padding-top: 10%;
+  max-width: 40%;
+  position: absolute;
+  float: left;
+  top: 37%;
+  left: 33%;
+  font-size: 2.552vw;
+}
+  .middle-container, .middle-container2 {
+    flex: 1;
+    max-width: 30%;
+    font-size: 1.2rem;
     color: white;
-}
+  }
 
+    /* .cta-button {
+    display: block;
+    margin-top: 5%;
+    } */
   .cta-button {
-   display: none;
-  }
-
-  a:hover {
-    background-color: var(--lightblue);
-    transform: scale(1.1);
-  }
-
-  .intro {
-  text-align: center;
-  font-size: 3em;
-  }
-}
-
-@media (max-width: 600px) { 
-  .cta-button {
-    font-size: 1rem;     
-    margin-top: 17rem;      
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 15px;
+    color: var(--black);
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 1em 2em;
+    background-color: var(--lightorange);
+    margin-top: 3rem;      
     width: 50%;            
     margin-left: auto;
     margin-right: auto;
     display: block;
+    }
+
+    .intro {
+    text-align: center;
+    font-size: 3em;
+    margin-top: -10px;
+    display: none;
+    }
+
+  footer {
+    position: fixed;
+    height: 60px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--black);
+    z-index: 0;
+  }
+
+  .footer-logo {
+    max-width: 80px;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 60px;              
+    width: 30vw;           
+    height: calc(100vh - 60px);     
+    border-radius: 0;
+    align-items: center;    
+    justify-content: left;
+    z-index: 1;
+  }
+
+  .nav-links a {
+    font-size: 26px;
+    padding: 12px;
+    border: none;
+    width: 20vw;
+  }
+
+  .banner-img{
+    width: 100%;
+    /* padding-top: 20px; */
+    /* margin-top: -40px; */
+    padding-bottom: 5%;
+  }
+
+  .banner {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+
+  .banner-text {
+    position: absolute;
+    top: -180px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 26px;
+    background-color: rgba(0, 0, 0, 0.546);
+    padding: 10px;
+    border-radius: 10px;
+  }
+  p {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .content-row {
+    flex-direction: column;
+    align-items: center; /* centers everything when stacked */
+    text-align: center;
+  }
+
+  .middle-container,
+  .middle-container2 {
+    max-width: 90%;
+    text-align: center;
+  }
+
+  .button-container {
+    margin: 1.5rem 0; /* spacing above/below button */
+  }
+}
+
+/* ----------------------------------------------------------------------- */
+@media (max-width: 600px) { 
+  .cta-button {
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 15px;
+  color: var(--black);
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 1em 2em;
+  background-color: var(--lightorange);
+  }
+
+  .button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   }
 
   h1 {
@@ -88,9 +224,6 @@
   text-align: center;
   font-size: 2em;
   display: none;
-  }
-  .cta-button{
-    display: none;
   }
 
  .middle-container {
@@ -125,14 +258,13 @@
   .nav-links {
     position: fixed;         /* stick to screen, not nav */
     top: 60px;              
-    left: 0;
-    width: 100vw;            /* full screen width */
+    /* left: 0; */
+    width: 30vw;            /* full screen width */
     height: calc(100vh - 60px);           /* full screen height */
-    background: #111;        /* dark overlay */
     /* padding: 80px 20px 20px;  */
     border-radius: 0;
     align-items: center;     /* center links horizontally */
-    justify-content: flex-start;
+    justify-content: left;
     /* gap: 20px;               space between links */
     z-index: 1;
   }
@@ -141,9 +273,8 @@
     font-size: 26px;
     padding: 12px;
     border: none;
-    width: 100vw;
+    width: 30vw;
   }
-
   /* show menu when checkbox is checked */
   #menu-toggle:checked ~ .nav-links {
     display: flex;
@@ -155,11 +286,43 @@
   .logo {
     display: inline;
   }
+
+  footer {
+    position: fixed;
+    height: 30px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--black);
+    z-index: 0;
+  }
+
+  .footer-logo {
+    max-width: 80px;
+  }
+
+  .banner-img {
+    margin-top: -50px;
+  }
+  .banner-text {
+    position: absolute;
+    top: -80px;
+    /* left: 50%; */
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, 0.546);
+    border-radius: 5px;
+  }
+
 }
 
-
+/* ------------------------------------------------------------------- */
 @media only screen and (max-width: 430px) {
-  .home-image .inrto .middle-container{
+  .home-image .intro .middle-container{
     display: none;
   }
 
@@ -177,7 +340,7 @@
     font-size: 26px;
     padding: 12px;
     border: none;
-    width: 100vw;
+    width: 40vw;
   }
   .hamburger {
   font-size: 28px;
@@ -203,6 +366,39 @@
   }
   .logo {
     display: inline;
+  }
+
+  footer {
+    position: fixed;
+    height: 80px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--black);
+    z-index: 0;
+  }
+
+  .footer-logo {
+    max-width: 80px;
+  }
+  .cta-button {
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 15px;
+  color: var(--black);
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 1em 2em;
+  background-color: var(--lightorange);
+  z-index: 99999;
+  }
+
+  .text-block {
+    display: none;
   }
 }
 

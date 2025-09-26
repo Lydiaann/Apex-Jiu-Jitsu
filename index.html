@@ -33,19 +33,27 @@
             <img src="images/IMG_6424.jpg" class="home-image" alt="Group Photo at APEX Sterling">
               <div class="text-block"> 
                 <h1 class="intro">APEX JIU JITSU & MMA</h1>
-            </div>
+              </div>
             <div class="top-container">
               <p> The #1 Jiu Jitsu Academy in Sterling, VA.</p>
             </div>
-            <div class="middle-container">
-              <h4>Get Your Complete Martial Arts Experience for Kids, 
-                Teens & Adults right here in Sterling, VA!</h4>
-            </div>
-            <div>
-              <a class="cta-button" href="index.html" id="openFormBtn" type="button">TRY A FREE CLASS TODAY!
-              </a>
+            <div class="content-row">
+              <div class="middle-container">
+                <h4>Get Your Complete Martial Arts Experience for Kids, 
+                  Teens & Adults right here in Sterling, VA!</h4>
+              </div>
+              <div class="button-container">
+                <a class="cta-button" href="index.html" id="openFormBtn" type="button">TRY A FREE CLASS TODAY!</a>
+              </div>
+              <div class="middle-container2">
+                <h4>At Apex, we believe Jiu Jitsu is more than just a 
+                  martial art—it’s a journey of growth, discipline, and community. 
+                  Whether you’re stepping on the mat for the first time or sharpening 
+                  your skills for competition, our experienced instructors are here to guide you every step of the way.</h4>
+              </div>
             </div>
           </div>
+          
           <br>
           <br>
 
@@ -108,101 +116,81 @@
             </div>
 
             <!-- JAVASCRIPT for form -->
-            <script>
-              // document.addEventListener("DOMContentLoaded", function() {
-              //   const modal = document.getElementById("formModal");
-              //   const openBtn = document.getElementById("openFormBtn");
-              //   const closeBtn = document.querySelector(".close");
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          const modal = document.getElementById("formModal");
+          const openBtn = document.getElementById("openFormBtn");
+          const closeBtn = document.querySelector(".close");
+          const form = document.getElementById("signupForm");
+          const confirmationDiv = document.getElementById("confirmation");
 
-              //   // Open modal (prevent <a> from navigating)
-              //   openBtn.onclick = (e) => {
-              //     e.preventDefault();
-              //     modal.style.display = "block";
-              //     openBtn.style.display = "none"; // hide button while modal is open
-              //   };
+          // Open modal
+          openBtn.onclick = (e) => {
+            e.preventDefault();
+            modal.style.display = "block";
+            openBtn.style.display = "none";
+          };
 
-              //   // Close modal via ×
-              //   closeBtn.onclick = () => {
-              //     modal.style.display = "none";
-              //     openBtn.style.display = "inline-block"; // show button again
-              //   };
+          // Close modal via ×
+          closeBtn.onclick = () => {
+            modal.style.display = "none";
+            openBtn.style.display = "block"; // ✅ bring CTA back
+          };
 
-              //   // Close modal by clicking outside
-              //   window.onclick = (e) => {
-              //     if (e.target == modal) {
-              //       modal.style.display = "none";
-              //       openBtn.style.display = "inline-block"; // show button again
-              //     }
-              //   };
-              // });
+          // Close modal by clicking outside
+          window.onclick = (e) => {
+            if (e.target == modal) {
+              modal.style.display = "none";
+              openBtn.style.display = "inline-block"; // ✅ bring CTA back
+            }
+          };
+
+          // Handle form submission via AJAX
+          form.onsubmit = (e) => {
+            e.preventDefault(); // prevent default form submit
             
-            document.addEventListener("DOMContentLoaded", function() {
-              const modal = document.getElementById("formModal");
-              const openBtn = document.getElementById("openFormBtn");
-              const closeBtn = document.querySelector(".close");
-              const form = document.getElementById("signupForm");
-              const confirmationDiv = document.getElementById("confirmation");
+            const formData = new FormData(form);
+            
+            fetch("index.php", {
+              method: "POST",
+              body: formData
+            })
+            .then(res => res.text())
+            .then(data => {
+              // Show success/error message
+              confirmationDiv.style.display = "block";
+              confirmationDiv.innerText = data;
+              
+              // Close modal after success
+              modal.style.display = "none";
+              
+              // ✅ Bring CTA back
+              openBtn.style.display = "block";
 
-              // Open modal
-              openBtn.onclick = (e) => {
-                e.preventDefault();
-                modal.style.display = "block";
-                openBtn.style.display = "none";
-              };
-
-              // Close modal via ×
-              closeBtn.onclick = () => {
-                modal.style.display = "none";
-                openBtn.style.display = "inline-block";
-              };
-
-              // Close modal by clicking outside
-              window.onclick = (e) => {
-                if (e.target == modal) {
-                  modal.style.display = "none";
-                  openBtn.style.display = "inline-block";
-                }
-              };
-
-              // Handle form submission via AJAX
-              form.onsubmit = (e) => {
-                e.preventDefault(); // prevent default form submit
-                
-                const formData = new FormData(form);
-                
-                fetch("index.php", {
-                  method: "POST",
-                  body: formData
-                })
-                .then(res => res.text())
-                .then(data => {
-                  // Show success/error message
-                  confirmationDiv.style.display = "block";
-                  confirmationDiv.innerText = data;
-                  
-                  // Optionally, close modal after success
-                  modal.style.display = "none";
-                  
-                  // Reset form if needed
-                  // form.reset();
-                })
-                .catch(error => {
-                  console.error("Error:", error);
-                  confirmationDiv.style.display = "block";
-                  confirmationDiv.innerText = "An error occurred.";
-                });
-              };
+              // Reset form if needed
+              // form.reset();
+            })
+            .catch(error => {
+              console.error("Error:", error);
+              confirmationDiv.style.display = "block";
+              confirmationDiv.innerText = "An error occurred.";
+              
+              // ✅ Even on error, close modal and restore CTA if you want
+              modal.style.display = "none";
+              openBtn.style.display = "block";
             });
-          </script>
-          <script>
-            document.querySelectorAll('.nav-links a').forEach(link => {
-              link.addEventListener('click', () => {
-                document.getElementById('menu-toggle').checked = false; // close menu
-              });
-            });
-          </script>
+          };
+        });
+        </script>
 
+        <span class="banner"> 
+          <div class="banner-text">The #1 Jiu Jitsu Academcy in Sterling VA!</div>
+          <img src="images/Banner-SVG.svg" class="banner-img" alt="Coach Jamil teaching class.">
+        </span>
       </body>
+
    <footer>
+    <img src="images/logo2.jpg" class="footer-logo"><br>
+    © 2025 Apex Jiu Jitsu & MMA
    </footer>
 </html>
