@@ -201,6 +201,34 @@ a {
   display: block;
 }
 
+/* holds image2 */
+.image2-container {
+  position: relative;
+  overflow: hidden; 
+  max-width: 900px;
+}
+
+.home-image2 {
+  width: 100%;       /* responsive scaling */
+  height: auto;      /* maintain aspect ratio */
+  display: block;
+}
+
+/* Text over image2 */
+.benefits {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  color: white;
+  text-align: left;
+  background: rgba(0,0,0,0.4); /* optional readability */
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 24px;
+  margin-top: 100px;
+  max-width: 90%;
+}
+
 .content-row {
   display: flex;
   justify-content: center;
@@ -208,7 +236,6 @@ a {
   gap: 2rem; /* space between columns */
   margin-top: 2rem;
 }
-
 
 /* for the p text below */
 .top-container {
@@ -241,14 +268,20 @@ p {
   color: white;
 }
 
+h3 {
+  /* background-color: rgb(255, 255, 255); */
+  /* color: black; */
+  padding: 5px;
+  width: 100%;
+}
 h4 {
   color: white;
   z-index: 9999;
-  text-align: left;
-  /* background-color: var(--darkblue); */
+  text-align: center;
+  /* background-color: rgba(255, 255, 255, 0.467); */
   padding: 3%;
   border-radius: 15px;
-  border: solid 2px white;
+  /* border: solid 2px white; */
 }
 
 /* Form */
@@ -276,6 +309,7 @@ input[type=submit] {
  input[type=submit]:hover {
   background-color: var(--lightblue);
 }
+
 .modal {
   display: none;
   position: fixed;
@@ -364,8 +398,8 @@ td {
   align-items: center;
   vertical-align: middle;
   border: 2px rgb(0, 0, 0) solid;
-  background-color: #333030;
-  color: #f1daef;
+  background-color: #000000;
+  color: #ffffff;
 }
 
 .logo {
@@ -396,3 +430,30 @@ footer {
 .map {
   padding: 3%;
 }
+
+.hours {
+  text-align: center;
+  margin: 2rem auto;
+  max-width: 700px;
+}
+.hours h2 {
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+.hours table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.hours th, .hours td {
+  padding: 1rem;
+  border: 1px solid #ddd;
+}
+.hours th {
+  background: var(--lightorange);
+  color: var(--black);
+}
+

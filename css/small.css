@@ -12,7 +12,7 @@
 /* ===== Responsive hamburger ===== */
 @media only screen and (max-width: 1080px) {
    html {
-    background-image: url(/images/background-for-mobile.jpg);
+    /* background-image: url(/images/background-for-mobile.jpg); */
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -59,6 +59,7 @@
     background: var(--black);
     border-radius: 6px;
   }
+
   .logo {
     margin-top: 15px;
     display: block;
@@ -69,6 +70,24 @@
   .home-image {
     display: none;
   }
+
+  .home-image2 {
+    width: 100vw;      
+    height: auto;      
+    display: block;    
+    margin: 0;         
+  }
+
+  .image2-container {
+    max-width: 700px;     /* shrink container */
+  }
+
+  .benefits {
+    font-size: 20px;      /* slightly smaller text */
+    padding: 0.75rem;     /* less padding */
+    width: 100vw;
+  }
+
   .tagline {
     display: none;
   }
@@ -87,11 +106,9 @@
     height: 100%;
   }
   .container {
-    /* position: relative; */
     text-align: center;
   }
 
-  
   .top-container {
     padding-top: 10%;
     max-width: 40%;
@@ -106,37 +123,44 @@
   iframe {
     max-width: 80%;
   }
+
   .mission {
     flex: 1;
-    max-width: 80%;
+    max-width: 100vw;
     font-size: 1.2rem;
     color: white;
-    /* background-color: rgba(0, 0, 0, 0.321); */
+    width: 100vw;
+    border-radius: 0;
+    padding: 15px;
   }
 
   .mis {
     color: var(--black);
-    background-color: rgba(255, 255, 255, 0.508);
-    margin-top: -2rem;
+    background-color: rgba(255, 255, 255, 0.961);
+    height: 80px;
+    border-radius: 0;
+    padding: 15px;
+    text-align: center;
+    text-align: start;
   }
+
   .welcome-msg  {
     flex: 1;
     max-width: 90%;
     font-size: 1.2rem;
     color: white;
-    display: none;
+    display: block;
   }
 
   .wel-msg {
-    /* white-space: nowrap; */
     overflow: hidden;
-    /* text-overflow: ellipsis; */
-    /* max-width: 250px; */
     display: block;
   }
+
   .desktop-only { 
     display: none; 
   }
+
   .cta-button {
     display: inline-block;
     cursor: pointer;
@@ -194,7 +218,7 @@
 
   .mobile-img{
     display: block;
-    max-width: 100%;
+    max-width: 100vw;
     opacity: 60%;
     margin: auto;
   }
@@ -206,23 +230,16 @@
   }
 
   .mobile-text {
-    /* position: absolute;
-    top: -280px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    font-size: 26px;
-    background-color: rgba(0, 0, 0, 0.546);
-    padding: 10px;
-    border-radius: 10px; */
     display: block;
   } 
 
   p {
     display: none;
   }
+
 }
 
+/* --------------------------------------------------------------------------------------------------- */
 @media (max-width: 900px) {
   .content-row {
     flex-direction: column;
@@ -235,8 +252,8 @@
   }
 
   html {
-    background-image: url(/images/background-for-mobile.jpg);
-    background-repeat: no-repeat;
+    /* background-image: url(/images/background-for-mobile.jpg); */
+    /* background-repeat: no-repeat; */
   }
 
   .cta-button {
@@ -251,10 +268,68 @@
     background-color: var(--lightorange);
     margin-top: -50px;
   }
+  .mission {
+    flex: 1;
+    max-width: 100vw;
+    font-size: 1.2rem;
+    color: white;
+    width: 100vw;
+    border-radius: 0;
+    padding: 20px;
+    /* text-align: left; */
+    /* background-color: rgba(0, 0, 0, 0.321); */
+  }
+
+  .mis {
+    color: var(--black);
+    background-color: rgba(255, 255, 255, 0.961);
+    /* margin-top: -2rem; */
+    /* width: 100vw; */
+    height: 100px;
+    border-radius: 0;
+    padding: 20px;
+    text-align: center;
+    text-align: start;
+  }
+
+ .image2-container {
+    max-width: 500px;     /* shrink container */
+  }
+
+  .benefits {
+    font-size: 18px;      /* slightly smaller text */
+    padding: 0.75rem;     /* less padding */
+    margin-top: 60px;     /* move text closer to image */
+  }
 }
 
 /* ----------------------------------------------------------------------- */
 @media (max-width: 600px) { 
+
+  .mission {
+    flex: 1;
+    max-width: 100vw;
+    font-size: 1.2rem;
+    color: white;
+    width: 100vw;
+    border-radius: 0;
+    padding: 20px;
+    /* text-align: left; */
+    /* background-color: rgba(0, 0, 0, 0.321); */
+  }
+
+  .mis {
+    color: var(--black);
+    background-color: rgba(255, 255, 255, 0.961);
+    /* margin-top: -2rem; */
+    /* width: 100vw; */
+    height: 100px;
+    border-radius: 0;
+    padding: 20px;
+    text-align: center;
+    text-align: start;
+  }
+
   .cta-button {
     display: inline-block;
     cursor: pointer;
@@ -401,10 +476,47 @@
   .button-container {
     margin: 1.5rem 0; 
   }
+
+  .image2-container {
+    max-width: 100%;
+  }
+  .benefits {
+    font-size: 16px;
+    margin-top: 40px;
+    padding: 0.5rem;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
 }
 
 /* ------------------------------------------------------------------- */
-@media only screen and (max-width: 430px) {
+@media only screen and (max-width: 480px) {
+  .mission {
+    flex: 1;
+    max-width: 100vw;
+    font-size: 1.2rem;
+    color: white;
+    width: 100vw;
+    border-radius: 0;
+    padding: 20px;
+    /* text-align: left; */
+    /* background-color: rgba(0, 0, 0, 0.321); */
+  }
+
+  .mis {
+    color: var(--black);
+    background-color: rgba(255, 255, 255, 0.961);
+    /* margin-top: -2rem; */
+    /* width: 100vw; */
+    height: 50px;
+    border-radius: 0;
+    padding: 20px;
+    text-align: center;
+    text-align: start;
+  }
+
   .cta-button {
     display: inline-block;
     cursor: pointer;
@@ -417,7 +529,6 @@
     background-color: var(--lightorange);
     /* z-index: 99999; */
   }
-  
   
   .home-image .intro .middle-container{
     display: none;
@@ -451,7 +562,6 @@
     width: 40vw;
     margin-left: 1.5em;
   } 
-
 
   .hamburger {
     font-size: 28px;
@@ -508,8 +618,25 @@
     display: none;
   }
 
+/* .home-image2 {
+  width: 100%;       
+  height: auto;      
+  display: block;   
+  margin: 0;         
+} */
+  .image2-container {
+    max-width: 100%;
+  }
+
+  .benefits {
+    font-size: 14px;
+    margin-top: 80px;
+    padding: 0.5rem;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+
+
 }
-
-
-
-
