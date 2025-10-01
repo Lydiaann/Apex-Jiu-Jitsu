@@ -1,3 +1,4 @@
+/* ================= Variables ================= */
 :root {
   --blue: rgb(25, 109, 255);
   --darkblue: rgb(0, 33, 130);
@@ -5,9 +6,11 @@
   --white: rgb(255, 255, 255);
   --black: rgb(0, 0, 0);
   --grey: rgb(154, 155, 164);
-  --orange: rgb(188, 100, 0);
-  --lightorange: rgb(241, 229, 59);
+  --orange: rgb(255, 193, 121);
+  --lightorange: rgb(241, 211, 59);
 }
+
+/* ================= Base ================= */
 html {
   background-color: var(--black);
   height: 100%;
@@ -16,10 +19,15 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* full viewport height */
+  min-height: 100vh;
   flex: 1;
 }
-/* Navigation buttons */
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden; /* prevent horizontal scroll */
+  box-sizing: border-box;
+}
 a {
   width: 8em;
   height: 2em;
@@ -30,13 +38,12 @@ a {
   color: var(--white);
   font-weight: bolder;
 }
-
-/* mouse over to change color */
 .nav-links a:hover {
   background-color: var(--lightblue);
   transform: scale(1.05);
 }
 
+/* ================= Buttons ================= */
 .cta-button {
   display: inline-block;
   cursor: pointer;
@@ -48,29 +55,87 @@ a {
   padding: 1em 2em;
   background-color: var(--lightorange);
 }
-
- .cta-button:hover {
-  z-index: 99999;
-  cursor: pointer;
+.cta-button:hover {
   transform: scale(1.1);
   background-color: rgb(247, 198, 109);
-  /* background-image: linear-gradient(to right, rgba(38, 0, 255, 0.8), rgba(255, 102, 0, 0.8)); */
- }
-
-
- .button-container {
+}
+.button-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1.5rem 0; 
- }
-/* container for the group pic and text on top of pic  */
+  margin: 1.5rem 0;
+}
+.mobile-cta {
+  display: none; /* hide by default */
+  text-align: center;
+  margin-top: 1rem;
+}
+/* ================= Navigation ================= */
+.nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+  height: 110px;
+}
+#menu-toggle { 
+  display: none; 
+}
+.hamburger {
+  font-size: 28px;
+  color: var(--white);
+  cursor: pointer;
+  z-index: 2;
+  user-select: none;
+  padding: 8px 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-links {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  width: 30vw;
+  z-index: 1;
+}
+.nav-links a {
+  color: var(--white);
+  text-align: left;
+  font-size: 26px;
+  display: block;
+  border-radius: 4px;
+  text-decoration: none;
+  background: var(--black);
+}
+#menu-toggle:checked ~ .nav-links { 
+  display: flex; 
+}
+#menu-toggle:checked + .hamburger {
+  background: rgba(255,255,255,0.03);
+  border-radius: 6px;
+}
+
+/* ================= Logo ================= */
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20vw;
+  max-height: 100px;
+  pointer-events: none;
+}
+
+/* ================= Hero / Intro ================= */
 .container {
   position: relative;
   text-align: center;
 }
-
-/* Div for 'APEX JIU JITSU & MMA */
 .text-block {
   width: 90%;
   position: absolute;
@@ -79,20 +144,16 @@ a {
   color: var(--white);
   opacity: 95%;
   transform: translate(-50%, -50%);
-  padding-left: 30px;
-  padding-right: 30px;
+  padding: 0 30px;
   height: 100%;
 }
-/* 'APEX JIU JITSU & MMA  */
 .intro {
   font-weight: bolder;
   text-align: center;
   font-size: 4em;
   padding: 10%;
-  text-shadow:2px 2px var(--black);
-  /* background-color: rgba(0, 0, 0, 0.595); */
+  text-shadow: 2px 2px var(--black);
 }
-
 .top-page-intros {
   text-align: center;
   font-size: 4em;
@@ -104,216 +165,128 @@ a {
   color: var(--white);
   font-weight: lighter;
 }
-
-/* navigation menu */
-.nav {
-  position: relative;        /* anchor absolute children */
-  display: flex;
-  align-items: center;
-  justify-content: flex-start; /* hamburger sits on left */
-  /* background: var(--black); */
-  padding: 10px;
-  height: 110px;
-}
-
-#menu-toggle {
-  display: none;
-}
-
-.hamburger {
-  font-size: 28px;
-  color: var(--white);
-  cursor: pointer;
-  z-index: 2;  /* always above logo */
-  position: relative;
-  font-size: 26px;
-  cursor: pointer;
-  user-select: none;
-  padding: 8px 10px;         /* larger hit area */
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.mobile-img {
-  display: none; /* Hide mobile image by default */
-}
-
-.mobile-text {
-  display: none;
-}
-
-.banner-text {
-  position: absolute;
-  top: -180px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  font-size: 26px;
-  background-color: rgba(0, 0, 0, 0.546);
-  padding: 10px;
-  border-radius: 10px;
-}
-.nav-links {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 100%;  /* appear below navbar */
-  left: 10px;
-  padding: 10px;
-  border-radius: 8px;
-  flex-direction: column;
-  width: 30vw;
-}
-
-/* links */
-.nav-links a {
-  /* margin: 3px 0; */
-  color: var(--white);
-  text-align: left;
-  font-size: 26px;
-  cursor: pointer;
-  display: block;
-  border-radius: 4px;             /* softer edges */
-  /* padding: 4px 10px;  */
-  text-decoration: none;
-  background-color: var(--black);
-  z-index: 2;
-  max-height: 25px;
-}
-
-#menu-toggle:checked ~ .nav-links {
-  display: flex;
-}
-
-#menu-toggle:checked + .hamburger {
-    background: rgba(255,255,255,0.03);
-    border-radius: 6px;
-  }
-
-/* Large group image */
 .home-image {
   width: 100%;
-  /* max-width: 100%; */
   opacity: 80%;
-
   height: auto;
   display: block;
 }
 
-/* holds image2 */
+/* ================= Image2 + Overlay ================= */
 .image2-container {
   position: relative;
-  overflow: hidden; 
+  display: inline-block;
   max-width: 900px;
+  width: 100%;
 }
-
-.home-image2 {
-  width: 100%;       /* responsive scaling */
-  height: auto;      /* maintain aspect ratio */
+.image2-container img {
   display: block;
+  width: 100%;
+  height: auto;
 }
-
-/* Text over image2 */
-.benefits {
+.image2-container .benefits {
   position: absolute;
   top: 8px;
   left: 8px;
-  color: white;
-  text-align: left;
-  background: rgba(0,0,0,0.4); /* optional readability */
-  padding: 1rem;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.67);
+  padding: 10px;
   border-radius: 8px;
-  font-size: 24px;
-  margin-top: 100px;
-  max-width: 90%;
+  font-size: 20px;
+  color: var(--white);
+  text-align: left;
+  max-width: calc(100% - 16px);
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+}
+.why { 
+  font-size: 30px; 
+}
+.home-image2 {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+#list-headings {
+  color: rgb(255, 147, 47);
+  text-shadow: 2px 1px var(--black);
+}
+.list { 
+  font-size: 14px; 
 }
 
+li {
+  color: var(--white);
+  font-weight: lighter;
+  padding: 5px 0;
+  font-size: 17px;
+  text-align: left;
+}
+
+/* ================= Content Layout ================= */
 .content-row {
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* keeps text aligned at top */
-  gap: 2rem; /* space between columns */
+  align-items: flex-start;
+  gap: 2rem;
   margin-top: 2rem;
 }
-
-/* for the p text below */
-.top-container {
-  padding-top: 1%;
-  max-width: 40%;
-  position: absolute;
-  float: left;
-  top: 37%;
-  left: 33%;
-  font-size: 2.552vw;
-}
-
-/* The #1 jj academy text */
-p {
-  color: white;
-  z-index: 9999;
-  text-align: left;
-  margin-top: -220px;
-  margin-left: -100px;
-  padding-left: 20px;
-  background-color: rgba(0, 0, 0, 0.5);
-  text-shadow:2px 2px var(--darkblue);
-}
-
-.welcome-msg,
-.mission {
+.welcome-msg, .mission {
   flex: 1;
-  max-width: 30%;
+  /* max-width: 30%; */
   font-size: 1.2rem;
-  color: white;
-}
-
-h3 {
-  /* background-color: rgb(255, 255, 255); */
-  /* color: black; */
-  padding: 5px;
-  width: 100%;
+  color: var(--white);
 }
 h4 {
-  color: white;
-  z-index: 9999;
+  color: var(--white);
   text-align: center;
-  /* background-color: rgba(255, 255, 255, 0.467); */
   padding: 3%;
   border-radius: 15px;
-  /* border: solid 2px white; */
 }
 
-/* Form */
+/* ================= Footer ================= */
+footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: var(--white);
+  text-align: center;
+  background-color: var(--black);
+  z-index: 0;
+}
+.footer-logo { 
+  max-width: 80px; 
+}
+
+/* ================= Forms ================= */
 input[type=text], input[type=email], select, textarea {
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
+  margin: 6px 0 16px;
   resize: vertical;
 }
-
 input[type=submit] {
   background: var(--blue);
-  color: white;
+  color: var(--white);
   padding: 12px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-size: 18px;
-} 
-
- input[type=submit]:hover {
-  background-color: var(--lightblue);
 }
 
+input[type=submit]:hover { 
+  background-color: var(--lightblue); 
+}
+
+/* Modal */
 .modal {
   display: none;
   position: fixed;
-  z-index: 9999; /* stays above everything */
+  z-index: 9999;
   left: 0;
   top: 0;
   width: 100%;
@@ -321,30 +294,26 @@ input[type=submit] {
   overflow: auto;
   background-color: rgba(0,0,0,0.5);
 }
-
-/* The form box */
 .modal-content {
   background-color: #f2f2f2;
   margin: 8% auto;
   padding: 40px;
   border-radius: 15px;
   width: 70%;
-  height: 500px;
   max-width: 700px;
-  border: 3px var(--black);
   height: fit-content;
 }
-/* Close button */
 .close {
   float: right;
   font-size: 24px;
   font-weight: bold;
   cursor: pointer;
 }
-/* For programs page */
+
+/* ================= Tables & Hours ================= */
 .programs-table {
   color: var(--white);
-  border: 1px solid #dddddd;
+  border: 1px solid #ddd;
   text-align: left;
   padding: 8px;
 }
@@ -352,83 +321,15 @@ input[type=submit] {
   color: var(--white);
   font-size: 3em;
 }
-caption {
-  color: var(--white);
+caption { 
+  color: var(--white); 
 }
-
-li {
-  color: var(--white);
-}
-
 .quicklink {
   color: var(--orange);
-  border: none;
-  padding: 2px;
   text-decoration: underline;
 }
-
-.quicklink:hover {
-  background-color: var(--lightblue);
-}
-
-/*For  Instructors page */
-.coach-img-container {
-  position: relative;
-  max-width: 800px;
-  margin: 0 auto;
-  padding-top: 5em;
-}
-
-.coach-img-container .coach-img-content {
-  position: absolute;
-  bottom: 0;
-  background: rgb(0, 0, 0); /* Fallback color */
-  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
-  color: #f1f1f1;
-  width: 100%;
-  /* padding: 20px; */
-}
-
-
-td {
-  padding: 1em;
-  margin-left: auto;
-  margin-right: auto;
-  justify-content: center;
-  align-items: center;
-  vertical-align: middle;
-  border: 2px rgb(0, 0, 0) solid;
-  background-color: #000000;
-  color: #ffffff;
-}
-
-.logo {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 20vw;
-  pointer-events: none; /* so it won’t block clicks */
-}
-
-footer {
-  /* height: 80px; */
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  color: white;
-  text-align: center;
-  /* padding: 1rem; */
-  background-color: var(--black);
-  z-index: 0;
-
-}
-
-.footer-logo {
-  max-width: 80px;
-}
-
-.map {
-  padding: 3%;
+.quicklink:hover { 
+  background-color: var(--lightblue); 
 }
 
 .hours {
@@ -443,8 +344,6 @@ footer {
 .hours table {
   width: 100%;
   border-collapse: collapse;
-  background: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0);
   border-radius: 8px;
   overflow: hidden;
 }
@@ -457,3 +356,133 @@ footer {
   color: var(--black);
 }
 
+/* ================= Media Queries ================= */
+
+/* Up to 1080px */
+@media (max-width: 1080px) {
+  .logo { 
+    width: 50vw; 
+    margin-top: 15px; 
+  }
+  .home-image { 
+    display: none; 
+  }
+  .home-image2 { 
+    width: 100vw; 
+    height: auto; 
+    display: block; 
+  }
+
+  .image2-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;   /* full width on mobile */
+    overflow: hidden;  /* clip anything extra */
+  }
+  .image2-container img {
+    width: 100%;
+    height: auto;
+  }
+  .image2-container .benefits {
+    left: 0.5rem;
+    right: 0.5rem;
+    max-width: calc(100% - 1rem);  /* box always fits inside */
+  }
+  .desktop-only, .tagline { 
+    display: none; 
+  }
+  .why {
+    margin-top: -5rem;
+  }
+  .benefits {
+    height: 550px;
+  }
+  #list-headings {
+    font-size: 1.5rem;
+  }
+  .list {
+    font-size: 1rem;
+  }
+
+}
+
+/* Up to 900px */
+@media (max-width: 900px) {
+  .content-row { 
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+  }
+  .button-container { 
+    margin: 1.5rem 0; 
+  }
+  .mission { 
+    padding: 20px; 
+  }
+  .image2-container { 
+    max-width: 500px; 
+  }
+  .image2-container .benefits { 
+    font-size: 18px; 
+  }
+}
+/* Tablet & below */
+@media (max-width: 768px) {
+  .image2-container .benefits {
+    font-size: 16px;
+    max-width: 100%;
+    left: 0;
+    right: 0;
+    padding: 8px;
+  }
+
+  
+}
+
+/* Phone sizes */
+@media (max-width: 480px) {
+  .image2-container .benefits {
+    font-size: 14px;
+    padding: 6px;
+  }
+}
+
+/* Small Mobile 375px */
+@media (max-width: 375px) {
+
+  .image2-container { 
+    max-width: 100%; 
+  }
+  .image2-container .benefits {
+    font-size: 12px;
+    padding: 0.5rem;
+    text-align: center;
+  }
+  .nav-links {
+    top: 100%;
+    left: 0;
+    position: absolute;
+    width: 60vw;
+  }
+  .nav-links a { 
+    width: 100%; 
+  }
+  footer { 
+    display: none; 
+  } /* optional: hide footer on tiny screens */
+  .list { 
+    font-size: 16px; 
+  }
+  #list-headings { 
+    font-size: 22px; 
+  }
+
+}
+
+/* Tiny phones */
+@media (max-width: 320px) {
+  .image2-container .benefits {
+    font-size: 12px;
+    padding: 4px;
+  }
+}
