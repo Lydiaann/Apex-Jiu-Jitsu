@@ -1,12 +1,12 @@
 /* ================= Variables ================= */
 :root {
-  --blue: rgb(25, 109, 255);
+  --blue: rgb(69, 168, 255);
   --darkblue: rgb(0, 33, 130);
   --lightblue: rgb(125, 168, 243);
   --white: rgb(255, 255, 255);
   --black: rgb(0, 0, 0);
   --grey: rgb(154, 155, 164);
-  --orange: rgb(255, 193, 121);
+  --orange: rgb(255, 147, 47);
   --lightorange: rgb(241, 211, 59);
 }
 
@@ -30,7 +30,7 @@ html, body {
 }
 a {
   width: 8em;
-  height: 2em;
+  /* height: 2em; */
   cursor: pointer;
   border-radius: 5px;
   text-decoration: none;
@@ -55,7 +55,7 @@ a {
   padding: 1em 2em;
   background-color: var(--lightorange);
 }
-.cta-button:hover {
+.cta-button:hover .sched-button{
   transform: scale(1.1);
   background-color: rgb(247, 198, 109);
 }
@@ -70,6 +70,19 @@ a {
   text-align: center;
   margin-top: 1rem;
 }
+
+.sched-button {
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 15px;
+  color: var(--black);
+  font-size: 1.2rem;
+  background-color: var(--lightorange);
+  padding: 1em;
+  margin-top: 7%;
+}
+
 /* ================= Navigation ================= */
 .nav {
   position: relative;
@@ -199,6 +212,8 @@ a {
   box-sizing: border-box;
   overflow-wrap: break-word;
 }
+
+
 .why { 
   font-size: 30px; 
 }
@@ -221,6 +236,33 @@ li {
   padding: 5px 0;
   font-size: 17px;
   text-align: left;
+}
+/* ================= Image3 + Overlay ================= */
+.image3-container {
+  position: relative;
+  display: inline-block;
+  max-width: 900px;
+  width: 100%;
+}
+.image3-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.image3-container .sched-button{
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  padding: 16px 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow:  0 0 5px rgba(0, 0, 0, 0.8),
+               0 0 6px rgb(0, 0, 0),
+               0 0 12px rgba(0,0,0,0.7);
 }
 
 /* ================= Content Layout ================= */
@@ -392,7 +434,7 @@ caption {
     display: none; 
   }
   .why {
-    margin-top: -5rem;
+    margin-top: -4rem;
   }
   .benefits {
     height: 550px;
@@ -403,7 +445,72 @@ caption {
   .list {
     font-size: 1rem;
   }
+  .container3-list {
+    margin-top: -180px;
+    margin-left: 33%;
+  }
 
+  .container3-list-item {
+    color: var(--lightorange);
+    font-size: 20px;
+  }
+
+  .mobile-welcome-msg {
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: -15px;
+  }
+  .mobile-welcome-msg-smaller {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    margin-top: -20px;
+    margin-bottom: -10px;
+  }
+  .bold {
+    color: var(--blue);
+    font-size: 22px;
+  }
+  .table-title {
+    color: white;
+  }
+  .cta-button {
+    margin-bottom: -30%;
+  }
+  .class-sched-button {
+    color: white;
+    text-align: center;
+  }
+/* ================= Image3 + Overlay ================= */
+.image3-container {
+  position: relative;
+  display: inline-block;
+  max-width: 900px;
+  width: 100%;
+}
+.image3-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.image3-container .sched-button{
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* background-color: var(--lightblue); */
+  color: black;
+  /* font-size: 16px; */
+  padding: 16px 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow:  0 0 5px rgba(0, 0, 0, 0.8),
+               0 0 6px rgb(0, 0, 0),
+               0 0 12px rgba(0,0,0,0.7);
+}
 }
 
 /* Up to 900px */
@@ -436,7 +543,6 @@ caption {
     padding: 8px;
   }
 
-  
 }
 
 /* Phone sizes */
