@@ -8,6 +8,7 @@
   --grey: rgb(154, 155, 164);
   --orange: rgb(255, 147, 47);
   --lightorange: rgb(241, 211, 59);
+  --benefitsorange: rgb(255, 147, 47);
 }
 
 /* ================= Base ================= */
@@ -43,6 +44,25 @@ a {
   transform: scale(1.05);
 }
 
+/* ================= Icons ================= */
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
 /* ================= Buttons ================= */
 .cta-button {
   display: inline-block;
@@ -213,7 +233,6 @@ a {
   overflow-wrap: break-word;
 }
 
-
 .why { 
   font-size: 30px; 
 }
@@ -223,7 +242,7 @@ a {
   display: block;
 }
 #list-headings {
-  color: rgb(255, 147, 47);
+  color: var(--benefitsorange);
   text-shadow: 2px 1px var(--black);
 }
 .list { 
@@ -447,7 +466,6 @@ caption {
   }
   .container3-list {
     margin-top: -180px;
-    margin-left: 33%;
   }
 
   .container3-list-item {
@@ -470,47 +488,22 @@ caption {
   }
   .bold {
     color: var(--blue);
-    font-size: 22px;
+    font-size: 30px;
   }
   .table-title {
     color: white;
   }
   .cta-button {
     margin-bottom: -30%;
+    margin-top: -70px;
   }
   .class-sched-button {
     color: white;
     text-align: center;
   }
-/* ================= Image3 + Overlay ================= */
-.image3-container {
-  position: relative;
-  display: inline-block;
-  max-width: 900px;
-  width: 100%;
-}
-.image3-container img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-.image3-container .sched-button{
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /* background-color: var(--lightblue); */
-  color: black;
-  /* font-size: 16px; */
-  padding: 16px 30px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  text-align: center;
-  box-shadow:  0 0 5px rgba(0, 0, 0, 0.8),
-               0 0 6px rgb(0, 0, 0),
-               0 0 12px rgba(0,0,0,0.7);
-}
+  .mis {
+    margin-top: -20px;
+  }
 }
 
 /* Up to 900px */
