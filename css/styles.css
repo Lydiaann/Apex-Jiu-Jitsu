@@ -416,6 +416,13 @@ caption {
   background: var(--blue);
   color: var(--black);
 }
+/*================== Programs page ================= */
+
+.program-img {
+  max-height: 400px;
+}
+
+
 
 /* ================= Media Queries ================= */
 
