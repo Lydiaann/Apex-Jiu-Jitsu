@@ -75,10 +75,11 @@ a {
   padding: 1em 2em;
   background-color: var(--lightorange);
 }
-.cta-button:hover .sched-button{
+.cta-button:hover {
   transform: scale(1.1);
   background-color: rgb(247, 198, 109);
 }
+
 .button-container {
   display: flex;
   justify-content: center;
@@ -100,7 +101,6 @@ a {
   font-size: 1.2rem;
   background-color: var(--lightorange);
   padding: 1em;
-  margin-top: 7%;
 }
 
 /* ================= Navigation ================= */
@@ -224,7 +224,7 @@ a {
   right: 8px;
   background: rgba(0, 0, 0, 0.67);
   padding: 10px;
-  border-radius: 8px;
+  /* border-radius: 8px; */
   font-size: 20px;
   color: var(--white);
   text-align: left;
@@ -292,7 +292,7 @@ li {
   gap: 2rem;
   margin-top: 2rem;
 }
-.welcome-msg, .mission {
+.welcome-msg, .mission{
   flex: 1;
   /* max-width: 30%; */
   font-size: 1.2rem;
@@ -410,10 +410,10 @@ caption {
 }
 .hours th, .hours td {
   padding: 1rem;
-  border: 1px solid #ddd;
+  border: 1px solid #000000;
 }
 .hours th {
-  background: var(--lightorange);
+  background: var(--blue);
   color: var(--black);
 }
 
@@ -449,6 +449,21 @@ caption {
     right: 0.5rem;
     max-width: calc(100% - 1rem);  /* box always fits inside */
   }
+    #list-headings {
+    font-size: 1.5rem;
+  }
+  .list {
+    font-size: 1.01rem;
+  }
+  .container3-list {
+    margin-top: -180px;
+  }
+  .container3-list-item {
+    color: var(--lightorange);
+    font-size: 28px;
+    font-weight: bold;
+    text-shadow: 2px 2px black;
+  }
   .desktop-only, .tagline { 
     display: none; 
   }
@@ -458,21 +473,10 @@ caption {
   .benefits {
     height: 550px;
   }
-  #list-headings {
-    font-size: 1.5rem;
-  }
-  .list {
-    font-size: 1rem;
-  }
-  .container3-list {
-    margin-top: -180px;
-  }
 
-  .container3-list-item {
-    color: var(--lightorange);
-    font-size: 20px;
+  .mis {
+    margin-top: -20px;
   }
-
   .mobile-welcome-msg {
     color: white;
     font-size: 24px;
@@ -493,6 +497,8 @@ caption {
   .table-title {
     color: white;
   }
+
+  /* ======================= Buttons ==================== */
   .cta-button {
     margin-bottom: -30%;
     margin-top: -70px;
@@ -501,8 +507,17 @@ caption {
     color: white;
     text-align: center;
   }
-  .mis {
-    margin-top: -20px;
+  
+  .program-overview {
+    display: inline-block;
+    color: var(--white);
+  }
+  .prog-overview {
+    font-weight: lighter;
+  }
+  strong {
+    color: var(--accent-color);
+    font-weight: 700;
   }
 }
 

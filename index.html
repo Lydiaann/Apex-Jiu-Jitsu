@@ -53,13 +53,13 @@
                       </ul>
                         
                       <ul id="list-headings">Real Skills For Real Situations<br>
-                        <li class="list">Clinches, takedowns, & ground control teach you to escape bad positions and take control.</li>
+                        <li class="list">Clinches, takedowns, & ground control teaches you to escape bad positions and take control.</li>
                         <li class="list">Learn to make critical decisions under pressure (literally).</li>
                       </ul>
                       
                       <ul id="list-headings">Train With Friends & Family<br>
                         <li class="list">Train as a family, grow as a team — fitness, fun, and skills for every age!</li>
-                        <li class="list">Build stronger bonds while learning technique from world champion coaches.</li>
+                        <li class="list">Build stronger bonds while learning technique from world class coaches.</li>
                       </ul>
                     </h1>
                   </aside>
@@ -67,6 +67,16 @@
               <div class="button-container">
                 <a class="cta-button" href="index.html" id="openFormBtn" type="button">FREE TRIAL SIGN UP!</a>
               </div>
+
+              <div class="program-overview">
+                <h2>PROGRAM OVERVIEW</h2>
+                <h4 class="prog-overview">At <strong>APEX Jiu Jitsu</strong>, we bring energy, discipline, and community to every class!
+                    Train with us throughout the week in both <strong>Gi and No-Gi</strong> sessions, led by 
+                    passionate instructors dedicated to helping you grow on and off the mats. 
+                    <br><br>
+                    Join the APEX family today and discover the incredible benefits of Jiu Jitsu — fitness, focus, and a community that pushes you to be your best!</h4>
+                    <a class="sched-button" href="schedule.html">Class Schedule</a>
+                  </div>
               <div class="mission">
                 <h4 class="mis">Call or text for more information!</h4>
                 <section class="hours">
@@ -85,11 +95,11 @@
                             <summary>HOURS OF OPERATION:</summary>
                             <table>
                               <tr><td>Monday</td><td>12:00–1:00, 4:30–8:30</td></tr>
-                              <tr><td>Tuesday</td><td>7:00–8:00am, 12:00–1:00, 5:15–9:00</td></tr>
-                              <tr><td>Wednesday</td><td>7:00–8:00am, 4:30–8:30</td></tr>
-                              <tr><td>Thursday</td><td>7:00–8:00am, 12:00–1:00, 5:15–9:00</td></tr>
+                              <tr><td>Tuesday</td><td>7:00am–8:00am, 12:00–1:00, 5:15–9:00</td></tr>
+                              <tr><td>Wednesday</td><td>7:00am–8:00am, 4:30–8:30</td></tr>
+                              <tr><td>Thursday</td><td>7:00am–8:00am, 12:00–1:00, 5:15–9:00</td></tr>
                               <tr><td>Friday</td><td>12:00–1:00, 5:15–7:30</td></tr>
-                              <tr><td>Saturday</td><td>10:00–1:00</td></tr>
+                              <tr><td>Saturday</td><td>10:00am–1:00</td></tr>
                               <tr><td>Sunday</td><td>CLOSED</td></tr>
                             </table>
                           </details>
@@ -102,30 +112,12 @@
             </div>
 
           <aside class="image3-container">
-            <span class= "class-sched-button">
-              <a class="sched-button" href="schedule.html">Class Schedule</a>
                 <img src="images/IMG_1385.jpg" class="dalash-img">
-
-            </span>
                 <ul class="container3-list">
-                  <li class="container3-list-item">Jiu Jitsu</li>
-                  <li class="container3-list-item">MMA</li>
-                  <li class="container3-list-item">Sombo</li>
-                  <li class="container3-list-item">Muay Thai</li>
-                  <li class="container3-list-item">Kickboxing</li>
+                  <li class="container3-list-item">Kids MMA taught by Coach Dalash!</li>
                 </ul>
           </aside>
                       
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
             <br><br><br>
             <!-- The Popup Form -->
             <div id="formModal" class="modal">
@@ -134,13 +126,13 @@
                 
                 <!-- <iframe src="form.php"></iframe> -->
                 <form id="signupForm" action="index.php" method="post">
-                  <label for="fname">First Name</label>
+                  <label for="fname">First Name*</label>
                   <input type="text" id="firstname" name="firstname" required placeholder="First Name">
 
-                  <label for="lname">Last Name</label>
+                  <label for="lname">Last Name*</label>
                   <input type="text" id="lastname" name="lastname" required placeholder="Last Name">
 
-                  <label for="phone">Phone</label>
+                  <label for="phone">Phone*</label>
                   <input type="text" id="phone" name="phone" required placeholder="(###) ### - ####">
 
                   <label for="email">Email*</label>
@@ -180,93 +172,20 @@
                   <input type="submit" value="Submit">
                 </form>
 
+                <script src="form.js"></script>
+
                 <!-- Confirmation message -->
                 <div id="confirmation" style="display:none; margin-top:15px; font-weight:bold;"></div>
               </div>
             </div>
+        </body>
 
-            <!-- JAVASCRIPT for form -->
-        <script>
-        document.addEventListener("DOMContentLoaded", function() {
-          const modal = document.getElementById("formModal");
-          const openBtn = document.getElementById("openFormBtn");
-          const closeBtn = document.querySelector(".close");
-          const form = document.getElementById("signupForm");
-          const confirmationDiv = document.getElementById("confirmation");
-
-          // Open modal
-          openBtn.onclick = (e) => {
-            e.preventDefault();
-            modal.style.display = "block";
-            openBtn.style.display = "none";
-          };
-
-          // Close modal via ×
-          closeBtn.onclick = () => {
-            modal.style.display = "none";
-            openBtn.style.display = "block"; // ✅ bring CTA back
-          };
-
-          // Close modal by clicking outside
-          window.onclick = (e) => {
-            if (e.target == modal) {
-              modal.style.display = "none";
-              openBtn.style.display = "inline-block"; // ✅ bring CTA back
-            }
-          };
-
-          // Handle form submission via AJAX
-          form.onsubmit = (e) => {
-            e.preventDefault(); // prevent default form submit
-            
-            const formData = new FormData(form);
-            
-            fetch("index.php", {
-              method: "POST",
-              body: formData
-            })
-            .then(res => res.text())
-            .then(data => {
-              // Show success/error message
-              confirmationDiv.style.display = "block";
-              confirmationDiv.innerText = data;
-              
-              // Close modal after success
-              modal.style.display = "none";
-              
-              // ✅ Bring CTA back
-              openBtn.style.display = "block";
-
-              // Reset form if needed
-              // form.reset();
-            })
-            .catch(error => {
-              console.error("Error:", error);
-              confirmationDiv.style.display = "block";
-              confirmationDiv.innerText = "An error occurred.";
-            
-              modal.style.display = "none";
-              openBtn.style.display = "block";
-            });
-          };
-        });
-        </script>
-
-<!-- FOR MOBILE -->
-        <!-- <span class="banner"> 
-          <div class="mobile-text">The #1 Jiu Jitsu Academy in Sterling VA!</div>
-           <img src="images/background-for-mobile.jpg" class="mobile-img"> 
-        </span> -->
-
-        <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3100.2035417009565!2d-77.42002902478386!3d39.01067017170008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b639acb7293f43%3A0x35d2317321a3af6e!2s45714%20Oakbrook%20Ct%20%23160%2C%20Sterling%2C%20VA%2020166!5e0!3m2!1sen!2sus!4v1758913713962!5m2!1sen!2sus" width="300" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe> -->
-      </body>
-
-   <footer>
-    <div class="icons">
-      <a href="#" class="fa fa-facebook"></a>
-      <a href="#" class="fa fa-instagram"></a>
-    </div>
-    <img src="images/logo2.jpg" class="footer-logo"><br>
-    © 2025 Apex Jiu Jitsu & MMA
-   </footer>
+          <footer>
+            <div class="icons">
+              <a href="#" class="fa fa-facebook"></a>
+              <a href="https://www.instagram.com/apexjjmma_sterling/" class="fa fa-instagram"></a>
+            </div>
+            <img src="images/logo2.jpg" class="footer-logo"><br>
+            <p>© 2025 Apex Jiu Jitsu & MMA</p>
+          </footer>
 </html>
