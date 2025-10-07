@@ -1,7 +1,7 @@
 /* ================= Variables ================= */
 :root {
   --blue: rgb(69, 168, 255);
-  --darkblue: rgb(0, 33, 130);
+  --darkblue: rgba(0, 33, 130, 0.616);
   --lightblue: rgb(125, 168, 243);
   --white: rgb(255, 255, 255);
   --black: rgb(0, 0, 0);
@@ -9,6 +9,8 @@
   --orange: rgb(255, 147, 47);
   --lightorange: rgb(241, 211, 59);
   --benefitsorange: rgb(255, 147, 47);
+  --instagram: #125688;
+  --facebook: #3B5998;
 }
 
 /* ================= Base ================= */
@@ -55,12 +57,12 @@ a {
 }
 
 .fa-facebook {
-  background: #3B5998;
+  background: var(--facebook);
   color: white;
 }
 
 .fa-instagram {
-  background: #125688;
+  background: var(--instagram);
   color: white;
 }
 /* ================= Buttons ================= */
@@ -372,16 +374,7 @@ input[type=submit]:hover {
 }
 
 /* ================= Tables & Hours ================= */
-.programs-table {
-  color: var(--white);
-  border: 1px solid #ddd;
-  text-align: left;
-  padding: 8px;
-}
-.programs-heading {
-  color: var(--white);
-  font-size: 3em;
-}
+
 caption { 
   color: var(--white); 
 }
@@ -417,12 +410,28 @@ caption {
   color: var(--black);
 }
 /*================== Programs page ================= */
-
-.program-img {
-  max-height: 400px;
+.programs-table {
+  color: var(--white);
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: left;
+  padding: 8px;
+  width: 370px;
+  font-size: 1.2em;
+  /* background-color: var(--darkblue); */
 }
-
-
+.programs-heading {
+  color: var(--white);
+  font-size: 3em;
+  margin-top: -200px;
+  margin-bottom: 100px;
+  background-color: #0000007b;
+  padding: 10px;
+  border-radius: 15px;
+}
+.program-img {
+  border-radius: 15px;
+}
 
 /* ================= Media Queries ================= */
 
@@ -548,6 +557,8 @@ caption {
     font-size: 18px; 
   }
 }
+
+
 /* Tablet & below */
 @media (max-width: 768px) {
   .image2-container .benefits {

@@ -9,8 +9,8 @@ echo "</pre>";
 $host = "localhost";
 $port = "5432";
 $dbname = "apexforms";
-$user = "user";
-$password = "pass"; 
+$user = "Lydia";
+$password = "Password"; 
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Build connection string
@@ -63,15 +63,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     pg_close($conn);
     exit; // important for AJAX
-}
-
-
-if (!$conn) {
-    die("Connection failed");
-}
-
-if (!$conn) {
-    die("Connection failed: " . pg_last_error());
 }
 
 ?>
