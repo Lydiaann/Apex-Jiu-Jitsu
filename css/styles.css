@@ -65,6 +65,10 @@ a {
   background: var(--instagram);
   color: white;
 }
+
+
+
+
 /* ================= Buttons ================= */
 .cta-button {
   display: inline-block;
@@ -103,6 +107,24 @@ a {
   font-size: 1.2rem;
   background-color: var(--lightorange);
   padding: 1em;
+}
+
+.animated-btn {
+  margin-top: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.cta-button-animated {
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 15px;
+  color: var(--black);
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 1em 2em;
+  background-color: var(--lightorange);
 }
 
 /* ================= Navigation ================= */
@@ -321,6 +343,8 @@ footer {
   max-width: 80px; 
 }
 
+
+
 /* ================= Forms ================= */
 input[type=text], input[type=email], select, textarea {
   width: 100%;
@@ -432,6 +456,33 @@ caption {
 .program-img {
   border-radius: 15px;
 }
+/* ================= Contact page ================= */
+
+.contact-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 0.5rem; /* smaller gap for better mobile fit */
+  margin-top: 2rem;
+}
+
+.contact-info {
+  color: var(--blue);
+  font-size: 1.2em;
+  margin-top: 0; /* remove the -70px offset */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: center;
+  max-width: 90vw; /* ensures text never goes off-screen */
+}
+
+.contact-icon {
+  max-width: 50px;
+  height: auto;
+}
+
 
 /* ================= Media Queries ================= */
 
@@ -465,7 +516,7 @@ caption {
     right: 0.5rem;
     max-width: calc(100% - 1rem);  /* box always fits inside */
   }
-    #list-headings {
+  #list-headings {
     font-size: 1.5rem;
   }
   .list {
