@@ -178,6 +178,8 @@ a {
   border-radius: 6px;
 }
 
+
+
 /* ================= Logo ================= */
 .logo {
   position: absolute;
@@ -307,6 +309,10 @@ li {
                0 0 6px rgb(0, 0, 0),
                0 0 12px rgba(0,0,0,0.7);
 }
+.here {
+  text-decoration: none;
+}
+
 
 /* ================= Content Layout ================= */
 .content-row {
@@ -481,6 +487,41 @@ caption {
 .contact-icon {
   max-width: 50px;
   height: auto;
+}
+
+
+/* ================= Instructors page ================= */
+.coach-img-container {
+  width: 100%;
+  height: auto;
+}
+
+.coach-img-content {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.coach-name {
+  color: var(--white);
+  background-color: rgba(0, 0, 0, 0.691);
+  padding: 10px;
+  border-radius: 15px;
+  font-size: 2em;
+  margin-top: -30%;
+  text-align: center;
+}
+
+.bio {
+  color: var(--white);
+  font-weight: 200;
+  margin-bottom: 50px;
+  margin-top: 10%;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.691);
+}
+
+.belt-color {
+  max-width: 80px;
 }
 
 
