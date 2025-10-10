@@ -55,19 +55,14 @@ a {
   text-decoration: none;
   margin: 5px 2px;
 }
-
 .fa-facebook {
   background: var(--facebook);
   color: white;
 }
-
 .fa-instagram {
   background: var(--instagram);
   color: white;
 }
-
-
-
 
 /* ================= Buttons ================= */
 .cta-button {
@@ -80,11 +75,24 @@ a {
   font-size: 1.2rem;
   padding: 1em 2em;
   background-color: var(--lightorange);
+  animation: pulse 2s ease-in-out infinite;
 }
 .cta-button:hover {
   transform: scale(1.1);
   background-color: rgb(247, 198, 109);
 }
+
+@keyframes pulse {
+      0% {
+        transform: scale(1); /* Original size */
+      }
+      50% {
+        transform: scale(1.1); /* Slightly larger */
+      }
+      100% {
+        transform: scale(1); /* Back to original size */
+      }
+    }
 
 .button-container {
   display: flex;
@@ -125,6 +133,7 @@ a {
   font-size: 1.2rem;
   padding: 1em 2em;
   background-color: var(--lightorange);
+  animation: pulse 2s ease-in-out infinite;
 }
 
 /* ================= Navigation ================= */
@@ -177,8 +186,6 @@ a {
   background: rgba(255,255,255,0.03);
   border-radius: 6px;
 }
-
-
 
 /* ================= Logo ================= */
 .logo {
@@ -258,7 +265,6 @@ a {
   box-sizing: border-box;
   overflow-wrap: break-word;
 }
-
 .why { 
   font-size: 30px; 
 }
@@ -272,7 +278,7 @@ a {
   text-shadow: 2px 1px var(--black);
 }
 .list { 
-  font-size: 14px; 
+  font-size: 20px; 
 }
 
 li {
@@ -448,7 +454,7 @@ caption {
   padding: 8px;
   width: 370px;
   font-size: 1.2em;
-  /* background-color: var(--darkblue); */
+  background-color: rgba(15, 72, 179, 0.7);
 }
 .programs-heading {
   color: var(--white);
@@ -494,37 +500,65 @@ caption {
 .coach-img-container {
   width: 100%;
   height: auto;
+  align-items: center;
 }
-
-.coach-img-content {
-  position: relative;
-  margin-bottom: 50px;
+.coach-img-container img {
+  width: 100%;
+  display: block;
+  border-radius: 15px;
 }
-
 .coach-name {
+  position: relative;
+  top: -60px;
+  /* display: inline-block; */
   color: var(--white);
-  background-color: rgba(0, 0, 0, 0.691);
-  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px 20px;
   border-radius: 15px;
   font-size: 2em;
-  margin-top: -30%;
   text-align: center;
+  margin-top: -20px;
 }
-
 .bio {
   color: var(--white);
-  font-weight: 200;
-  margin-bottom: 50px;
-  margin-top: 10%;
+  font-weight: 300;
+  margin-top: -40px;
+  padding: 20px;
   text-align: left;
-  background-color: rgba(0, 0, 0, 0.691);
+  background-color: rgba(15, 72, 179, 0.7);
+  border-radius: 10px;
 }
-
 .belt-color {
   max-width: 80px;
+  display: block;
+  margin: auto;
+  width: 50%;
 }
 
+.coach-intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden; /* prevents scrollbars during animation */
+}
 
+.coach-intro-msg {
+  color: white;
+  position: relative;
+  animation: slideIn 1s ease-out forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 /* ================= Media Queries ================= */
 
 /* Up to 1080px */
@@ -561,7 +595,7 @@ caption {
     font-size: 1.5rem;
   }
   .list {
-    font-size: 1.01rem;
+    font-size: 1rem;
   }
   .container3-list {
     margin-top: -180px;
@@ -587,9 +621,11 @@ caption {
   }
   .mobile-welcome-msg {
     color: white;
-    font-size: 24px;
+    font-size: 26px;
+    font-weight: 800;
     text-align: center;
     margin-bottom: -15px;
+    animation: slideIn 1s ease-out forwards;
   }
   .mobile-welcome-msg-smaller {
     color: white;
@@ -598,6 +634,21 @@ caption {
     margin-top: -20px;
     margin-bottom: -10px;
   }
+
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+
+
   .bold {
     color: var(--blue);
     font-size: 30px;
