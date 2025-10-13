@@ -8,7 +8,7 @@
   --grey: rgb(154, 155, 164);
   --orange: rgb(255, 147, 47);
   --lightorange: rgb(241, 211, 59);
-  --benefitsorange: rgb(255, 147, 47);
+  --benefitsorange: rgb(249, 201, 119);
   --instagram: #125688;
   --facebook: #3B5998;
 }
@@ -448,10 +448,10 @@ caption {
 /*================== Programs page ================= */
 .programs-table {
   color: var(--white);
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  /* border: 1px solid #ddd; */
+  border-radius: 15px;
   text-align: left;
-  padding: 8px;
+  padding: 10px 20px;
   width: 370px;
   font-size: 1.2em;
   background-color: rgba(15, 72, 179, 0.7);
@@ -467,6 +467,35 @@ caption {
 }
 .program-img {
   border-radius: 15px;
+}
+
+.programs-home-container {
+  padding: 20px;
+  text-align: center;
+  margin-top: -30px;
+}
+
+.programs-home-content {
+  color: white;
+  animation: pulse 5s ease-in-out infinite;
+  padding: 2px;
+}
+.programs-home-content-items {
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  padding: 20px;
+  background-color: var(--blue);
+  border-radius: 15px;
+}
+.blurb {
+  color: rgb(222, 220, 220);
+  width: 100%;
+  text-align: start;
+  font-size: 18px;
+}
+.readmore {
+  text-decoration: underline;
+  padding: 0%;
 }
 /* ================= Contact page ================= */
 
@@ -559,6 +588,19 @@ caption {
     opacity: 1;
   }
 }
+
+/* ====================REVIEWS======================*/
+.reviews-container {
+color: white;
+text-align: center;
+}
+
+.reviews {
+ max-width: 100%;
+ padding: 10px;
+}
+
+
 /* ================= Media Queries ================= */
 
 /* Up to 1080px */
