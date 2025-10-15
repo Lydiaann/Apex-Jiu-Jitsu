@@ -85,18 +85,6 @@ a {
   background-color: rgb(247, 198, 109);
 }
 
-@keyframes pulse {
-      0% {
-        transform: scale(1); /* Original size */
-      }
-      50% {
-        transform: scale(1.1); /* Slightly larger */
-      }
-      100% {
-        transform: scale(1); /* Back to original size */
-      }
-    }
-
 .button-container {
   display: flex;
   justify-content: center;
@@ -242,12 +230,13 @@ a {
 }
 
 /* ================= Image2 + Overlay ================= */
-.image2-container {
+/* .image2-container {
   position: relative;
   display: inline-block;
   max-width: 900px;
   width: 100%;
-}
+  height: auto;
+} */
 .image2-container img {
   display: block;
   width: 100%;
@@ -255,9 +244,7 @@ a {
 }
 .image2-container .benefits {
   position: absolute;
-  top: 8px;
-  left: 8px;
-  right: 8px;
+  inset: 0;
   background: rgba(0, 0, 0, 0.67);
   padding: 10px;
   /* border-radius: 8px; */
@@ -266,22 +253,71 @@ a {
   text-align: left;
   max-width: calc(100% - 16px);
   box-sizing: border-box;
-  overflow-wrap: break-word;
+
 }
 .why { 
   font-size: 30px; 
 }
-.home-image2 {
+/* .home-image2 {
   max-width: 100%;
   height: auto;
   display: block;
-}
-#list-headings {
+} */
+/* #list-headings {
   color: var(--benefitsorange);
   text-shadow: 2px 1px var(--black);
-}
-.list { 
+} */
+/* .list { 
   font-size: 20px; 
+} */
+#list-headings {
+  list-style: none;
+  margin: 10px 0;
+  padding: 0;
+  font-weight: bold;
+  color: var(--benefitsorange);
+}
+.list {
+  font-weight: normal;
+  font-size: 2.5rem;
+  margin-left: 15px;
+  list-style-type: disc;
+  white-space: normal; /* allows wrapping */
+  word-wrap: break-word;
+  padding: 10px 10px;
+}
+.benefits {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  color: white;
+  font-size: 1rem;
+  background: rgba(0, 0, 0, 0.5); /* optional overlay */
+  box-sizing: border-box;
+  overflow: hidden; /* ensures no overflow beyond image */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centers content vertically */
+  align-items: flex-start; /* or center if you prefer */
+  text-align: left;
+}
+.image2-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px; /* adjust as needed */
+  margin: 0 auto;
+  overflow: hidden; /* ensures nothing spills outside */
+  border-radius: 12px;
+}
+
+.home-image2 {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
 }
 
 li {
@@ -427,7 +463,7 @@ caption {
 
 .hours {
   text-align: center;
-  margin: 2rem auto;
+  /* margin: 2rem auto; */
   max-width: 700px;
 }
 .hours h2 {
@@ -495,7 +531,10 @@ iframe {
 .program-img {
   border-radius: 15px;
 }
-
+.white-text {
+  color: white;
+  padding: 10px 5px;
+}
 .programs-home-container {
   padding: 20px;
   text-align: center;
@@ -511,14 +550,17 @@ iframe {
   color: rgb(0, 0, 0);
   cursor: pointer;
   padding: 20px;
-  background-color: var(--blue);
+  background-color: var(--lightblue);
   border-radius: 15px;
+  margin: 0;
 }
 .blurb {
   color: rgb(222, 220, 220);
   width: 100%;
   text-align: start;
   font-size: 18px;
+  font-weight: 100;
+  padding: 2px;
 }
 .readmore {
   text-decoration: underline;
@@ -545,13 +587,10 @@ iframe {
   text-align: center;
   max-width: 90vw; /* ensures text never goes off-screen */
 }
-
 .contact-icon {
   max-width: 50px;
   height: auto;
 }
-
-
 /* ================= Instructors page ================= */
 .coach-img-container {
   width: 100%;
@@ -605,33 +644,137 @@ iframe {
   animation: slideIn 1s ease-out forwards;
 }
 
-@keyframes slideIn {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
 /* ==================== Reviews ======================*/
 .reviews-container {
 color: white;
 text-align: center;
+margin-top: -50px;
 }
-
 .reviews {
  max-width: 100%;
- padding: 10px;
+ padding: 5px;
 }
+
+
+
 
 
 /* ================= Media Queries ================= */
+@media only screen and (min-width:992px) {
+
+  .reviews-container {
+  color: white;
+  text-align: center;
+
+  }
+  .reviews {
+  width: 600px;
+  /* padding: 5px; */
+    display:grid;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .button-container {
+    display: none;
+  }
+
+  .content-row {
+    display: none;
+  }
+
+  .programs-home-container {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+  }
+
+  .prog-overview {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 36px;
+  }
+
+  .desktop-benefits, .desktop-list, #desktop-list-headings {
+    color: white;
+    width: fit-content;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 30px;
+  }
+  .desktop-list {
+    max-width: 75%;
+    background-color: #0000009c;
+    padding: 20px;
+    border-radius: 15px;
+  }
+
+  #desktop-list-headings {
+    color: var(--benefitsorange);
+    font-weight: bold;
+    font-size: 40px;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .desktop-benefits {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: 1100px; /* 👈 controls the visible image height */
+    background-image: url("../images/jamil-gi.png"); /* update path if CSS in separate folder */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    
+  }
+  .overlay-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* centers vertically */
+    color: white;
+    padding: 40px;
+    z-index: 1;               /* makes sure text is above overlay */
+    box-sizing: border-box;
+  }
+  .desktop-benefits::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 0;
+  }
+
+  .mobile-welcome-msg, .mobile-welcome-msg-smaller {
+    display: none;
+  }
+  .sched-button {
+    display: none;
+  }
+  .white-text {
+    display: none;
+  }
+  .why-desktop {
+    margin-top: 5px;
+    color: white;
+  }
+
+
+}
 
 /* Up to 1080px */
 @media (max-width: 1080px) {
+  .desktop-benefits, .desktop-list-headings, .desktop-list {
+    display: none;
+  }
+
+
   .logo { 
     width: 50vw; 
     margin-top: 15px; 
@@ -643,14 +786,8 @@ text-align: center;
     width: 100vw; 
     height: auto; 
     display: block; 
-  }
+  } */
 
-  .image2-container {
-    position: relative;
-    width: 100%;
-    max-width: 100%;   /* full width on mobile */
-    overflow: hidden;  /* clip anything extra */
-  }
   .image2-container img {
     width: 100%;
     height: auto;
@@ -659,13 +796,8 @@ text-align: center;
     left: 0.5rem;
     right: 0.5rem;
     max-width: calc(100% - 1rem);  /* box always fits inside */
-  }
-  #list-headings {
-    font-size: 1.5rem;
-  }
-  .list {
-    font-size: 1rem;
-  }
+  } */
+
   .container3-list {
     margin-top: -180px;
   }
@@ -680,9 +812,6 @@ text-align: center;
   }
   .why {
     margin-top: -4rem;
-  }
-  .benefits {
-    height: 550px;
   }
 
   .mis {
@@ -703,19 +832,56 @@ text-align: center;
     margin-top: -20px;
     margin-bottom: -10px;
   }
-
-
-  @keyframes slideIn {
-    from {
-      transform: translateX(100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
+  #list-headings {
+  list-style: none;
+  margin: 10px 0;
+  padding: 0;
+  font-weight: bold;
+  color: var(--benefitsorange);
+  text-align: center;
+  font-size: 24px;
   }
-
+  .list {
+    font-weight: normal;
+    font-size: 26px;
+    margin-left: 15px;
+    list-style-type: disc;
+    white-space: normal; /* allows wrapping */
+    word-wrap: break-word;
+    padding: 10px 10px;
+  }
+  .benefits {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    color: white;
+    font-size: 1rem;
+    background: rgba(0, 0, 0, 0.5); /* optional overlay */
+    box-sizing: border-box;
+    overflow: hidden; /* ensures no overflow beyond image */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centers content vertically */
+    align-items: flex-start; /* or center if you prefer */
+    text-align: left;
+  }
+  .image2-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px; /* adjust as needed */
+    margin: 0 auto;
+    overflow: hidden; /* ensures nothing spills outside */
+    border-radius: 12px;
+  }
+  .home-image2 {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+  }
   iframe {
     display: none;
   }
@@ -728,13 +894,11 @@ text-align: center;
     padding: 5px;
     max-width: 530px;
   }
-
   .day {
     display: inline;
     font-size: 36px;
     max-width: 430px;
   }
-
 
   /* =============== Class colors ================== */
   .adultsjj {
@@ -780,8 +944,6 @@ text-align: center;
     width: 100%;
     max-width: 530px;
   }
-
-
   .bold {
     color: var(--blue);
     font-size: 30px;
@@ -834,7 +996,6 @@ text-align: center;
   }
 }
 
-
 /* Tablet & below */
 @media (max-width: 768px) {
   .image2-container .benefits {
@@ -846,15 +1007,23 @@ text-align: center;
   }
 
 }
-
+/* ========================================= */
 /* Phone sizes */
 @media (max-width: 480px) {
   .image2-container .benefits {
     font-size: 14px;
     padding: 6px;
   }
+  .blurb {
+  color: rgb(222, 220, 220);
+  width: 100%;
+  text-align: start;
+  font-size: 18px;
+  font-weight: 100;
+  margin: -10px;
+  }
 }
-
+/* ======================================== */
 /* Small Mobile 375px */
 @media (max-width: 375px) {
 
@@ -879,14 +1048,29 @@ text-align: center;
     display: none; 
   } /* optional: hide footer on tiny screens */
   .list { 
-    font-size: 16px; 
+    font-size: 18px; 
   }
   #list-headings { 
     font-size: 22px; 
   }
-
+  .prog-overview {
+    font-size: 8px;
+  }
+  .review-intro {
+    font-size: 18px;
+  }
 }
-
+/* ============================================= */
+@media (max-width: 600px) {
+  .benefits {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+  .list {
+    font-size: 18px;
+  }
+}
+/* ============================================= */
 /* Tiny phones */
 @media (max-width: 320px) {
   .image2-container .benefits {
@@ -894,3 +1078,25 @@ text-align: center;
     padding: 4px;
   }
 }
+/* ============== Key Frames =================== */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes pulse {
+      0% {
+        transform: scale(1); /* Original size */
+      }
+      50% {
+        transform: scale(1.1); /* Slightly larger */
+      }
+      100% {
+        transform: scale(1); /* Back to original size */
+      }
+    }
