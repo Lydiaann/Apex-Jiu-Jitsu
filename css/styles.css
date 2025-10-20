@@ -636,16 +636,39 @@ iframe {
   height: auto;
 }
 /* ================= Instructors page ================= */
+.coaches-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2vw;
+  max-width: 90vw;
+  margin: 0 auto;
+  padding: 3vw;
+  box-sizing: border-box;
+  /* align-items: stretch; */
+}
 .coach-img-container {
-  width: 100%;
-  height: auto;
-  align-items: center;
+  background-color: #111;
+  color: white;
+  border-radius: 1vw;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: stretch; */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .coach-img-container img {
   width: 100%;
-  display: block;
-  border-radius: 15px;
+  height: 600px;
+  max-height: 600px;
+  object-fit: cover;
+  /* display: block; */
 }
+.coach-img-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
 .coach-name {
   position: relative;
   top: -60px;
@@ -668,10 +691,11 @@ iframe {
   border-radius: 10px;
 }
 .belt-color {
-  max-width: 80px;
   display: block;
-  margin: auto;
-  width: 50%;
+  width: 40%;          
+  max-width: 80px;    /* keeps it from getting too big */
+   /* keeps aspect ratio */
+  margin: 20px auto;   /* centers it with space above/below */
 }
 
 .coach-intro {
@@ -721,13 +745,60 @@ display: flex;
     max-width: 1400px;
     margin: 0 auto;
   }
+  .coaches-wrapper {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  .coach-img-container {
+    width: 100%;
+    height: auto;
+    align-items: center;
+  }
+  .coach-img-container img {
+    width: 100%;
+    display: block;
+    border-radius: 15px;
+  }
+  .coach-name {
+    position: relative;
+    top: -60px;
+    /* display: inline-block; */
+    color: var(--white);
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 2em;
+    text-align: center;
+    margin-top: -20px;
+  }
+  .bio {
+    color: var(--white);
+    font-weight: 300;
+    margin-top: -40px;
+    padding: 20px;
+    text-align: left;
+    background-color: rgba(15, 72, 179, 0.7);
+    border-radius: 10px;
+  }
+  .belt-color {
+    max-width: 80px;
+    display: block;
+    margin: auto;
+    width: 50%;
+  }
 
-    /* .programs-home-container {
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
-  } */
+  .coach-intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden; /* prevents scrollbars during animation */
+  }
+
+  .coach-intro-msg {
+    color: white;
+    position: relative;
+    animation: slideIn 1s ease-out forwards;
+  }
 
 }
 
@@ -884,20 +955,13 @@ display: flex;
   .content-row {
     display: none;
   }
-  /* .programs-home-container {
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
-  } */
 
-
-  
   .prog-overview {
     width: 85%;
     margin-left: auto;
     margin-right: auto;
     font-size: 36px;
+    margin-top: 100px;
   }
 
   .desktop-benefits {
@@ -1205,6 +1269,49 @@ display: flex;
   .program-overview {
     max-width: 700px;
   }
+.coaches-wrapper {
+    grid-template-columns: 1fr;       /* stack vertically */
+    max-width: 95vw;
+    padding: 4vw 2vw;
+  }
+
+  .coach-img-container {
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto 3vw auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: visible;                /* 👈 allows image to show fully */
+  }
+
+  .coach-img-container img {
+    width: 100%;
+    height: auto;                     /* 👈 ensures full image is visible */
+    object-fit: contain;              /* 👈 prevents any cropping */
+    border-radius: 0;                 /* optional — keep edges clean */
+    display: block;
+  }
+
+  .coach-name {
+    position: static;                 /* removes offset so it won’t overlap */
+    margin-top: 1rem;
+    font-size: clamp(1.2rem, 2.5vw, 2rem);
+    background-color: rgba(0, 0, 0, 0.8);
+    display: inline-block;
+    border-radius: 10px;
+  }
+
+  .bio {
+    font-size: clamp(1.3rem, 2vw, 1.1rem);
+    padding: 3vw;
+    margin-top: 1rem;
+  }
+
+  .belt-color {
+    width: 30%;
+    max-width: 90px;
+  }
 }
 
 /* Up to 900px */
@@ -1250,6 +1357,10 @@ display: flex;
   .parent-home-reviews {
     position: relative;
   }
+    .bio {
+    font-size: clamp(1.1rem, 2vw, 1.1rem);
+    padding: 3vw;
+  }
 }
 
 /* ========================================= */
@@ -1276,6 +1387,10 @@ display: flex;
   .desktop-list {
     font-size: 1rem;
     padding: 1rem;
+  }
+    .belt-color {
+    width: 50%;
+    max-width: 90px;
   }
 }
 
