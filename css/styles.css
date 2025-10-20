@@ -518,7 +518,7 @@ caption {
   border: 1px solid #000000;
 }
 .hours th {
-  background: var(--blue);
+  background: var(--lightorange);
   color: var(--black);
 }
  
@@ -570,13 +570,13 @@ iframe {
 }
 .white-text {
   color: white;
-  padding: 10px 5px;
+  /* padding: 10px 5px; */
 }
 
 .white-text-programs {
     color: white;
-  padding: 10px 5px;
-  margin-top: -10px;
+  /* padding: 10px 5px; */
+  /* margin-top: -10px; */
 }
 
 .programs-home-container {
@@ -690,27 +690,56 @@ iframe {
 
 /* ==================== Reviews ======================*/
 .reviews-container {
-color: white;
-text-align: center;
-margin-top: -50px;
-
+  color: white;
+  text-align: center;
+  margin-top: -50px;
+  flex: 1;
 }
 .reviews {
  max-width: 100%;
  padding: 5px;
 }
+.parent-home-reviews {
+display: flex;
+  justify-content: center;   /* centers horizontally */
+  align-items: stretch;      /* ensures equal height */
+  gap: 20px;                 /* space between them */
+}
+.parent-home-reviews > div {
+  flex: 1;                   /* each takes equal width */
+  min-width: 0;              /* prevents flex overflow */
+  background-color: #111;    /* optional, helps visualize */
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 0;
+}
+/* 1500 px and down - div stack on top  */
+@media (max-width:1500px) {
+  .parent-home-reviews {
+    flex-direction: column;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+    /* .programs-home-container {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+  } */
+
+}
 
 /* ================= Media Queries ================= */
 @media only screen and (min-width:992px) {
-
   .reviews-container {
-  color: white;
-  text-align: center;
-
+    color: white;
+    text-align: center;
+    width: 800px;
   }
   .reviews {
-  width: 600px;
-  /* padding: 5px; */
+    /* width: 600px; */
     display:grid;
     margin-left: auto;
     margin-right: auto;
@@ -724,17 +753,16 @@ margin-top: -50px;
   }
 
   .programs-home-container {
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
+    width: 800px;
+    /* max-width: 600px; */
+    /* margin-left: auto; */
   }
 
   .prog-overview {
-    width: 85%;
+    width: 600px;
     margin-left: auto;
     margin-right: auto;
-    font-size: 36px;
+    display: grid;
   }
 
   .desktop-benefits, .desktop-list, #desktop-list-headings {
@@ -824,19 +852,21 @@ margin-top: -50px;
   }
 /* Home-Image-Text */
   .HIT {
-    color: white;
+    color: rgb(255, 255, 255);
+    background-color: #0000009f;
     font-size: 80px;
     position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     margin-top: -200px;
+    border-radius: 15px;
   }
   .home-image-text-container {
     position: relative;
     text-align: center;
   }
-  .reviews-container {
+  .reviews-container, .programs-home-container {
     color: white;
     text-align: center;
     position: relative;
@@ -854,13 +884,15 @@ margin-top: -50px;
   .content-row {
     display: none;
   }
-  .programs-home-container {
+  /* .programs-home-container {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
-  }
+  } */
 
+
+  
   .prog-overview {
     width: 85%;
     margin-left: auto;
@@ -1214,6 +1246,10 @@ margin-top: -50px;
     max-width: 95%;
     margin-bottom: 2rem;
   }
+
+  .parent-home-reviews {
+    position: relative;
+  }
 }
 
 /* ========================================= */
@@ -1279,6 +1315,8 @@ margin-top: -50px;
   .review-intro {
     font-size: 18px;
   }
+
+  
 }
 /* ============================================= */
 @media (max-width: 600px) {
@@ -1303,6 +1341,8 @@ margin-top: -50px;
     font-size: 12px;
     padding: 4px;
   }
+
+
 }
 /* ============== Key Frames =================== */
 @keyframes slideIn {
