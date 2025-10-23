@@ -1309,7 +1309,10 @@ display: flex;
   }
   .program-img {
     width: 100%;
+    max-width: 500px;
     height: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
   strong {
     color: var(--accent-color);
