@@ -720,7 +720,7 @@ iframe {
   margin-top: -40px;
   padding: 20px;
   text-align: left;
-  background-color: rgba(15, 72, 179, 0.7);
+  /* background-color: rgba(15, 72, 179, 0.7); */
   border-radius: 10px;
 }
 .belt-color {
@@ -772,6 +772,26 @@ display: flex;
 }
 /* 1500 px and down - div stack on top  */
 @media (max-width:1500px) {
+
+  
+.animated-btn {
+  margin-top: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.cta-button-animated {
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 15px;
+  color: var(--black);
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 1em 2em;
+  background-color: var(--lightorange);
+  animation: pulse 2s ease-in-out infinite;
+}
   .parent-home-reviews {
     flex-direction: column;
     align-items: center;
@@ -809,7 +829,7 @@ display: flex;
     margin-top: -40px;
     padding: 20px;
     text-align: left;
-    background-color: rgba(15, 72, 179, 0.7);
+    /* background-color: rgba(15, 72, 179, 0.7); */
     border-radius: 10px;
   }
   .belt-color {
@@ -848,9 +868,9 @@ display: flex;
     margin-left: auto;
     margin-right: auto;
   }
-  .button-container {
+  /* .button-container {
     display: none;
-  }
+  } */
 
   .content-row {
     display: none;
@@ -988,7 +1008,11 @@ display: flex;
   .content-row {
     display: none;
   }
-
+  .program-to-schedule-link {
+    text-align: center;
+    background-color: var(--lightorange);
+    color: black;
+  }
   .prog-overview {
     width: 85%;
     margin-left: auto;
@@ -996,7 +1020,58 @@ display: flex;
     font-size: 36px;
     margin-top: 100px;
   }
+  .program-img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin-left: auto;
+    display: block;
+  }
 
+  .bullet-section {
+    background-color: rgba(15, 72, 179, 0.7);
+    /* color: var(--blue); */
+    display: flex;
+    align-items: flex-start; /* image stays aligned to top */
+    justify-content: space-between;
+    /* gap: 40px; */
+    flex-wrap: wrap; /* allows stacking on small screens */
+    border-radius: 15px;
+    }
+
+  .bullets {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* space between bulletpoints */
+    max-width: 550px;
+    padding: 20px;
+  }
+
+  .bulletpoints {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    /* max-width: 380px; */
+    font-size: clamp(1.2rem, 2vw, 1.1rem);
+    font-weight: 100;
+    padding: 1vw 0;
+    line-height: 1.1;
+    text-align: start;
+    /* color: rgba(15, 72, 179, 0.7); */
+  }
+  .blue {
+    font-size: clamp(1.4rem, 2vw, 1.4rem);
+    /* color: rgba(15, 72, 179, 0.7); */
+    font-weight: 600;
+    /* background-color: white; */
+    border-radius: 15px;
+
+  }
+
+  .arrow-icon {
+    width: 18px;
+    flex-shrink: 0; /* prevents icon from resizing */
+}
   .desktop-benefits {
     position: relative; /* keep in normal flow */
     width: 100%;
@@ -1071,20 +1146,8 @@ display: flex;
   .mis, .list, .benefits, #list-headings{
     display: none;
   }
-  .program-img {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    margin-right: auto;
-    margin-left: auto;
-  }
 
-  .bulletpoints {
-    max-width: 400px;
-    font-size: clamp(1.3rem, 2vw, 1.1rem);
-    padding: 3vw;
   
-  }
 }
 
 /* Up to 1080px */
@@ -1281,9 +1344,19 @@ display: flex;
 
   /* ======================= Buttons ==================== */
   .cta-button {
-    margin-bottom: -30%;
-    margin-top: -70px;
-    display: none;
+    /* margin-bottom: -30%; */
+    /* margin-top: -70px; */
+    /* display: none; */
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 15px;
+    color: var(--black);
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 1em 2em;
+    background-color: var(--lightorange);
+    animation: pulse 2s ease-in-out infinite;
   }
   .class-sched-button {
     color: white;
@@ -1374,6 +1447,17 @@ display: flex;
     width: 30%;
     max-width: 90px;
   }
+  
+  .bullet-section {
+    background-color: rgba(15, 72, 179, 0.7);
+    display: flex;
+    align-items: flex-start; /* image stays aligned to top */
+    justify-content: space-between;
+    text-align: start;
+    flex-wrap: wrap; /* allows stacking on small screens */
+    border-radius: 15px;
+  }
+
 }
 
 /* Up to 900px */
@@ -1395,6 +1479,7 @@ display: flex;
   .image2-container .benefits { 
     font-size: 18px; 
   }
+
 }
 
 /* Tablet & below */
@@ -1419,9 +1504,17 @@ display: flex;
   .parent-home-reviews {
     position: relative;
   }
-    .bio {
-    font-size: clamp(1.1rem, 2vw, 1.1rem);
-    padding: 3vw;
+  .bio {
+  font-size: clamp(1.1rem, 2vw, 1.1rem);
+  padding: 3vw;
+  }
+
+  .bullet-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  .program-img {
+    margin-top: 20px;
   }
 }
 
@@ -1433,12 +1526,12 @@ display: flex;
     padding: 6px;
   }
   .blurb {
-  color: rgb(222, 220, 220);
-  width: 100%;
-  text-align: start;
-  font-size: 18px;
-  font-weight: 100;
-  margin: -10px;
+    color: rgb(222, 220, 220);
+    width: 100%;
+    text-align: start;
+    font-size: 18px;
+    font-weight: 100;
+    margin: -10px;
   }
 }
   @media (max-width: 480px) {
@@ -1504,7 +1597,7 @@ display: flex;
   .list {
     font-size: 18px;
   }
-    .white-text, .white-text-programs {
+  .white-text, .white-text-programs {
     color: var(--lightblue);
   }
   .program-overview {
@@ -1534,13 +1627,13 @@ display: flex;
 }
 
 @keyframes pulse {
-    0% {
-      transform: scale(1); /* Original size */
-    }
-    50% {
-      transform: scale(1.1); /* Slightly larger */
-    }
-    100% {
-      transform: scale(1); /* Back to original size */
-    }
+  0% {
+    transform: scale(1); /* Original size */
   }
+  50% {
+    transform: scale(1.1); /* Slightly larger */
+  }
+  100% {
+    transform: scale(1); /* Back to original size */
+  }
+}
