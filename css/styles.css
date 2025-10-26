@@ -529,12 +529,14 @@ caption {
   top: 400px;
   max-width: 100%;
   width: 100vw;
+  /* display: none; */
 }
 
 iframe {
-  margin-top: 3px;
-  width: 100%;
+  width: 80%;
   height: 700px;
+  margin-right: auto;
+  margin-left: auto;
 }
 .class-schedule {
   text-align: center;
@@ -692,7 +694,7 @@ iframe {
 }
 .coach-img-container img {
   width: 100%;
-  height: 600px;
+  /* height: 600px; */
   max-height: 600px;
   object-fit: cover;
   /* display: block; */
@@ -725,7 +727,7 @@ iframe {
 }
 .belt-color {
   display: block;
-  width: 40%;          
+  width: 20%;          
   max-width: 80px;    /* keeps it from getting too big */
    /* keeps aspect ratio */
   margin: 20px auto;   /* centers it with space above/below */
@@ -772,8 +774,6 @@ display: flex;
 }
 /* 1500 px and down - div stack on top  */
 @media (max-width:1500px) {
-
-  
 .animated-btn {
   margin-top: 5px;
   margin-bottom: 20px;
@@ -868,9 +868,6 @@ display: flex;
     margin-left: auto;
     margin-right: auto;
   }
-  /* .button-container {
-    display: none;
-  } */
 
   .content-row {
     display: none;
@@ -1065,7 +1062,6 @@ display: flex;
     font-weight: 600;
     /* background-color: white; */
     border-radius: 15px;
-
   }
 
   .arrow-icon {
@@ -1147,12 +1143,13 @@ display: flex;
     display: none;
   }
 
-  
+  .calendar, .day {
+    display: none;
+  }
 }
 
 /* Up to 1080px */
 @media (max-width: 1080px) {
-
   .desktop-list, .desktop-benefits, .why-desktop {
     display: none;
   }
@@ -1272,23 +1269,6 @@ display: flex;
     display: block;
     border-radius: 12px;
   }
-  iframe {
-    display: none;
-  }
-  .calendar {
-    position: relative;
-    top: 50px;
-    width: 100%;
-    background-color: rgb(40, 40, 38);
-    border-radius: 15px 15px;
-    padding: 5px;
-    max-width: 530px;
-  }
-  .day {
-    display: inline;
-    font-size: 36px;
-    max-width: 430px;
-  }
 
   /* =============== Class colors ================== */
   .adultsjj {
@@ -1331,8 +1311,9 @@ display: flex;
     margin: 0;
     padding-left: 5px;
     border: solid 1px black;
-    width: 100%;
-    max-width: 530px;
+    width: 100vw;
+    max-width: 100%;
+    text-align: center;
   }
   .bold {
     color: var(--blue);
@@ -1344,9 +1325,6 @@ display: flex;
 
   /* ======================= Buttons ==================== */
   .cta-button {
-    /* margin-bottom: -30%; */
-    /* margin-top: -70px; */
-    /* display: none; */
     display: inline-block;
     cursor: pointer;
     text-decoration: none;
@@ -1448,14 +1426,38 @@ display: flex;
     max-width: 90px;
   }
   
-  .bullet-section {
-    background-color: rgba(15, 72, 179, 0.7);
+  .bullets {
     display: flex;
+    flex-direction: column;
+    gap: 20px; /* space between bulletpoints */
+    max-width: 550px;
+    padding: 10px;
+  }
+
+  .bulletpoints {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    /* max-width: 380px; */
+    font-size: clamp(1.2rem, 2vw, 1.1rem);
+    font-weight: 100;
+    padding: 1vw 0;
+    line-height: 1.1;
+    text-align: start;
+    /* color: rgba(15, 72, 179, 0.7); */
+    display: none;
+  }
+  .bullet-section {
+    /* background-color: rgba(15, 72, 179, 0.7); */
+    /* display: flex; */
     align-items: flex-start; /* image stays aligned to top */
     justify-content: space-between;
     text-align: start;
     flex-wrap: wrap; /* allows stacking on small screens */
     border-radius: 15px;
+  }
+  .calendar, .day {
+    display: none;
   }
 
 }
@@ -1547,6 +1549,7 @@ display: flex;
     width: 50%;
     max-width: 90px;
   }
+
 }
 
 /* ======================================== */
