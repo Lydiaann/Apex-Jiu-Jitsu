@@ -58,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         echo "Error saving data.";
     } else {
         // Success, you can send a success message or just exit
-        echo "Submission successful.";
+        echo "Thank you for signing up! We'll contact you soon.";
     }
 
     pg_close($conn);

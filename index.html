@@ -27,30 +27,18 @@
         <a class="faq" href="faq.html">FAQ</a>
       </div>
       <div class="nav-button-container">
-        <a class="cta-nav-button" href="index.html" id="openFormBtn" type="button">BOOK A FREE TRIAL HERE!</a>
+        <a class="cta-nav-button" href="#" id="openFormBtn" type="button">BOOK A FREE TRIAL HERE!</a>
       </div>
     </nav>
-    <div id="modal-container"></div>
-<!-- Load modal, then form logic -->
-    <script>
-      fetch("modal.html")
-        .then(res => res.text())
-        .then(html => {
-          document.getElementById("modal-container").innerHTML = html;
-
-          // ✅ Load form.js *after* modal is added to DOM
-          const script = document.createElement("script");
-          script.src = "js/form.js";
-          document.body.appendChild(script);
-        })
-        .catch(err => console.error("Error loading modal:", err));
-    </script>
     <header> 
       <p class="mobile-welcome-msg">Welcome! <br><br></p>
         <p class="mobile-welcome-msg-smaller">Step into an environment where <b class="bold">champions</b> are made.</p>
-      
     </header>
     <body>
+    <div id="comfirmation-popup" class="confirmation-popup"></div>
+    <!-- <div id="confirmation" ></div> -->
+    <div id="modal-container"></div>
+
       <div class="container">
         <img src="images/IMG_6424.jpg" class="home-image" alt="Group Photo at APEX Sterling">
         <div class="home-image-text-container">
@@ -133,71 +121,6 @@
               </div>
             </div>
         <br><br><br>
-
-
-
-
-        <!-- The Popup Form -->
-        <!-- <div id="formModal" class="modal">
-          <div class="modal-content">
-            <span class="close">&times;</span> -->
-            
-            <!-- <iframe src="form.php"></iframe> -->
-            <!-- <form id="signupForm" action="php/process.php" method="post">
-              <label for="fname">First Name*</label>
-              <input type="text" id="firstname" name="firstname" required placeholder="First Name">
-
-              <label for="lname">Last Name*</label>
-              <input type="text" id="lastname" name="lastname" required placeholder="Last Name">
-
-              <label for="phone">Phone*</label>
-              <input type="text" id="phone" name="phone" required placeholder="(###) ### - ####">
-
-              <label for="email">Email*</label>
-              <input type="email" id="email" name="email" required placeholder="example@domain.com"><br><br><br>
-
-              <label for="options">Areas of interest (Select all that apply)</label><br>
-              <input type="checkbox" id="adultsjj" name="adultsJiuJitsu">
-              <label for="adultsjj">Adult Jiu Jitsu</label><br>
-
-              <input type="checkbox" id="teensjj" name="teensJiuJitsu">
-              <label for="teensjj">Teen Jiu Jitsu (age 14+)</label><br>
-
-              <input type="checkbox" id="kidsjj" name="kidsJiuJitsu">
-              <label for="kidsjj">Kids Jiu Jitsu (age 7 - 13)</label><br>
-
-              <input type="checkbox" id="youngjj" name="youngJiuJitsu">
-              <label for="youngjj">Childrens Jiu Jitsu (age 3-6)</label><br>
-
-              <input type="checkbox" id="mma" name="MMA">
-              <label for="mma">Intro to MMA</label><br>
-
-              <input type="checkbox" id="boxing" name="Boxing">
-              <label for="boxing">Adult & Teen Boxing</label><br>
-
-              <input type="checkbox" id="bombo" name="Sombo">
-              <label for="sombo">Sombo</label><br><br>
-
-              <label for="subject">Voice your concerns and questions below...</label>
-              <textarea id="subject" name="subject" placeholder="Ask us anything!"></textarea>
-
-              <input type="checkbox" id="sms" name="SMS">
-              <label for="sms">I Consent to Receive SMS Notifications and Alerts from Apex Jiu-Jitsu & MMA. 
-              Frequency varies. Message & data rates may apply. Text HELP to (571) 605-1985 for assistance. 
-              You can reply STOP to unsubscribe.
-              </label><br><br>
-
-              <input type="checkbox" id="marketing" name="Marketing">
-              <label for="marketing">I agree to receive Marketing and Promotional messages from Apex Jiu-Jitsu & MMA 
-              at the phone number provided above. Msg & data rates may apply. 
-              Reply STOP or OUT to opt out or to unsubscribe at any time.
-              </label><br><br>
-
-              <input type="submit" value="Submit">
-            </form>
-            <div id="confirmation" style="display:none; margin-top:15px; font-weight:bold;">Submitted</div>
-          </div>
-        </div> -->
         <div class="parent-home-reviews">
             <div class="programs-home-container">
               <h2 class="white-text-programs">APEX STERLING PROGRAMS</h2>
@@ -277,7 +200,21 @@
                   <img class="reviews" src="images/review6.jpg">
                 </div>
               </div>
-             <script src="form.js"></script>
+             <!-- Load modal, then form logic -->
+            <script>
+              fetch("modal.html")
+                .then(res => res.text())
+                .then(html => {
+                  document.getElementById("modal-container").innerHTML = html;
+
+                  // ✅ Load form.js *after* modal is added to DOM
+                  const script = document.createElement("script");
+                  script.src = "form.js";
+                  document.body.appendChild(script);
+                })
+                .catch(err => console.error("Error loading modal:", err));
+            </script>
+
             </body>
           <footer>
             <img src="images/logo2.jpg" class="footer-logo"><br>

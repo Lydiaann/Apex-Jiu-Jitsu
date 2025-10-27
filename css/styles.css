@@ -499,7 +499,31 @@ input[type=submit]:hover {
   font-weight: bold;
   cursor: pointer;
 }
+.confirmation-popup {
+  display: none;
+  position: fixed;
+  margin-top: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center horizontally + vertically */
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 1s ease;
+  z-index: 9999;
+}
 
+.confirmation-popup.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
 /* ================= Tables & Hours ================= */
 
 caption { 
