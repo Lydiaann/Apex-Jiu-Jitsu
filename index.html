@@ -5,15 +5,17 @@
   <title>Apex Jiu Jitsu
   </title> 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/styles.css">  
+  <link rel="stylesheet" href="css/styles.css">      
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/modal.css">
   <!-- <link rel="stylesheet" href="css/small.css"> -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <nav class="nav"> 
       <input type="checkbox" id="menu-toggle" />
       <label for="menu-toggle" class="hamburger">☰</label>
       <img src="images/logo.jpg" class="logo" >
-
+      
       <div class="nav-links">
         <a class="home" href="index.html">Home</a>
         <a class="instructors" href="instructors.html">Instructors</a>
@@ -24,7 +26,25 @@
         <a class="gallery" href="gallery.html">Gallery</a>
         <a class="faq" href="faq.html">FAQ</a>
       </div>
+      <div class="nav-button-container">
+        <a class="cta-nav-button" href="index.html" id="openFormBtn" type="button">BOOK A FREE TRIAL HERE!</a>
+      </div>
     </nav>
+    <div id="modal-container"></div>
+<!-- Load modal, then form logic -->
+    <script>
+      fetch("modal.html")
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById("modal-container").innerHTML = html;
+
+          // ✅ Load form.js *after* modal is added to DOM
+          const script = document.createElement("script");
+          script.src = "js/form.js";
+          document.body.appendChild(script);
+        })
+        .catch(err => console.error("Error loading modal:", err));
+    </script>
     <header> 
       <p class="mobile-welcome-msg">Welcome! <br><br></p>
         <p class="mobile-welcome-msg-smaller">Step into an environment where <b class="bold">champions</b> are made.</p>
@@ -36,20 +56,12 @@
         <div class="home-image-text-container">
           <h1 class="HIT">The #1 Jiu Jitsu Academy in Sterling, VA!</h1>
         </div>
-          <!-- <div class="text-block"> 
-            <h1 class="intro">APEX JIU JITSU & MMA</h1>
-          </div> -->
-        <!-- <div class="top-container">
-          <p> The #1 Jiu Jitsu Academy in Sterling, VA.</p>
-        </div> -->
         <div class="content-row">
           <div class="welcome-msg">
             <h4 class="wel-msg"><span class="desktop-only">Experience world-class martial arts training for kids, teens, 
               and adults!</span></h4>
               <h3 class="why">Why Choose Us?</h3>
               <aside class="image2-container">
-                <!-- <img src="images/2025-05-16.webp" class="home-image2" alt="Coach Jamil"> -->
-
                 <img src="images/2025-05-16.webp" class="home-image2" alt="Coach Jamil">
 
                 <div class="benefits">
@@ -119,21 +131,19 @@
                   </p>
                 </div>
               </div>
-                
-              </div>
-
-      <!-- <aside class="image3-container">
-        <img src="images/IMG_1385.jpg" class="dalash-img">
-      </aside> -->
-                  
+            </div>
         <br><br><br>
+
+
+
+
         <!-- The Popup Form -->
-        <div id="formModal" class="modal">
+        <!-- <div id="formModal" class="modal">
           <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close">&times;</span> -->
             
             <!-- <iframe src="form.php"></iframe> -->
-            <form id="signupForm" action="php/process.php" method="post">
+            <!-- <form id="signupForm" action="php/process.php" method="post">
               <label for="fname">First Name*</label>
               <input type="text" id="firstname" name="firstname" required placeholder="First Name">
 
@@ -173,108 +183,104 @@
 
               <input type="checkbox" id="sms" name="SMS">
               <label for="sms">I Consent to Receive SMS Notifications and Alerts from Apex Jiu-Jitsu & MMA. 
-          Frequency varies. Message & data rates may apply. Text HELP to (571) 605-1985 for assistance. 
-          You can reply STOP to unsubscribe.</label><br><br>
+              Frequency varies. Message & data rates may apply. Text HELP to (571) 605-1985 for assistance. 
+              You can reply STOP to unsubscribe.
+              </label><br><br>
 
               <input type="checkbox" id="marketing" name="Marketing">
               <label for="marketing">I agree to receive Marketing and Promotional messages from Apex Jiu-Jitsu & MMA 
-          at the phone number provided above. Msg & data rates may apply. Reply STOP or OUT to opt out or to unsubscribe at any time.</label><br><br>
+              at the phone number provided above. Msg & data rates may apply. 
+              Reply STOP or OUT to opt out or to unsubscribe at any time.
+              </label><br><br>
 
               <input type="submit" value="Submit">
             </form>
-
-            <script src="form.js"></script>
-
-            <!-- Confirmation message -->
             <div id="confirmation" style="display:none; margin-top:15px; font-weight:bold;">Submitted</div>
           </div>
-        </div>
-    <div class="parent-home-reviews">
-        <div class="programs-home-container">
-          <h2 class="white-text-programs">APEX STERLING PROGRAMS</h2>
-            <a href="programs.html#adultsbjj"><h2 class="programs-home-content-items">ADULTS JIU JITSU</h2></a>
-            <h4 class="blurb">Tailored for practitioners of all experience levels — 
-            from complete beginners to seasoned grapplers...<a href="programs.html#adultsbjj" class="readmore">read more</a></h4>
+        </div> -->
+        <div class="parent-home-reviews">
+            <div class="programs-home-container">
+              <h2 class="white-text-programs">APEX STERLING PROGRAMS</h2>
+                <a href="programs.html#adultsbjj"><h2 class="programs-home-content-items">ADULTS JIU JITSU</h2></a>
+                <h4 class="blurb">Tailored for practitioners of all experience levels — 
+                from complete beginners to seasoned grapplers...<a href="programs.html#adultsbjj" class="readmore">read more</a></h4>
 
-            <a href="programs.html#teensbjj"><h2 class="programs-home-content-items">TEENS JIU JITSU</h2></a>
-            <h4 class="blurb">Designed for students ages 14 and up, this program blends self-defense 
-            training, physical conditioning, and...<a href="programs.html#teensbjj" class="readmore">read more</a></h4>
-
-
-            <a href="programs.html#kidsbjj"><h2 class="programs-home-content-items">KIDS JIU JITSU</h2></a>
-            <h4 class="blurb">A fun and dynamic program designed for kids ages 7 to 13, 
-            helping them build confidence, discipline, and real self-defense skills...<a href="programs.html#kidsbjj" class="readmore">read more</a></h4>
+                <a href="programs.html#teensbjj"><h2 class="programs-home-content-items">TEENS JIU JITSU</h2></a>
+                <h4 class="blurb">Designed for students ages 14 and up, this program blends self-defense 
+                training, physical conditioning, and...<a href="programs.html#teensbjj" class="readmore">read more</a></h4>
 
 
-            <a href="programs.html#intromma"><h2 class="programs-home-content-items"> INTRO TO MMA</h2></a>
-            <h4 class="blurb">The Intro to MMA Program is designed for beginners ready to step 
-            confidently into the world of mixed martial arts. ...<a href="programs.html#intromma" class="readmore">read more</a></h4>
+                <a href="programs.html#kidsbjj"><h2 class="programs-home-content-items">KIDS JIU JITSU</h2></a>
+                <h4 class="blurb">A fun and dynamic program designed for kids ages 7 to 13, 
+                helping them build confidence, discipline, and real self-defense skills...<a href="programs.html#kidsbjj" class="readmore">read more</a></h4>
 
-            <a href="programs.html#youthmma"><h2 class="programs-home-content-items"> YOUTH MMA</h2></a>
-            <h4 class="blurb">Our Youth MMA Program is designed for students ages 8 to 13 who want to
-            build confidence, strength, and focus while learning...<a href="programs.html#youthmma" class="readmore">read more</a></h4>
 
-            <a href="programs.html#adultskickboxing"><h2 class="programs-home-content-items"> ADULTS KICKBOXING</h2></a>
-            <h4 class="blurb">Adult Kickboxing Program delivers high-energy workouts 
-            that build strength, stamina, and real self-defense skills.
-            Each class blends...<a href="programs.html#adultskickboxing" class="readmore">read more</a></h4>
+                <a href="programs.html#intromma"><h2 class="programs-home-content-items"> INTRO TO MMA</h2></a>
+                <h4 class="blurb">The Intro to MMA Program is designed for beginners ready to step 
+                confidently into the world of mixed martial arts. ...<a href="programs.html#intromma" class="readmore">read more</a></h4>
 
-            <a href="programs.html#youthkickboxing"><h2 class="programs-home-content-items"> KIDS MUAY THAI</h2></a>
-            <h4 class="blurb">Proudly presenting Kids Muay Thai program, specifically 
-            designed for Kids Ages 8 to 13 to help young athletes build striking skills, 
-            fitness, and self-confidence...<a href="programs.html#youthkickboxing" class="readmore">read more</a></h4>
-          <br><br>
-          <div class="mission">
-                <h4 class="mis">Call or text for more information!</h4>
-                <section class="hours">
-                  <table>
-                    <caption class="table-title">Contact Us:</caption>
-                    <tr>
-                      <th>ADDRESS:</th>
-                      <th>PHONE:</th>
-                    </tr>
-                      <tr>
-                        <td>
-                        <a href="https://www.google.com/maps?q=45714+Oakbrook+Ct+%23160,+Sterling,+VA+20166" 
-                        target="_blank">45714 Oakbrook Ct #160, Sterling, VA 20166</a><td><a href="tel:+1571520-3911">(571) 250-3911</a></td></tr>
-                        <th colspan="2">
-                          <details>
-                            <summary>HOURS OF OPERATION:</summary>
-                            <table>
-                              <tr><td>Monday</td><td>12:00–1:00, 4:30–8:30</td></tr>
-                              <tr><td>Tuesday</td><td>7:00am–8:00am, 12:00–1:00, 5:15–9:00</td></tr>
-                              <tr><td>Wednesday</td><td>7:00am–8:00am, 4:30–8:30</td></tr>
-                              <tr><td>Thursday</td><td>7:00am–8:00am, 12:00–1:00, 5:15–9:00</td></tr>
-                              <tr><td>Friday</td><td>12:00–1:00, 5:15–7:30</td></tr>
-                              <tr><td>Saturday</td><td>10:00am–1:00</td></tr>
-                              <tr><td>Sunday</td><td>CLOSED</td></tr>
-                            </table>
-                          </details>
-                        </th>
-                      </tr>
-                    </table>
-                  </section>
+                <a href="programs.html#youthmma"><h2 class="programs-home-content-items"> YOUTH MMA</h2></a>
+                <h4 class="blurb">Our Youth MMA Program is designed for students ages 8 to 13 who want to
+                build confidence, strength, and focus while learning...<a href="programs.html#youthmma" class="readmore">read more</a></h4>
+
+                <a href="programs.html#adultskickboxing"><h2 class="programs-home-content-items"> ADULTS KICKBOXING</h2></a>
+                <h4 class="blurb">Adult Kickboxing Program delivers high-energy workouts 
+                that build strength, stamina, and real self-defense skills.
+                Each class blends...<a href="programs.html#adultskickboxing" class="readmore">read more</a></h4>
+
+                <a href="programs.html#youthkickboxing"><h2 class="programs-home-content-items"> KIDS MUAY THAI</h2></a>
+                <h4 class="blurb">Proudly presenting Kids Muay Thai program, specifically 
+                designed for Kids Ages 8 to 13 to help young athletes build striking skills, 
+                fitness, and self-confidence...<a href="programs.html#youthkickboxing" class="readmore">read more</a></h4>
+              <br><br>
+              <div class="mission">
+                    <h4 class="mis">Call or text for more information!</h4>
+                    <section class="hours">
+                      <table>
+                        <caption class="table-title">Contact Us:</caption>
+                        <tr>
+                          <th>ADDRESS:</th>
+                          <th>PHONE:</th>
+                        </tr>
+                          <tr>
+                            <td>
+                            <a href="https://www.google.com/maps?q=45714+Oakbrook+Ct+%23160,+Sterling,+VA+20166" 
+                            target="_blank">45714 Oakbrook Ct #160, Sterling, VA 20166</a><td><a href="tel:+1571520-3911">(571) 250-3911</a></td></tr>
+                            <th colspan="2">
+                              <details>
+                                <summary>HOURS OF OPERATION:</summary>
+                                <table>
+                                  <tr><td>Monday</td><td>12:00–1:00, 4:30–8:30</td></tr>
+                                  <tr><td>Tuesday</td><td>7:00am–8:00am, 12:00–1:00, 5:15–9:00</td></tr>
+                                  <tr><td>Wednesday</td><td>7:00am–8:00am, 4:30–8:30</td></tr>
+                                  <tr><td>Thursday</td><td>7:00am–8:00am, 12:00–1:00, 5:15–9:00</td></tr>
+                                  <tr><td>Friday</td><td>12:00–1:00, 5:15–7:30</td></tr>
+                                  <tr><td>Saturday</td><td>10:00am–1:00</td></tr>
+                                  <tr><td>Sunday</td><td>CLOSED</td></tr>
+                                </table>
+                              </details>
+                            </th>
+                          </tr>
+                        </table>
+                      </section>
+                    </div>
+                  </div>
+                <br><br>
+                <div class="reviews-container">
+                <h2 class="white-text">VARIFIED GOOGLE REVIEWS</h2>
+                <h3 class="review-intro">Find out what others say about APEX in Sterling, VA.</h3>
+                  <img class="reviews" src="images/review1.jpg">
+                  <img class="reviews" src="images/review2.jpg">
+                  <img class="reviews" src="images/review3.jpg">
+                  <img class="reviews" src="images/review4.jpg">
+                  <img class="reviews" src="images/review5.jpg">
+                  <img class="reviews" src="images/review6.jpg">
                 </div>
               </div>
-          <br><br>
-          <div class="reviews-container">
-          <h2 class="white-text">VARIFIED GOOGLE REVIEWS</h2>
-          <h3 class="review-intro">Find out what others say about APEX in Sterling, VA.</h3>
-            <img class="reviews" src="images/review1.jpg">
-            <img class="reviews" src="images/review2.jpg">
-            <img class="reviews" src="images/review3.jpg">
-            <img class="reviews" src="images/review4.jpg">
-            <img class="reviews" src="images/review5.jpg">
-            <img class="reviews" src="images/review6.jpg">
-          </div>
-        </div>
-      </body>
-    <footer>
-      <!-- <div class="icons">
-        <a href="#" class="fa fa-facebook"></a>
-        <a href="https://www.instagram.com/apexjjmma_sterling/" class="fa fa-instagram"></a>
-      </div> -->
-      <img src="images/logo2.jpg" class="footer-logo"><br>
-      <p>© 2025 Apex Jiu Jitsu & MMA</p>
-    </footer>
+             <script src="form.js"></script>
+            </body>
+          <footer>
+            <img src="images/logo2.jpg" class="footer-logo"><br>
+            <p>© 2025 Apex Jiu Jitsu & MMA</p>
+          </footer>
 </html>
