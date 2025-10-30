@@ -26,7 +26,9 @@
         <a class="cta-nav-button" href="index.html" id="openFormBtn" type="button">BOOK A FREE TRIAL HERE!</a>
       </div>
     </nav>
-    
+    <div id="comfirmation-popup" class="confirmation-popup"></div>
+          <!-- <div id="confirmation" ></div> -->
+          <div id="modal-container"></div>
     <div class="contact-row">
       <img src="images/location.png" class="contact-icon"><br>
       <p class="contact-info"><a href="https://www.google.com/maps?q=45714+Oakbrook+Ct+%23160,+Sterling,+VA+20166" target="_blank" class="contact-info">45714 Oakbrook Ct #160, Sterling Virginia, 20166</a></p>
@@ -40,63 +42,20 @@
       <p class="contact-info"><a href="mailto:info@apexjiujitsusterling.com" class="contact-info">info@apexjiujitsusterling.com</a></p>
     </div>
 <br>
-        <div class="modal-content">
-          <!-- <iframe src="form.php"></iframe> -->
-          <form id="signupForm" action="php/process.php" method="post">
-            <label for="fname">First Name*</label>
-            <input type="text" id="firstname" name="firstname" required placeholder="First Name">
+      <script>
+        fetch("modal.html")
+          .then(res => res.text())
+          .then(html => {
+            document.getElementById("modal-container").innerHTML = html;
 
-            <label for="lname">Last Name*</label>
-            <input type="text" id="lastname" name="lastname" required placeholder="Last Name">
-
-            <label for="phone">Phone*</label>
-            <input type="text" id="phone" name="phone" required placeholder="(###) ### - ####">
-
-            <label for="email">Email*</label>
-            <input type="email" id="email" name="email" required placeholder="example@domain.com"><br><br><br>
-
-            <label for="options">Areas of interest (Select all that apply)</label><br>
-            <input type="checkbox" id="adultsjj" name="adultsJiuJitsu">
-            <label for="adultsjj">Adult Jiu Jitsu</label><br>
-
-            <input type="checkbox" id="teensjj" name="teensJiuJitsu">
-            <label for="teensjj">Teen Jiu Jitsu (age 14+)</label><br>
-
-            <input type="checkbox" id="kidsjj" name="kidsJiuJitsu">
-            <label for="kidsjj">Kids Jiu Jitsu (age 7 - 13)</label><br>
-
-            <input type="checkbox" id="youngjj" name="youngJiuJitsu">
-            <label for="youngjj">Childrens Jiu Jitsu (age 3-6)</label><br>
-
-            <input type="checkbox" id="mma" name="MMA">
-            <label for="mma">Intro to MMA</label><br>
-
-            <input type="checkbox" id="boxing" name="Boxing">
-            <label for="boxing">Adult & Teen Boxing</label><br>
-
-            <input type="checkbox" id="bombo" name="Sombo">
-            <label for="sombo">Sombo</label><br><br>
-
-            <label for="subject">Voice your concerns and questions below...</label>
-            <textarea id="subject" name="subject" placeholder="Ask us anything!"></textarea>
-
-            <input type="checkbox" id="sms" name="SMS">
-            <label for="sms">I Consent to Receive SMS Notifications and Alerts from Apex Jiu-Jitsu & MMA. 
-              Frequency varies. Message & data rates may apply. Text HELP to (571) 605-1985 for assistance. 
-              You can reply STOP to unsubscribe.</label><br><br>
-
-            <input type="checkbox" id="marketing" name="Marketing">
-            <label for="marketing">I agree to receive Marketing and Promotional messages from Apex Jiu-Jitsu & MMA 
-              at the phone number provided above. Msg & data rates may apply. Reply STOP or OUT to opt out or to unsubscribe at any time.
-            <br><br>
-            <input type="submit" value="Submit">
-          </form>
-
-          <script src="form.js"></script>
-        </div>
+            // ✅ Load form.js *after* modal is added to DOM
+            const script = document.createElement("script");
+            script.src = "form.js";
+            document.body.appendChild(script);
+          })
+          .catch(err => console.error("Error loading modal:", err));
+      </script>
   </body>
-
-
 <footer>
   <img src="images/logo2.jpg" class="footer-logo"><br>
   <p>© 2025 Apex Jiu Jitsu & MMA</p>

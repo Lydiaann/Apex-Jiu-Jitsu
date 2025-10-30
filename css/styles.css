@@ -32,7 +32,7 @@ html, body {
   box-sizing: border-box;
 }
 a {
-  width: 8em;
+  /* width: 8em; */
   /* height: 2em; */
   cursor: pointer;
   border-radius: 5px;
@@ -409,8 +409,6 @@ li {
 .here {
   text-decoration: none;
 }
-
-
 /* ================= Content Layout ================= */
 .content-row {
   display: flex;
@@ -430,7 +428,7 @@ li {
 h4 {
   color: var(--white);
   text-align: center;
-  padding: 3%;
+  padding: 5px;
   border-radius: 15px;
 }
 
@@ -617,28 +615,32 @@ iframe {
   /* margin-top: -10px; */
 }
 .programs-wrapper {
- display: flex;
-  flex-direction: column; /* Stack all items vertically */
+  /* display: flex; */
+  /* flex-direction: row;  */
   align-items: center; /* Center them horizontally */
   justify-content: center;
   gap: 60px; /* space between sections */
   padding: 40px 20px;
   background-color: #000; /* optional background */
   color: #fff;
+  width: 100%;
 }
 .program-container {
   display: flex;
-  flex-direction: column; /* Text and image stacked vertically */
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   max-width: 1000px;
   width: 100%;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 .programs-home-container {
   padding: 20px;
   text-align: center;
   margin-top: -30px;
+  /* max-width: 800px; */
 }
 .program-container:hover {
   transform: translateY(-5px);
@@ -667,10 +669,14 @@ iframe {
 .programs-home-content-items {
   color: rgb(0, 0, 0);
   cursor: pointer;
+  width: 400px;
   padding: 20px;
   background-color: var(--lightblue);
   border-radius: 15px;
-  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+  /* margin-top: 0;
+  margin-bottom: 0;  */
 }
 .blurb {
   color: rgb(222, 220, 220);
@@ -683,6 +689,22 @@ iframe {
 .readmore {
   text-decoration: underline;
   padding: 0%;
+}
+.bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* space between bulletpoints */
+  max-width: 1100px;
+  padding: 10px;
+}
+.bullet-section {
+    background-color: rgba(15, 72, 179, 0.7);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-radius: 15px;
+    max-width: 900px;
 }
 /* ================= Contact page ================= */
 
@@ -790,27 +812,65 @@ iframe {
 .reviews-container {
   color: white;
   text-align: center;
-  margin-top: -50px;
   flex: 1;
+  margin-top: 0; /* reset */
+  padding: 20px; /* optional */
 }
 .reviews {
  max-width: 100%;
  padding: 5px;
 }
-.parent-home-reviews {
-display: flex;
-  justify-content: center;   /* centers horizontally */
-  align-items: stretch;      /* ensures equal height */
-  gap: 20px;                 /* space between them */
-}
-.parent-home-reviews > div {
-  flex: 1;                   /* each takes equal width */
-  min-width: 0;              /* prevents flex overflow */
-  background-color: #111;    /* optional, helps visualize */
-  padding: 20px;
+ .parent-home-reviews {
+  display: flex;
+  justify-content: space-between; /* puts divs side by side */
+  align-items: stretch;
+  gap: 20px;                      /* space between the two sections */
+  flex-wrap: wrap;                /* allows wrapping when needed */
+  width: 100%;
   box-sizing: border-box;
-  margin: 0;
 }
+.programs-home-container,
+.reviews-container {
+  flex: 1;                        /* take equal space */
+  min-width: 350px;               /* prevents shrinking too much */
+  box-sizing: border-box;
+}
+.programs-home-container {
+  flex: 1;
+  margin-top: 0; /* reset */
+  padding: 20px;
+  background: #222;
+
+}
+.reviews-container {
+  background: #222;
+  color: white;
+  /* padding: 20px; */
+  text-align: center;
+}
+
+.parent-home-reviews {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; /* aligns tops */
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+/* Make sure both child containers can stretch */
+.parent-home-reviews > div {
+  flex: 1; /* equal width share */
+  padding: 20px;
+  background-color: #111; /* optional, helps visualize */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column; /* keeps inner content flowing top to bottom */
+}
+
+
+ /* ================================================================== */
 /* 1500 px and down - div stack on top  */
 @media (max-width:1500px) {
   .animated-btn {
@@ -830,12 +890,6 @@ display: flex;
     padding: 1em 2em;
     background-color: var(--lightorange);
     animation: pulse 2s ease-in-out infinite;
-  }
-  .parent-home-reviews {
-    flex-direction: column;
-    align-items: center;
-    max-width: 1400px;
-    margin: 0 auto;
   }
   .coaches-wrapper {
       grid-template-columns: repeat(3, 1fr);
@@ -914,8 +968,6 @@ display: flex;
 
   .programs-home-container {
     width: 800px;
-    /* max-width: 600px; */
-    /* margin-left: auto; */
   }
 
   .prog-overview {
@@ -931,7 +983,7 @@ display: flex;
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
-    font-size: 30px;
+    /* font-size: 30px; */
   }
   .desktop-list {
     max-width: 75%;
@@ -959,7 +1011,6 @@ display: flex;
     background-position: center;
     background-repeat: no-repeat;
     overflow: hidden;
-    
   }
   .overlay-text {
     position: absolute;
@@ -968,7 +1019,6 @@ display: flex;
     flex-direction: column;
     justify-content: center;  /* centers vertically */
     color: white;
-    /* padding: 40px; */
     z-index: 1;               /* makes sure text is above overlay */
     box-sizing: border-box;
   }
@@ -979,14 +1029,12 @@ display: flex;
     background: rgba(0, 0, 0, 0.45);
     z-index: 0;
   }
-
   .mobile-welcome-msg, .mobile-welcome-msg-smaller {
     display: none;
   }
   .sched-button {
     display: none;
   }
-
   .why-desktop {
     margin-top: 5px;
     color: white;
@@ -996,14 +1044,12 @@ display: flex;
 @media only screen and (min-width:1080px) {
   .table-title, .review-intro {
     color: white;
-    font-size: 32px;
+    font-size: 22px;
   }
-
   .white-text, .white-text-programs {
-    font-size: 44px;
+    font-size: 24px;
     color: var(--lightblue);
   }
-
   .hours {
     text-align: center;
     max-width: 700px;
@@ -1014,12 +1060,10 @@ display: flex;
   .HIT {
     color: rgb(255, 255, 255);
     background-color: #0000009f;
-    font-size: 60px;
     position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    margin-top: -200px;
     border-radius: 15px;
   }
   .home-image-text-container {
@@ -1053,8 +1097,6 @@ display: flex;
     width: 85%;
     margin-left: auto;
     margin-right: auto;
-    font-size: 30px;
-    margin-top: 100px;
   }
   .program-img {
     width: 100%;
@@ -1066,40 +1108,35 @@ display: flex;
 
   .bullet-section {
     background-color: rgba(15, 72, 179, 0.7);
-    /* color: var(--blue); */
     display: flex;
-    align-items: flex-start; /* image stays aligned to top */
     justify-content: space-between;
-    /* gap: 40px; */
     flex-wrap: wrap; /* allows stacking on small screens */
     border-radius: 15px;
+    width: 100%;
+    max-width: 1100px;
     }
 
   .bullets {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* space between bulletpoints */
-    max-width: 550px;
-    padding: 20px;
+    gap: 20px;
+    max-width: 400px;
+    padding: 10px;
   }
 
   .bulletpoints {
     display: flex;
     align-items: flex-start;
     gap: 10px;
-    /* max-width: 380px; */
     font-size: clamp(1.2rem, 2vw, 1.1rem);
     font-weight: 100;
     padding: 1vw 0;
     line-height: 1.1;
     text-align: start;
-    /* color: rgba(15, 72, 179, 0.7); */
   }
   .blue {
     font-size: clamp(1.4rem, 2vw, 1.4rem);
-    /* color: rgba(15, 72, 179, 0.7); */
     font-weight: 600;
-    /* background-color: white; */
     border-radius: 15px;
   }
 
@@ -1141,7 +1178,7 @@ display: flex;
   .desktop-heading {
     color: var(--benefitsorange);
     font-weight: bold;
-    font-size: 1.8em;
+    font-size: 1.3em;
     padding: 0;
     margin: 0;
     /* margin-top: 2rem; */
@@ -1392,14 +1429,14 @@ display: flex;
     padding: 3vw;
   }
   .program-container {
-    max-width: 700px;
+    max-width: 900px;
     width: 100%;
     margin: 0 auto 3vw auto;
     overflow: visible;
   }
   .program-img {
     width: 100%;
-    max-width: 500px;
+    max-width: 700px;
     height: auto;
     margin-left: auto;
     margin-right: auto;
@@ -1422,10 +1459,10 @@ display: flex;
   }
 
   .coaches-wrapper, .programs-wrapper {
-      grid-template-columns: 1fr;       /* stack vertically */
-      max-width: 95vw;
-      padding: 4vw 2vw;
-    }
+    grid-template-columns: 1fr;       /* stack vertically */
+    max-width: 95vw;
+    padding: 4vw 2vw;
+  }
 
   .coach-img-container {
     max-width: 700px;
@@ -1548,12 +1585,22 @@ display: flex;
     margin-bottom: 2rem;
   }
 
-  .parent-home-reviews {
+  /* .parent-home-reviews {
     position: relative;
+  } */
+  .parent-home-reviews {
+    flex-direction: column;       /* stack vertically */
+    align-items: center;
+  }
+
+  .programs-home-container,
+  .reviews-container {
+    width: 100%;
+    max-width: 700px;             /* optional: limit width */
   }
   .bio {
-  font-size: clamp(1.1rem, 2vw, 1.1rem);
-  padding: 3vw;
+    font-size: clamp(1.1rem, 2vw, 1.1rem);
+    padding: 3vw;
   }
 
   .bullet-section {
@@ -1688,3 +1735,5 @@ display: flex;
     transform: scale(1); /* Back to original size */
   }
 }
+
+
