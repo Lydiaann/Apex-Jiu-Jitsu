@@ -24,11 +24,12 @@ body {
   flex-direction: column;
   min-height: 100vh;
   flex: 1;
+  overflow: auto;
 }
 
 html, body {
   max-width: 100%;
-  overflow-x: hidden; /* prevent horizontal scroll */
+  /* overflow-x: hidden;  */
   box-sizing: border-box;
 }
 a {
@@ -715,30 +716,40 @@ iframe {
     max-width: 900px;
 }
 /* ================= Contact page ================= */
-
-.contact-row {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  gap: 0.5rem; /* smaller gap for better mobile fit */
-  margin-top: 2rem;
+.map {
+ width: 100%;
+  height: clamp(250px, 50vh, 450px); /* scales but never huge */
+  border: 0;
+  display: block;
 }
 
-.contact-info {
-  color: var(--blue);
-  font-size: 1.2em;
-  margin-top: 0; /* remove the -70px offset */
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  text-align: center;
-  max-width: 90vw; /* ensures text never goes off-screen */
+.contact-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2vw;
+  max-width: 90vw;
+  margin: 0 auto;
+  padding: 3vw;
+  box-sizing: border-box;
+  vertical-align: middle;
+  background-color: rgba(15, 72, 179, 0.433);
+  border-radius: 15px;
 }
+
 .contact-icon {
-  max-width: 50px;
+  width: 30px;
   height: auto;
+  vertical-align: middle;
 }
+.contact-info {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between icon and text */
+  font-size: 1.2rem;
+  margin: 10px 0;
+  font-weight: 100;
+}
+
 /* ================= Instructors page ================= */
 .coaches-wrapper {
   display: grid;
@@ -1533,8 +1544,6 @@ iframe {
     display: none;
   }
   .bullet-section {
-    /* background-color: rgba(15, 72, 179, 0.7); */
-    /* display: flex; */
     align-items: flex-start; /* image stays aligned to top */
     justify-content: space-between;
     text-align: start;
@@ -1621,6 +1630,42 @@ iframe {
   }
 }
 
+/* ========================================== */
+@media (max-width: 600px) {
+  .benefits {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+  .list {
+    font-size: 18px;
+  }
+  .white-text, .white-text-programs {
+    color: var(--lightblue);
+  }
+  .program-overview {
+    margin-top: -40px;
+  }
+  .contact-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .contact-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .contact-info {
+    justify-content: center; /* centers icon + text when using flex */
+  }
+
+  .map {
+    width: 100%;
+    height: auto;
+  }
+}
 /* ========================================= */
 /* Phone sizes */
 @media (max-width: 480px) {
@@ -1696,21 +1741,7 @@ iframe {
   
 }
 /* ============================================= */
-@media (max-width: 600px) {
-  .benefits {
-    font-size: 0.9rem;
-    padding: 10px;
-  }
-  .list {
-    font-size: 18px;
-  }
-  .white-text, .white-text-programs {
-    color: var(--lightblue);
-  }
-  .program-overview {
-    margin-top: -40px;
-  }
-}
+
 /* ============================================= */
 /* Tiny phones */
 @media (max-width: 320px) {
