@@ -6,22 +6,55 @@
      <meta name="viewport" content="width=device-width, initial-scale=1">
      <link rel="stylesheet" href="css/styles.css">    
      <body> 
-    <nav class="nav"> 
-      <input type="checkbox" id="menu-toggle" />
-      <label for="menu-toggle" class="hamburger">☰</label>
-      <img src="images/logo.jpg" class="logo" >
+      <nav class="nav"> 
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle" class="hamburger">☰</label>
+        <img src="images/logo.jpg" class="logo" >
 
-      <div class="nav-links">
-        <a class="home" href="index.html">Home</a>
-        <a class="instructors" href="instructors.html">Instructors</a>
-        <a class="programs" href="programs.html">Programs</a>
-        <a class="schedule" href="schedule.html">Schedule</a>
-        <a class="contact" href="contact.html">Contact</a>
-        <a class="comp" href="champ.html">Champions</a>
-        <a class="gallery" href="gallery.html">Gallery</a>
-        <a class="faq" href="faq.html">FAQ</a>
+        <div class="nav-links">
+          <a class="home" href="index.html">Home</a>
+          <a class="instructors" href="instructors.html">Instructors</a>
+          <a class="programs" href="programs.html">Programs</a>
+          <a class="schedule" href="schedule.html">Schedule</a>
+          <a class="contact" href="contact.html">Contact</a>
+          <a class="comp" href="champ.html">Champions</a>
+          <a class="gallery" href="gallery.html">Gallery</a>
+          <a class="faq" href="faq.html">FAQ</a>
+        </div>
+      </nav>
+      <h2>Accordion</h2>
+
+      <button class="accordion">Section 1</button>
+      <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       </div>
-    </nav>
+
+      <button class="accordion">Section 2</button>
+      <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+
+      <button class="accordion">Section 3</button>
+      <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+
+      <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+          acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+              panel.style.display = "none";
+            } else {
+              panel.style.display = "block";
+            }
+          });
+        }
+      </script>
     </body>
   <footer>
     <img src="images/logo2.jpg" class="footer-logo">
