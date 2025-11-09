@@ -22,23 +22,53 @@
           <a class="faq" href="faq.html">FAQ</a>
         </div>
       </nav>
-      <h2>Accordion</h2>
 
-      <button class="accordion">Section 1</button>
+      <h2 class="faq-h2">Frequently Asked Questions</h2>
+
+      <button class="accordion">What happens during my first class?</button>
       <div class="panel">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p><strong>Warm-Up: </strong>Start the session by moving through foundational Jiu Jitsu exercises alongside the group.
+          <br><strong>Technical Instruction: </strong> our instructors as they break down each technique step-by-step for clear understanding.
+          <br><strong>Specific Drilling: </strong> your skills through focused drills designed to help you apply each technique effectively.
+          <br><strong>One-on-One Orientation: </strong> individual attention as we walk you through the fundamental positions and a few key moves from each to help you get started confidently.</p>
       </div>
 
-      <button class="accordion">Section 2</button>
+      <button class="accordion">What do I wear to my first class?</button>
       <div class="panel">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>We recommend wearing comfortable workout clothes—something like board shorts and a T-shirt works great. 
+          On Gi days (pronounced “Gee”), we’ll provide you with a Gi uniform to borrow for your first class. 
+          For No-Gi days—held on Tuesday, Thursday, and Saturday—just come in your shorts and T-shirt, 
+          and you’ll be all set.</p>
       </div>
 
-      <button class="accordion">Section 3</button>
+      <button class="accordion">Is Jiu Jitsu safe for kids?</button>
       <div class="panel">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Yes, Jiu Jitsu is very safe for kids when practiced in a structured and supervised environment 
+          like ours. Our experienced instructors prioritize safety by teaching proper technique and creating 
+          a positive, supportive setting where children can progress at their own pace. We emphasize building 
+          confidence, discipline, and self-defense skills in a way that’s engaging, encouraging, and fun for 
+          every student.</p>
       </div>
 
+      <button class="accordion">Do I need prior experience?</button>
+      <div class="panel">
+        <p>Not at all! Our classes are designed for every skill level — from complete beginners to seasoned practitioners. 
+          Whether it’s your first time on the mats or you’ve trained before, our experienced instructors will 
+          guide you step-by-step in a welcoming and supportive environment. You can relax knowing we’ll help you feel 
+          comfortable, confident, and ready to learn from your very first class!</p>
+      </div>
+
+      <button class="accordion">What are the differences between Gi and No-Gi Jiu Jitsu?</button>
+      <div class="panel">
+        <p>The main difference between Gi and No-Gi Jiu Jitsu comes down to clothing and grip style. 
+          In Gi Jiu Jitsu, practitioners wear a traditional uniform (called a Gi), which allows for 
+          gripping the fabric to control opponents and execute techniques. In No-Gi Jiu Jitsu, practitioners
+           wear athletic gear like rash guards and shorts, focusing on movements and grips that don’t depend on the fabric. 
+           Both styles build essential Jiu Jitsu skills — Gi training sharpens grip strength and technical precision, 
+           while No-Gi emphasizes speed, timing, and fluid transitions. Each offers unique benefits and is an excellent way 
+           to grow as a practitioner.</p>
+      </div>
+<!-- 
       <script>
         var acc = document.getElementsByClassName("accordion");
         var i;
@@ -54,7 +84,20 @@
             }
           });
         }
-      </script>
+      </script> -->
+  <script>
+    const accordions = document.querySelectorAll(".accordion");
+
+    accordions.forEach((accordion) => {
+      accordion.addEventListener("click", function () {
+        this.classList.toggle("active");
+        const panel = this.nextElementSibling;
+        panel.classList.toggle("show");
+      });
+    });
+  </script>
+
+
     </body>
   <footer>
     <img src="images/logo2.jpg" class="footer-logo">

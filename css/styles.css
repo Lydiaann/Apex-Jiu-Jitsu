@@ -198,6 +198,8 @@ a {
   animation: pulse 2s ease-in-out infinite;
   cursor: pointer;
   text-align: center;
+  border-radius: 20px;
+  padding: 12px;
 }
 
 /* ================= Logo ================= */
@@ -614,17 +616,14 @@ iframe {
 }
 .white-text {
   color: white;
-  /* padding: 10px 5px; */
+  font-size: 29px;
 }
 
 .white-text-programs {
     color: white;
-  /* padding: 10px 5px; */
-  /* margin-top: -10px; */
+    font-size: 29px;
 }
 .programs-wrapper {
-  /* display: flex; */
-  /* flex-direction: row;  */
   align-items: center; /* Center them horizontally */
   justify-content: center;
   gap: 60px; /* space between sections */
@@ -678,7 +677,7 @@ iframe {
 .programs-home-content-items {
   color: rgb(0, 0, 0);
   cursor: pointer;
-  width: 400px;
+  /* width: 400px; */
   padding: 20px;
   background-color: var(--lightblue);
   border-radius: 15px;
@@ -825,6 +824,62 @@ iframe {
   color: white;
   position: relative;
   animation: slideIn 1s ease-out forwards;
+}
+/* ==================== FAQ page ===================== */
+ .accordion {
+  background-color: #004aad;
+  color: white;
+  cursor: pointer;
+  padding: 12px;
+  width: 100%;
+  max-width: 1100px;
+  text-align: left;
+  border: none;
+  outline: none;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  position: relative;
+  transition: background-color 0.3s ease;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* Add the dropdown arrow */
+.accordion::after {
+  content: "▼";
+  font-size: 0.9rem;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease;
+}
+
+/* Rotate arrow when active */
+.accordion.active::after {
+  transform: translateY(-50) rotate(180deg);
+}
+
+/* Panel styling */
+.panel {
+  padding: 0 12px;
+  background-color: #f1f1f1;
+  max-height: 0;
+  overflow: hidden;
+  max-width: 1100px;
+  border-radius: 12px;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Open panel */
+.panel.show {
+  padding: 12px;
+  max-height: 500px; /* enough space for your text */
 }
 
 /* ==================== Reviews ======================*/
@@ -994,6 +1049,7 @@ iframe {
     margin-left: auto;
     margin-right: auto;
     display: grid;
+    font-size: 24px;
   }
 
   .desktop-benefits, .desktop-list, #desktop-list-headings {
@@ -1443,6 +1499,7 @@ iframe {
   }
   .prog-overview {
     font-weight: lighter;
+    font-size: 22px;
   }
   .program-container .bio {
     font-size: clamp(0.9rem, 2vw, 1.1rem);
