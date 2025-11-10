@@ -1639,6 +1639,10 @@ iframe {
   .prog-overview {
     width: 100%;
   }
+
+  .cta-nav-button {
+    display: none;
+  }
 }
 
 /* Tablet & below */
