@@ -103,7 +103,7 @@ a {
   margin-top: 1rem;
 }
 
-.sched-button {
+/* .sched-button {
   display: inline-block;
   cursor: pointer;
   text-decoration: none;
@@ -112,7 +112,26 @@ a {
   font-size: 1.2rem;
   background-color: var(--lightorange);
   padding: 1em;
+} */
+
+.sched-button {
+  position: relative;
+  z-index: 2;
+  margin-top: 1.5rem;
+  background: #45a8ff;
+  color: white;
+  padding: 0.9rem 2rem;
+  border-radius: 40px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease;
 }
+
+.sched-button:hover {
+  background: #0077cc;
+}
+
+
 
 .animated-btn {
   margin-top: 5px;
@@ -1022,10 +1041,10 @@ iframe {
     animation: slideIn 1s ease-out forwards;
   }
 
-}
+/* } */
 
 /* ================= Media Queries ================= */
-@media only screen and (min-width:992px) {
+/* @media only screen and (min-width:992px) { */
   .reviews-container {
     color: white;
     text-align: center;
@@ -1047,11 +1066,12 @@ iframe {
   }
 
   .prog-overview {
-    width: 600px;
+    /* width: 600px; */
     margin-left: auto;
     margin-right: auto;
     display: grid;
     font-size: 24px;
+    
   }
 
   .desktop-benefits, .desktop-list, #desktop-list-headings {
@@ -1494,14 +1514,68 @@ iframe {
     color: white;
     text-align: center;
   }
-  .program-overview {
-    display: inline-block;
-    color: var(--white);
-    max-width: 700px;
+  /* .program-overview {
+    background-image: url("../images/992img2.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 80vh;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
+
   .prog-overview {
-    font-weight: lighter;
-    font-size: 22px;
+    position: relative;
+    z-index: 2;
+    flex-direction: column;
+    justify-content: center;   
+    align-items: center;       
+    text-align: center;
+    height: 80vh;              
+    background-color: #00000061;
+    border-radius: 50px;
+  } */
+.program-overview {
+  background-image: url("../images/992img2.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 80vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* center text vertically */
+  align-items: center;       /* center text horizontally */
+  overflow: hidden;
+}
+
+/* Optional dark overlay for readability */
+  .program-overview::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+    border-radius: inherit;
+  }
+
+  .prog-overview {
+    position: relative;
+    z-index: 2;                /* ensures text stays above overlay */
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4); /* semi-transparent box behind text */
+    padding: 2rem 3rem;
+    max-width: 900px;
+    border-radius: 20px;
+    font-size: clamp(1rem, 1.5vw, 1.3rem);
+    line-height: 1.6;
+    box-sizing: border-box;
   }
   .program-container .bio {
     font-size: clamp(0.9rem, 2vw, 1.1rem);
@@ -1813,9 +1887,77 @@ iframe {
     font-size: 12px;
     padding: 4px;
   }
-
-
 }
+
+/* ================= Responsive scaling for .prog-overview ================= */
+
+/* Large desktops */
+@media (max-width: 1500px) {
+  .prog-overview {
+    width: 80%;
+    font-size: 22px;
+  }
+}
+
+/* Tablets (landscape & mid screens) */
+@media (max-width: 1080px) {
+  .prog-overview {
+    width: 90%;
+    font-size: 20px;
+    line-height: 1.4;
+  }
+}
+
+/* Tablets (portrait) */
+@media (max-width: 768px) {
+  .prog-overview {
+    width: 95%;
+    font-size: 18px;
+    line-height: 1.3;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .prog-overview {
+    width: 100%;
+    font-size: 16px;
+    padding: 0 10px;
+    line-height: 1.25;
+  }
+}
+
+/* Smallest screens */
+@media (max-width: 360px) {
+  .prog-overview {
+    font-size: 14px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ============== Key Frames =================== */
 @keyframes slideIn {
   from {
