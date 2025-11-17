@@ -851,6 +851,31 @@ iframe {
   position: relative;
   animation: slideIn 1s ease-out forwards;
 }
+
+/* ==================== Champion page ================ */
+
+/* Create four equal columns that sits next to each other */
+.img-column {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.img-row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  /* flex-wrap: wrap; */
+  padding: 0 4px;
+}
+
+.img-column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
 /* ==================== FAQ page ===================== */
  .accordion {
   background-color: #004aad;
@@ -1698,6 +1723,14 @@ iframe {
 
 /* Tablet & below */
 @media (max-width: 768px) {
+
+  .img-column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+
+
   .image2-container .benefits {
     font-size: 16px;
     max-width: 100%;
@@ -1744,6 +1777,12 @@ iframe {
 
 /* ========================================== */
 @media (max-width: 600px) {
+  .img-column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+
   .benefits {
     font-size: 0.9rem;
     padding: 10px;
