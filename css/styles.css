@@ -271,6 +271,7 @@ a {
   opacity: 80%;
   height: auto;
   display: block;
+  border-radius: 15px;
 }
 
 /* ================= Image2 + Overlay ================= */
@@ -343,13 +344,14 @@ a {
   max-width: 600px; /* adjust as needed */
   margin: 0 auto;
   overflow: hidden; /* ensures nothing spills outside */
-  border-radius: 12px;
+  border-radius: 15px
 }
 
 .home-image2 {
   width: 100%;
   height: auto;
   display: block;
+  border-radius: 15px;
 } 
 #list-headings {
   list-style: none;
@@ -451,7 +453,6 @@ li {
 }
 .welcome-msg, .mission{
   flex: 1;
-  /* max-width: 30%; */
   font-size: 1.2rem;
   color: var(--white);
   margin-left: auto;
@@ -699,11 +700,11 @@ iframe {
   padding: 2px;
 }
 .programs-home-content-items {
-  color: rgb(0, 0, 0);
+  /* color: rgb(0, 0, 0); */
   cursor: pointer;
   /* width: 400px; */
   padding: 10px;
-  background-color: var(--lightblue);
+  color: var(--lightorange);
   border-radius: 15px;
   margin-left: auto;
   margin-right: auto;
@@ -711,12 +712,13 @@ iframe {
   margin-bottom: 0;  */
 }
 .blurb {
-  color: rgb(222, 220, 220);
-  width: 100%;
+  /* color: rgb(222, 220, 220); */
+  max-width: 100%;
   text-align: start;
-  font-size: 18px;
+  /* font-size: 18px; */
   font-weight: 100;
   margin: 0;
+  text-align: center;
 }
 .readmore {
   text-decoration: underline;
@@ -936,12 +938,8 @@ iframe {
 }
 .programs-home-container {
   flex: 1;
-  /* margin-top: 0;  */
   padding: 20px;
   background: #222;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
 }
 .reviews-container {
   background: #222;
@@ -949,22 +947,26 @@ iframe {
   /* padding: 20px; */
   text-align: center;
 }
-
+.programs-home-container,
+.parent-home-reviews {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
 .parent-home-reviews {
   display: flex;
   justify-content: space-between;
   align-items: stretch; /* aligns tops */
   flex-wrap: wrap;
   gap: 20px;
-  width: 100%;
   box-sizing: border-box;
-  margin: 0 auto;
 }
 /* Make sure both child containers can stretch */
 .parent-home-reviews > div {
   flex: 1; /* equal width share */
-  padding: 20px;
   background-color: #111; /* optional, helps visualize */
+  border-radius: 15px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column; /* keeps inner content flowing top to bottom */
@@ -1152,7 +1154,6 @@ iframe {
     font-size: 22px;
   }
   .white-text, .white-text-programs {
-    font-size: 24px;
     color: var(--lightblue);
   }
   .hours {
@@ -1182,7 +1183,7 @@ iframe {
     /* margin-top: 1000px; */
   }
   .reviews {
-    width: 600px;
+    /* width: 600px; */
     padding: 5px;
     margin-left: auto;
     margin-right: auto;
@@ -1262,6 +1263,7 @@ iframe {
     /* padding: 60px 20px; */
     box-sizing: border-box;
     font-size: 1.6rem;
+    border-radius: 15px;
   }
 
   .desktop-benefits::before {
@@ -1308,6 +1310,7 @@ iframe {
     inset: 0;
     background: rgba(0, 0, 0, 0.45);
     z-index: 0;
+    border-radius: 15px;
   }
   .mobile-welcome-msg, .mobile-welcome-msg-smaller {
     display: none;
@@ -1787,7 +1790,7 @@ iframe {
     color: rgb(222, 220, 220);
     width: 100%;
     text-align: start;
-    font-size: 18px;
+    /* font-size: 18px; */
     font-weight: 100;
     margin: -10px;
   }
