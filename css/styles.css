@@ -79,7 +79,7 @@ a {
   cursor: pointer;
   text-decoration: none;
   border-radius: 15px;
-  color: var(--black);
+  color: white;
   font-weight: bold;
   font-size: 1.2rem;
   padding: 1em 2em;
@@ -130,8 +130,6 @@ a {
 .sched-button:hover {
   background: #0077cc;
 }
-
-
 
 .animated-btn {
   margin-top: 5px;
@@ -232,9 +230,12 @@ a {
 }
 
 /* ================= Hero / Intro ================= */
-.container {
+.home-container {
   position: relative;
   text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 .text-block {
   width: 90%;
@@ -444,6 +445,9 @@ li {
   align-items: flex-start;
   gap: 2rem;
   margin-top: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 .welcome-msg, .mission{
   flex: 1;
@@ -663,11 +667,13 @@ iframe {
   margin-right: auto;
 }
 .programs-home-container {
-  padding: 20px;
   text-align: center;
-  margin-top: -30px;
-  /* max-width: 800px; */
+  /* margin-top: -30px; */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
+
 .program-container:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
@@ -679,7 +685,6 @@ iframe {
   object-fit: cover;        /* fills card evenly */
   display: block;
   border-radius: 15px;
-  max-width: 100%;
 }
 .program-container .bio {
   font-size: 1.2rem;
@@ -697,7 +702,7 @@ iframe {
   color: rgb(0, 0, 0);
   cursor: pointer;
   /* width: 400px; */
-  padding: 20px;
+  padding: 10px;
   background-color: var(--lightblue);
   border-radius: 15px;
   margin-left: auto;
@@ -750,7 +755,7 @@ iframe {
   padding: 3vw;
   box-sizing: border-box;
   vertical-align: middle;
-  background-color: rgba(15, 72, 179, 0.433);
+  background-color: #26272d7a;
   border-radius: 15px;
 }
 
@@ -780,7 +785,7 @@ iframe {
   /* align-items: stretch; */
 }
 .coach-img-container, .program-container {
-  background-color: #111;
+  background-color: #26272d7a;
   color: white;
   border-radius: 1vw;
   overflow: hidden;
@@ -911,6 +916,7 @@ iframe {
 }
 .reviews {
   max-width: 100%;
+  width: 400px;
   padding: 5px;
 }
  .parent-home-reviews {
@@ -930,10 +936,12 @@ iframe {
 }
 .programs-home-container {
   flex: 1;
-  margin-top: 0; /* reset */
+  /* margin-top: 0;  */
   padding: 20px;
   background: #222;
-
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 .reviews-container {
   background: #222;
@@ -1527,9 +1535,9 @@ iframe {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
+  } */
 
-  .prog-overview {
+  /* .prog-overview {
     position: relative;
     z-index: 2;
     flex-direction: column;
@@ -1540,43 +1548,7 @@ iframe {
     background-color: #00000061;
     border-radius: 50px;
   } */
-.program-overview {
-  background-image: url("../images/992img2.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  width: 100%;
-  min-height: 80vh;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;   /* center text vertically */
-  align-items: center;       /* center text horizontally */
-  overflow: hidden;
-}
 
-/* Optional dark overlay for readability */
-  .program-overview::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.45);
-    z-index: 1;
-    border-radius: inherit;
-  }
-
-  .prog-overview {
-    position: relative;
-    z-index: 2;                /* ensures text stays above overlay */
-    text-align: center;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.4); /* semi-transparent box behind text */
-    padding: 2rem 3rem;
-    max-width: 900px;
-    border-radius: 20px;
-    font-size: clamp(1rem, 1.5vw, 1.3rem);
-    line-height: 1.6;
-    box-sizing: border-box;
-  }
   .program-container .bio {
     font-size: clamp(0.9rem, 2vw, 1.1rem);
     padding: 3vw;
@@ -1933,30 +1905,6 @@ iframe {
     font-size: 14px;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* ============== Key Frames =================== */
 @keyframes slideIn {
