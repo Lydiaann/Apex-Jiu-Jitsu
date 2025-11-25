@@ -149,41 +149,7 @@ a {
   background-color: var(--lightorange);
   animation: pulse 2s ease-in-out infinite;
 }
-/* ================= Search bar ================= */
-.search-container {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-left: auto;
-}
 
-.search-container input {
-  padding: 6px 10px;
-  border-radius: 6px;
-  border: 1px solid #555;
-  background: #111;
-  color: white;
-}
-
-.search-container button {
-  padding: 6px 12px;
-  border-radius: 6px;
-  background: #444;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-  mark.page-search-highlight {
-    background: #ffea8a;
-    color: #111;
-    padding: 0 2px;
-    border-radius: 2px;
-  }
-  #searchResults {
-    color: #ddd;
-    font-size: 0.95rem;
-    margin-left: 12px;
-  }
 /* ================= Navigation ================= */
 .nav {
   position: relative;
@@ -652,7 +618,80 @@ iframe {
 .day {
   color: white;
 }
+.class-row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  padding: 0 4px;
+  border-radius: 15px;
+}
 
+.class-column {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+  font-size: 20px;
+  text-align: center;
+  border: solid 2px black;
+  border-radius: 15px;
+  background-color: var(--lightblue);
+  font-weight: 700;
+  padding-top: 18px;
+  
+}
+
+h3.class-item {
+  margin-top: 5px;
+  margin-bottom: 1px;
+  vertical-align: middle;
+  /* padding:8px 8px ; */
+  width: 100%;
+  font-weight: 100;
+  font-size: 18px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+.class-time {
+  color: rgb(22, 1, 255);
+  font-size: 16px;
+  margin: 0px 0px;
+}
+
+/* ================= Search bar ================= */
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+}
+
+.search-container input {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #555;
+  background: #111;
+  color: white;
+}
+
+.search-container button {
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: #444;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+  mark.page-search-highlight {
+    background: #ffea8a;
+    color: #111;
+    padding: 0 2px;
+    border-radius: 2px;
+  }
+  #searchResults {
+    color: #ddd;
+    font-size: 0.95rem;
+    margin-left: 12px;
+  }
 /*================== Programs page ================= */
 .programs-table {
   color: var(--white);
@@ -777,10 +816,11 @@ iframe {
 }
 /* ================= Contact page ================= */
 .map {
- width: 100%;
+  width: 100%;
   height: clamp(250px, 50vh, 450px); /* scales but never huge */
   border: 0;
   display: block;
+  border-radius: 15px;
 }
 
 .contact-container {
@@ -808,6 +848,63 @@ iframe {
   font-size: 1.2rem;
   margin: 10px 0;
   font-weight: 100;
+}
+
+/* ================= Feedback Form ==================== */
+
+.form-container{
+  width:100%;
+  max-width:460px;
+  background:#fff;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.feedback-header{
+  margin-top:0;
+  margin-bottom:10px;
+  font-size:1.4rem;
+  text-align:center;
+}
+
+label{
+  display:block;
+  margin-bottom:5px;
+  font-size:.9rem;
+  font-weight:600;
+}
+
+input, textarea, select{
+  width:100%;
+  padding:10px;
+  margin-bottom:15px;
+  border:1px solid #ccc;
+  border-radius:6px;
+  font-size:1rem;
+}
+
+textarea{height:100px; resize:vertical;}
+
+.feedback-button{
+  width:100%;
+  padding:12px;
+  background:#2563eb;
+  color:white;
+  border:none;
+  border-radius:6px;
+  font-size:1rem;
+  cursor:pointer;
+}
+
+.feedback-button:hover {
+  background-color: #3B5998;
+}
+
+@media(max-width:450px){
+.form-container{padding:15px;}
 }
 
 /* ================= Instructors page ================= */
@@ -1875,10 +1972,10 @@ iframe {
     justify-content: center; /* centers icon + text when using flex */
   }
 
-  .map {
+  /* .map {
     width: 100%;
     height: auto;
-  }
+  } */
 }
 /* ========================================= */
 /* Phone sizes */

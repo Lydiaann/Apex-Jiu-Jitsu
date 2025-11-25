@@ -1,6 +1,7 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
 echo "<pre>";
 print_r($_POST);
 echo "</pre>";
@@ -9,8 +10,8 @@ echo "</pre>";
 $host = "localhost";
 $port = "5432";
 $dbname = "apexforms";
-$user = "Lydia";
-$password = "Password"; 
+$user = "postgres";
+$password = "password"; 
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Build connection string
@@ -29,19 +30,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email     = $_POST['email'];
     $subject   = $_POST['subject'];
 
-    $adultsJiuJitsu = isset($_POST['adultsJiuJitsu']) ? true : false;
-    $teensJiuJitsu  = isset($_POST['teensJiuJitsu']) ? true : false;
-    $kidsJiuJitsu   = isset($_POST['kidsJiuJitsu']) ? true : false;
-    $youngJiuJitsu  = isset($_POST['youngJiuJitsu']) ? true : false;
-    $MMA             = isset($_POST['MMA']) ? true : false;
-    $Boxing          = isset($_POST['Boxing']) ? true : false;
-    $Sombo           = isset($_POST['Sombo']) ? true : false;
-    $SMS             = isset($_POST['SMS']) ? true : false;
-    $Marketing       = isset($_POST['Marketing']) ? true : false;
+    $adultsJiuJitsu = isset($_POST['adultsjiujitsu']) ? true : false;
+    $teensJiuJitsu  = isset($_POST['teensjiujitsu']) ? true : false;
+    $kidsJiuJitsu   = isset($_POST['kidsjiujitsu']) ? true : false;
+    $youngJiuJitsu  = isset($_POST['youngjiujitsu']) ? true : false;
+    $MMA             = isset($_POST['mma']) ? true : false;
+    $Boxing          = isset($_POST['boxing']) ? true : false;
+    $Sombo           = isset($_POST['sombo']) ? true : false;
+    $SMS             = isset($_POST['sms']) ? true : false;
+    $Marketing       = isset($_POST['marketing']) ? true : false;
 
     // Prepare SQL
     $query = "INSERT INTO form_submissions 
-        (firstname, lastname, phone, email, adultsJiuJitsu, teensJiuJitsu, kidsJiuJitsu, youngJiuJitsu, MMA, Boxing, Sombo, subject, SMS, Marketing) 
+        (firstname, lastname, phone, email, adultsJiuJitsu, teensJiuJitsu, kidsJiuJitsu, youngJiuJitsu, mma, boxing, sombo, subject, sms, marketing) 
         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)";
 
     // Execute query
@@ -55,7 +56,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // Handle error
         error_log("Database insert failed: " . pg_last_error($conn));
         // Optionally, send an error response
-        echo "Error saving data.";
+        echo "Error saving data: " . pg_last_error($conn);
+
     } else {
         // Success, you can send a success message or just exit
         echo "Thank you for signing up! We'll contact you soon.";
