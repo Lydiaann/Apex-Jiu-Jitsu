@@ -1,70 +1,74 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-echo "<pre>";
-print_r($_POST);
-echo "</pre>";
-
-// Connection parameters
-$host = "localhost";
-$port = "5432";
-$dbname = "apexforms";
-$user = "postgres";
-$password = "password"; 
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Build connection string
-    $conn_string = "host=$host port=$port dbname=$dbname user=$user password=$password";
 
-    // Connect to PostgreSQL
-    $conn = pg_connect($conn_string);
+    // PostgreSQL connection
+    $conn = pg_connect("host=localhost port=5432 dbname=apexforms user=postgres password=password");
+
     if (!$conn) {
-        die("Connection failed");
+        die("DB connection failed: " . pg_last_error());
     }
 
-    // Assign values
-    $firstname = $_POST['firstname'];
-    $lastname  = $_POST['lastname'];
-    $phone     = $_POST['phone'];
-    $email     = $_POST['email'];
-    $subject   = $_POST['subject'];
+    // Text inputs
+    $firstname = $_POST['firstname'] ?? '';
+    $lastname  = $_POST['lastname'] ?? '';
+    $phone     = $_POST['phone'] ?? '';
+    $email     = $_POST['email'] ?? '';
+    $subject   = $_POST['subject'] ?? '';
 
-    $adultsJiuJitsu = isset($_POST['adultsjiujitsu']) ? true : false;
-    $teensJiuJitsu  = isset($_POST['teensjiujitsu']) ? true : false;
-    $kidsJiuJitsu   = isset($_POST['kidsjiujitsu']) ? true : false;
-    $youngJiuJitsu  = isset($_POST['youngjiujitsu']) ? true : false;
-    $MMA             = isset($_POST['mma']) ? true : false;
-    $Boxing          = isset($_POST['boxing']) ? true : false;
-    $Sombo           = isset($_POST['sombo']) ? true : false;
-    $SMS             = isset($_POST['sms']) ? true : false;
-    $Marketing       = isset($_POST['marketing']) ? true : false;
+    // Checkbox booleans — MUST match column names exactly
+    $adultsJiuJitsu  = isset($_POST['adultsjiujitsu']) ? 't' : 'f';
+    $teensJiuJitsu   = isset($_POST['teensjiujitsu']) ? 't' : 'f';
+    $kidsJiuJitsu    = isset($_POST['kidsjiujitsu']) ? 't' : 'f';
+    $youngJiuJitsu   = isset($_POST['youngjiujitsu']) ? 't' : 'f';
+    $mma             = isset($_POST['mma']) ? 't' : 'f';
+    $boxing          = isset($_POST['boxing']) ? 't' : 'f';
+    $sombo           = isset($_POST['sombo']) ? 't' : 'f';
+    $sms             = isset($_POST['sms']) ? 't' : 'f';
+    $marketing       = isset($_POST['marketing']) ? 't' : 'f';
 
-    // Prepare SQL
-    $query = "INSERT INTO form_submissions 
-        (firstname, lastname, phone, email, adultsJiuJitsu, teensJiuJitsu, kidsJiuJitsu, youngJiuJitsu, mma, boxing, sombo, subject, sms, marketing) 
-        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)";
 
-    // Execute query
-    $result = pg_query_params($conn, $query, [
-        $firstname, $lastname, $phone, $email,
-        $adultsJiuJitsu, $teensJiuJitsu, $kidsJiuJitsu, $youngJiuJitsu,
-        $MMA, $Boxing, $Sombo, $subject, $SMS, $Marketing
-    ]);
+    // SQL insert (same column order as your DB)
+    $sql = "
+        INSERT INTO form_submissions
+        (firstname, lastname, phone, email,
+         adultsjiujitsu, teensjiujitsu, kidsjiujitsu, youngjiujitsu,
+         mma, boxing, sombo,
+         sms, marketing,
+         subject)
+        VALUES
+        ($1,$2,$3,$4,
+         $5,$6,$7,$8,
+         $9,$10,$11,
+         $12,$13,
+         $14)
+    ";
 
-    if (!$result) {
-        // Handle error
-        error_log("Database insert failed: " . pg_last_error($conn));
-        // Optionally, send an error response
-        echo "Error saving data: " . pg_last_error($conn);
+    $params = [
+        $firstname,
+        $lastname,
+        $phone,
+        $email,
+        $adultsJiuJitsu,
+        $teensJiuJitsu,
+        $kidsJiuJitsu,
+        $youngJiuJitsu,
+        $mma,
+        $boxing,
+        $sombo,
+        $sms,
+        $marketing,
+        $subject
+    ];
 
+    $result = pg_query_params($conn, $sql, $params);
+
+    if ($result) {
+        echo "Form submitted successfully!";
     } else {
-        // Success, you can send a success message or just exit
-        echo "Thank you for signing up! We'll contact you soon.";
+        echo "Error saving data: " . pg_last_error($conn);
     }
-
-    pg_close($conn);
-    exit; // important for AJAX
 }
-
 ?>
