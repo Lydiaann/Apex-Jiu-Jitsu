@@ -657,6 +657,11 @@ h3.class-item {
   margin: 0px 0px;
 }
 
+.class-name {
+  margin-top: 15px;
+  margin-bottom: -15px;
+}
+
 /* ================= Search bar ================= */
 .search-container {
   display: flex;
@@ -764,7 +769,7 @@ h3.class-item {
 .program-container .bio {
   font-size: 1.2rem;
   line-height: 1.8;
-  margin: 20px 0;
+  margin: 5px 0;
   color: #f2f2f2;
   padding: 0 10px;
 }
@@ -806,7 +811,7 @@ h3.class-item {
   padding: 10px;
 }
 .bullet-section {
-    background-color: rgba(15, 72, 179, 0.7);
+    /* background-color: rgba(15, 72, 179, 0.7); */
     display: flex;
     align-items: flex-start;
     justify-content: space-between;

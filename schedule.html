@@ -1,16 +1,16 @@
 <!doctype HTML>
 <html lang="en">
- <head>
-  <meta charset="utf-8">
-   <title>Apex Jiu Jitsu</title> 
-     <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link rel="stylesheet" href="css/styles.css">    
-     <body> 
+  <head>
+    <meta charset="utf-8">
+    <title>Apex Jiu Jitsu</title> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">    
+  </head>
+  <body> 
     <nav class="nav"> 
       <input type="checkbox" id="menu-toggle" />
       <label for="menu-toggle" class="hamburger">☰</label>
       <img src="images/logo.jpg" class="logo" >
-
       <div class="nav-links">
         <a class="home" href="index.html">Home</a>
         <a class="instructors" href="instructors.html">Instructors</a>
@@ -22,302 +22,282 @@
         <a class="gallery" href="gallery.html">Gallery</a>
         <a class="faq" href="faq.html">FAQ</a>
       </div>
-      <div class="search-container">
-        <input type="text" id="searchInput" placeholder="Search this page..." />
-        <button onclick="searchPage()" id="searchbutton">Search</button>
-      </div>
-      <div id="searchResults"></div>
-      <!-- <div class="nav-button-container">
-        <a class="cta-nav-button" href="index.html" id="openFormBtn" type="button">BOOK A FREE TRIAL HERE!</a>
-      </div> -->
     </nav>
-  
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search this page..." />
+      <button onclick="searchPage()" id="searchbutton" class="search-button">Search</button>
+    </div>
+    <div id="searchResults"></div>
+    <!-- <div class="nav-button-container">
+      <a class="cta-nav-button" href="index.html" id="openFormBtn" type="button">BOOK A FREE TRIAL HERE!</a>
+    </div> -->
+
     <div class="schedule-container">
       <div class="class-row">
         <div class="class-column"><strong>ADULTS JIU JITSU GI</strong>
           <h3 class="class-item">Monday & Wednesday</h3>
-            <h4 class="class-time">12:00 PM - 1:00 PM<br>6:30 PM - 7:30 PM</h4>
+          <h4 class="class-time">12:00 PM - 1:00 PM<br>6:30 PM - 7:30 PM</h4>
         </div>
 
         <div class="class-column"><strong>TEENS JIU JITSU GI</strong>
           <h3 class="class-item">Monday & Wednesday</h3>
-            <h4 class="class-time">7:30 PM - 8:30 PM</h4>
+          <h4 class="class-time">7:30 PM - 8:30 PM</h4>
         </div>
 
         <div class="class-column"><strong>KIDS JIU JITSU</strong>
           <h3 class="class-item">Monday - Thursday</h3>
-            <h4 class="class-time">5:30 PM - 6:30 PM</h4>
+          <h4 class="class-time">5:30 PM - 6:30 PM</h4>
           <h3 class="class-item">Saturday</h3>
-            <h4 class="class-time">10:00 AM - 11:00 AM</h4>
-
+          <h4 class="class-time">10:00 AM - 11:00 AM</h4>
         </div>
 
         <div class="class-column"><strong>CHILDRENS JIU JITSU (3-6 yrs)</strong>
           <h3 class="class-item">Monday - Thursday</h3>
-            <h4 class="class-time">5:00 PM - 5:30 PM</h4>
+          <h4 class="class-time">5:00 PM - 5:30 PM</h4>
         </div>
       </div>
-<br>
+  <br>
       <div class="class-row">
         <div class="class-column"><strong>ADULTS JIU JITSU NO-GI</strong>
           <h3 class="class-item">Tuesday & Thursday</h3>
-            <h4 class="class-time">7:00 AM - 8:00 AM<br>6:30 PM - 8:00 PM</h4>
+          <h4 class="class-time">7:00 AM - 8:00 AM<br>6:30 PM - 8:00 PM</h4>
           <h3 class="class-item">Friday</h3>
-            <h4 class="class-time">12:00 PM - 1:00 PM</h4>
+          <h4 class="class-time">12:00 PM - 1:00 PM</h4>
           <h3 class="class-item">Saturday</h3>
-            <h4 class="class-time">10:00 AM - 11:00 AM</h4>
+          <h4 class="class-time">10:00 AM - 11:00 AM</h4>
         </div>
+
         <div class="class-column"><strong>TEENS JIU JITSU NO-GI</strong>
           <h3 class="class-item">Tuesday & Thursday</h3>
-            <h4 class="class-time">7:00 AM - 8:00 AM<br>6:30 PM - 8:00 PM</h4>
+          <h4 class="class-time">7:00 AM - 8:00 AM<br>6:30 PM - 8:00 PM</h4>
         </div>
 
         <div class="class-column"><strong>KIDS MUAY THAI</strong>
           <h3 class="class-item">Monday & Wednesday</h3>
-            <h4 class="class-time">6:30 PM - 7:30 PM</h4>
+          <h4 class="class-time">6:30 PM - 7:30 PM</h4>
         </div>
 
         <div class="class-column"><strong>YOUTH MMA</strong>
           <h3 class="class-item">Tuesday & Thursday</h3>
-            <h4 class="class-time">6:30 PM - 7:30 PM</h4>
+          <h4 class="class-time">6:30 PM - 7:30 PM</h4>
           <h3 class="class-item">Friday</h3>
-            <h4 class="class-time">6:30 PM - 7:30 PM</h4>
+          <h4 class="class-time">6:30 PM - 7:30 PM</h4>
         </div>
       </div>
-      <br>
+        <br>
       <div class="class-row">
         <div class="class-column"><strong>SOMBO</strong>
           <h3 class="class-item">Friday</h3>
-            <h4 class="class-time">6:30 PM - 7:30 PM</h4>
+          <h4 class="class-time">6:30 PM - 7:30 PM</h4>
         </div>
 
         <div class="class-column"><strong>KICKBOXING</strong>
           <h3 class="class-item">Tuesday & Thursday</h3>
-            <h4 class="class-time">8:00 PM - 9:00 PM</h4>
+          <h4 class="class-time">8:00 PM - 9:00 PM</h4>
         </div>
 
         <div class="class-column"><strong>BOXING</strong>
           <h3 class="class-item">Saturday</h3>
-            <h4 class="class-time">11:15 AM - 12:15 PM</h4>
+          <h4 class="class-time">11:15 AM - 12:15 PM</h4>
         </div>
 
         <div class="class-column"><strong>MMA</strong>
           <h3 class="class-item">Monday & Wednesday</h3>
-            <h4 class="class-time">7:30 PM - 8:30 PM</h4>
+          <h4 class="class-time">7:30 PM - 8:30 PM</h4>
         </div>
       </div>
     </div>
     <br><br>
-    <!-- <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FNew_York&showPrint=0&title=Apex&src=ZmI2NGYxZmIwNjdjMzMzZDYyYzE4OGJjMmFiNGE0YWFiNmFjOTMyMjViYmQ4ZDk5NDVhNjNlYmVhYzc4YzY2NUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23ad1457&color=%230b8043" style="border:solid 1px #777" scrolling="no"></iframe> -->
-    <!-- <div class="calendar" id="calendar"> -->
-      <!-- <h1 class="day">Monday</h1>
-        <h3 class="adultsjj">Adults Jiu Jitsu : 12:00 PM - 1:00 PM</h3>
-        <h3 class="kidsjj">Kids Jiu Jitsu (3-6 yrs) : 5:00 PM - 5:30 PM</h3>
-        <h3 class="kids">Kids Jiu Jitsu : 5:30 PM - 6:30 PM</h3>
-        <h3 class="teensjj">Teens Jiu Jitsu : 6:30 PM - 7:30 PM</h3>
-        <h3 class="adultsjj">Adults Jiu Jitsu : 6:30 PM - 7:30 PM</h3>
-        <h3 class="kidsmt">Kids Muay Thai : 6:30 PM - 7:30 PM</h3>
-        <h3 class="intromma">Intro to MMA : 7:30 PM - 8:30 PM</h3>
+    <script>
+    (function () {
+      // grab elements (script should be placed at end of body)
+      const input = document.getElementById('searchInput');
+      const resultsBox = document.getElementById('searchResults');
+      const searchButton = document.getElementById('searchbutton');
 
-      <h1 class="day">Tuesday</h1>
-      <h3 class="adultsjj">Adults No Gi : 7:00 AM - 8:00 AM</h3>
-        <h3 class="adultsjj">Adults No Gi : 12:00 PM - 1:00 PM</h3>
-        <h3 class="kidsjj">Kids Jiu Jitsu (3-6 yrs) : 5:00 PM - 5:30 PM</h3>
-        <h3 class="kids">Kids Jiu Jitsu : 5:30 PM - 6:30 PM</h3>
-        <h3 class="youthmma">Youth MMA : 6:30 PM - 7:30 PM</h3>
-        <h3 class="adultsjj">Adults No Gi : 6:30 PM - 8:00 PM</h3>
-        <h3 class="teensjj">Teens No Gi : 6:30 PM - 8:00 PM</h3>
-        <h3 class="openmat">Open Mat : 8:00 PM - 9:00 PM</h3>
-        <h3 class="kickb">Kickboxing : 8:00 PM - 9:00 PM</h3>
-
-      <h1 class="day">Wednesday</h1>
-        <h3 class="adultsjj">Adults No Gi : 7:00 AM - 8:00 AM</h3>
-        <h3 class="adultsjj">Adults Jiu Jitsu : 12:00 PM - 1:00 PM</h3>
-        <h3 class="kidsjj">Kids Jiu Jitsu (3-6 yrs) : 5:00 PM - 5:30 PM</h3>
-        <h3 class="kids">Kids Jiu Jitsu : 5:30 PM - 6:30 PM</h3>
-        <h3 class="teensjj">Teens Jiu Jitsu : 6:30 PM - 7:30 PM</h3>
-        <h3 class="adultsjj">Adults Jiu Jitsu : 6:30 PM - 7:30 PM</h3>
-        <h3 class="kidsmt">Kids Muay Thai : 6:30 PM - 7:30 PM</h3>
-        <h3 class="openmat">Open Mat : 8:00 PM - 9:00 PM</h3>
-        <h3 class="intromma">Intro to MMA : 7:30 PM - 8:30 PM</h3>
-
-      <h1 class="day">Thursday</h1>
-        <h3 class="adultsjj">Adults No Gi : 7:00 AM - 8:00 AM</h3>
-        <h3 class="adultsjj">Adults No Gi : 12:00 PM - 1:00 PM</h3>
-        <h3 class="kidsjj">Kids Jiu Jitsu (3-6 yrs) : 5:00 PM - 5:30 PM</h3>
-        <h3 class="kids">Kids Jiu Jitsu : 5:30 PM - 6:30 PM</h3>
-        <h3 class="youthmma">Youth MMA : 6:30 PM - 7:30 PM</h3>
-        <h3 class="adultsjj">Adults No Gi : 6:30 PM - 8:00 PM</h3>
-        <h3 class="teensjj">Teens No Gi : 6:30 PM - 8:00 PM</h3>
-        <h3 class="openmat">Open Mat : 8:00 PM - 9:00 PM</h3>
-        <h3 class="kickb">Kickboxing : 8:00 PM - 9:00 PM</h3>
-
-      <h1 class="day">Friday</h1>
-        <h3 class="adultsjj">Adults No Gi : 12:00 PM - 1:00 PM</h3>
-        <h3 class="youthmma">Youth MMA : 6:30 PM - 7:30 PM</h3>
-        <h3 class="sombo">Sombo (13+) : 6:30 PM - 7:30 PM</h3>
-
-      <h1 class="day">Saturday</h1>
-        <h3 class="kids">Kids Jiu Jitsu : 10:00 AM - 11:00 AM</h3>
-        <h3 class="adultsjj">Adults No Gi : 10:00 AM - 11:00 AM</h3>
-        <h3 class="youthcomp">Youth Comp Jiu Jitsu (Invite Only) : 10:00 AM - 12:00 PM</h3>
-        <h3 class="kickb">Boxing : 11:15 PM - 12:15 PM</h3>
-        <h3 class="openmat">Open Mat : 11:30 AM - 12:00 PM</h3>
-    </div> -->
-<script>
-(function() {
-  const input = document.getElementById('searchInput');
-  const resultsBox = document.getElementById('searchResults');
-
-  if (!input) {
-    console.warn('searchInput not found — make sure input id="searchInput" exists');
-    return;
-  }
-
-  // Debounce helper
-  function debounce(fn, wait = 200) {
-    let t;
-    return (...args) => {
-      clearTimeout(t);
-      t = setTimeout(() => fn(...args), wait);
-    };
-  }
-
-  // Remove all existing highlights <mark class="page-search-highlight">...</mark>
-  function removeHighlights() {
-    const marks = document.querySelectorAll('mark.page-search-highlight');
-    marks.forEach(mark => {
-      const textNode = document.createTextNode(mark.textContent);
-      mark.parentNode.replaceChild(textNode, mark);
-    });
-  }
-
-  // Check whether a node is inside an ignored container (nav/header/footer/etc.)
-  function isInsideIgnored(node) {
-    if (!node || !node.parentElement) return true;
-    const ignored = node.parentElement.closest('nav, header, footer, script, style, input, textarea, #searchResults');
-    return !!ignored;
-  }
-
-  // Highlight occurrences inside a single text node by replacing the node with a fragment
-  // Returns number of matches replaced
-  function highlightTextNode(textNode, queryRegex) {
-    const text = textNode.nodeValue;
-    const matches = text.match(queryRegex);
-    if (!matches) return 0;
-
-    const frag = document.createDocumentFragment();
-    let lastIndex = 0;
-    queryRegex.lastIndex = 0; // ensure fresh
-
-    let match;
-    while ((match = queryRegex.exec(text)) !== null) {
-      const start = match.index;
-      const end = start + match[0].length;
-
-      // plain text before match
-      if (start > lastIndex) {
-        frag.appendChild(document.createTextNode(text.slice(lastIndex, start)));
+      if (!input || !resultsBox) {
+        console.error('Missing #searchInput or #searchResults in DOM.');
+        return;
       }
-      // highlighted match
-      const mark = document.createElement('mark');
-      mark.className = 'page-search-highlight';
-      mark.textContent = text.slice(start, end);
-      frag.appendChild(mark);
 
-      lastIndex = end;
-
-      // Avoid infinite loops for zero-length matches
-      if (queryRegex.lastIndex === match.index) {
-        queryRegex.lastIndex++;
+      // utility: escape for regex
+      function escapeRegex(s) {
+        return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
       }
-    }
 
-    // remaining text
-    if (lastIndex < text.length) {
-      frag.appendChild(document.createTextNode(text.slice(lastIndex)));
-    }
-
-    textNode.parentNode.replaceChild(frag, textNode);
-    return matches.length;
-  }
-
-  // Main search/highlight routine
-  function performSearch(query) {
-    removeHighlights();
-
-    if (!query) {
-      resultsBox.textContent = '';
-      return;
-    }
-
-    // build a safe regex, escape special chars
-    const safe = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const regex = new RegExp(safe, 'gi');
-
-    // Walk DOM and highlight all text nodes (skipping ignored containers)
-    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
-    let node;
-    let totalMatches = 0;
-
-    // We'll collect nodes to operate on first to avoid messing the walker while replacing.
-    const textNodes = [];
-    while ((node = walker.nextNode())) {
-      // skip empty text nodes and ones inside ignored containers
-      if (!node.nodeValue.trim()) continue;
-      if (isInsideIgnored(node)) continue;
-      textNodes.push(node);
-    }
-
-    // Replace each text node (this won't affect the already-collected list)
-    for (const tn of textNodes) {
-      totalMatches += highlightTextNode(tn, new RegExp(regex)); // use fresh regex per node
-    }
-
-    if (totalMatches === 0) {
-      resultsBox.textContent = 'No results found.';
-    } else {
-      resultsBox.textContent = `Found ${totalMatches} match${totalMatches > 1 ? 'es' : ''}.`;
-    }
-  }
-
-  // Live search (debounced)
-  const liveSearch = debounce(() => {
-    const query = input.value.trim();
-    performSearch(query);
-  }, 180);
-
-  // Trigger on input (live)
-  input.addEventListener('input', liveSearch);
-
-  // Also support pressing Enter to focus first match
-  input.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-      // Focus the first highlighted mark if present
-      const firstMark = document.querySelector('mark.page-search-highlight');
-      if (firstMark) {
-        // scroll into view smoothly
-        firstMark.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        // flash/highlight briefly
-        firstMark.animate([{ boxShadow: '0 0 0px rgba(255,235,138,0)' }, { boxShadow: '0 0 12px rgba(255,235,138,0.6)' }, { boxShadow: '0 0 0px rgba(255,235,138,0)' }], { duration: 600 });
+      // remove existing marks without touching other structure
+      function removeHighlights() {
+        const marks = Array.from(document.querySelectorAll('mark.page-search-highlight'));
+        marks.forEach(mark => {
+          // replace mark with its text content nodes, preserving inline structure
+          const parent = mark.parentNode;
+          while (mark.firstChild) parent.insertBefore(mark.firstChild, mark);
+          parent.removeChild(mark);
+          parent.normalize();
+        });
       }
-      e.preventDefault();
-    }
-  });
 
-  // Optional: clear highlights when user clears the input
-  input.addEventListener('search', () => {
-    if (!input.value) removeHighlights();
-  });
+      // gather visible candidate elements (narrow scope to schedule-container to be faster)
+      function getCandidates() {
+        // prefer searching inside .schedule-container to avoid nav/footer noise
+        const container = document.querySelector('.schedule-container') || document.body;
+        return Array.from(container.querySelectorAll('*')).filter(el => {
+          // skip elements we don't want to search
+          if (!el.innerText || !el.innerText.trim()) return false;
+          const tag = el.tagName;
+          if (['SCRIPT','STYLE','INPUT','TEXTAREA','SELECT'].includes(tag)) return false;
+          // ignore search UI
+          if (el.id === 'searchResults' || el.id === 'searchInput') return false;
+          return true;
+        });
+      }
 
-  // Expose manual API if needed
-  window.pageSearch = {
-    doSearch: (q) => performSearch(String(q || '').trim()),
-    clear: () => { input.value = ''; removeHighlights(); resultsBox.textContent = ''; }
-  };
-})();
-</script>
-    </body>
+      // walk text nodes inside an element and return array with text nodes + cumulative lengths
+      function gatherTextNodes(el) {
+        const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, {
+          acceptNode(node) {
+            if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+            // skip nodes that are already highlighted (shouldn't happen after removeHighlights)
+            if (node.parentElement && node.parentElement.classList && node.parentElement.classList.contains('page-search-highlight')) {
+              return NodeFilter.FILTER_REJECT;
+            }
+            return NodeFilter.FILTER_ACCEPT;
+          }
+        });
+        const nodes = [];
+        let n;
+        let total = 0;
+        while ((n = walker.nextNode())) {
+          nodes.push({ node: n, length: n.nodeValue.length });
+          total += n.nodeValue.length;
+        }
+        return { nodes, total };
+      }
+
+      // highlight a range of text inside element (indices measured over element.innerText)
+      function highlightRangeInElement(el, startIndex, endIndex) {
+        const { nodes } = gatherTextNodes(el);
+        if (!nodes.length) return false;
+
+        let cur = 0;
+        let startNode = null, endNode = null;
+        let startOffset = 0, endOffset = 0;
+
+        for (const pair of nodes) {
+          const len = pair.length;
+          if (startNode == null && startIndex < cur + len) {
+            startNode = pair.node;
+            startOffset = Math.max(0, startIndex - cur);
+          }
+          if (endNode == null && endIndex <= cur + len) {
+            endNode = pair.node;
+            endOffset = Math.max(0, endIndex - cur);
+            break;
+          }
+          cur += len;
+        }
+
+        if (!startNode || !endNode) return false;
+
+        const range = document.createRange();
+        range.setStart(startNode, startOffset);
+        range.setEnd(endNode, endOffset);
+
+        const contents = range.extractContents();
+        const mark = document.createElement('mark');
+        mark.className = 'page-search-highlight';
+        mark.appendChild(contents);
+        range.insertNode(mark);
+
+        // normalize to merge text nodes
+        mark.parentNode.normalize();
+        return true;
+      }
+
+      // perform the search
+      function performSearch(query) {
+        removeHighlights();
+
+        if (!query || !query.trim()) {
+          resultsBox.textContent = '';
+          return;
+        }
+
+        const safe = escapeRegex(query);
+        const regex = new RegExp(safe, 'gi');
+
+        const candidates = getCandidates();
+        let total = 0;
+
+        candidates.forEach(el => {
+          // use innerText for human-visible text and find matches with indices
+          const text = el.innerText;
+          if (!text) return;
+
+          // collect matches (matchAll)
+          const matches = [...text.matchAll(regex)];
+          if (!matches.length) return;
+
+          // highlight from last to first to avoid index shifting issues
+          for (let i = matches.length - 1; i >= 0; i--) {
+            const m = matches[i];
+            const start = m.index;
+            const end = start + m[0].length;
+            const ok = highlightRangeInElement(el, start, end);
+            if (ok) total++;
+          }
+        });
+
+        resultsBox.textContent = total === 0 ? 'No results found.' : `Found ${total} match${total > 1 ? 'es' : ''}.`;
+      }
+
+      // debounce helper
+      function debounce(fn, wait = 160) {
+        let t;
+        return (...args) => {
+          clearTimeout(t);
+          t = setTimeout(() => fn(...args), wait);
+        };
+      }
+
+      const live = debounce(() => performSearch(input.value.trim()), 160);
+      input.addEventListener('input', live);
+
+      // hook up search button safely (if button exists)
+      if (searchButton) {
+        searchButton.addEventListener('click', () => performSearch(input.value.trim()));
+        // also remove inline onclick to fail-safe older handler
+        searchButton.onclick = null;
+      }
+
+      // Enter to scroll to first result
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          performSearch(input.value.trim());
+          const first = document.querySelector('mark.page-search-highlight');
+          if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          e.preventDefault();
+        }
+      });
+
+      // Re-run search when DOM changes (small throttle)
+      const observer = new MutationObserver(() => {
+        if (input.value.trim()) {
+          Promise.resolve().then(() => performSearch(input.value.trim()));
+        }
+      });
+      observer.observe(document.body, { childList: true, subtree: true, characterData: true });
+
+      // expose a safe API
+      window.pageSearch = {
+        doSearch: (q) => performSearch(String(q || '').trim()),
+        clear: () => { input.value = ''; removeHighlights(); resultsBox.textContent = ''; }
+      };
+
+    })();
+    </script>
+
+
     <footer>
       <img src="images/logo2.jpg" class="footer-logo">
       <br>
@@ -332,6 +312,6 @@
         <p>45714 Oakbrook Ct Unit 160, Sterling, Virginia 20166</p>
         <p>© 2025 Apex Jiu Jitsu & MMA | All Rights Reserved</p>
       </div>
-
-  </footer>
+    </footer>
+  </body>
 </html>
