@@ -505,6 +505,38 @@ input[type=submit]:hover {
   background-color: var(--lightblue); 
 }
 
+.modal-content input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;   /* space between checkbox + label */
+  vertical-align: middle;
+}
+
+.modal-content label {
+  vertical-align: middle;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+/* Fix checkbox alignment inside modal */
+.modal-content .checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.modal-content .checkbox-group input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-top: 3px;
+}
+
+.modal-content .checkbox-group label {
+  line-height: 1.3;
+  flex: 1;
+}
+
+
 /* Modal */
 .modal {
   display: none;
@@ -864,8 +896,8 @@ h3.class-item {
   padding:20px;
   border-radius:10px;
   box-shadow:0 4px 12px rgba(0,0,0,0.1);
-  margin-left: auto;
-  margin-right: auto;
+  /* margin-left: auto;
+  margin-right: auto; */
 }
 
 .feedback-header{
@@ -880,6 +912,7 @@ label{
   margin-bottom:5px;
   font-size:.9rem;
   font-weight:600;
+  float: inline-start;
 }
 
 input, textarea, select{
@@ -891,7 +924,10 @@ input, textarea, select{
   font-size:1rem;
 }
 
-textarea{height:100px; resize:vertical;}
+textarea{
+  height:100px; 
+  resize:vertical;
+}
 
 .feedback-button{
   width:100%;
@@ -951,7 +987,7 @@ textarea{height:100px; resize:vertical;}
   top: -60px;
   /* display: inline-block; */
   color: var(--white);
-  background-color: rgba(0, 0, 0, 0.7);
+  /* background-color: rgba(0, 0, 0, 0.7); */
   padding: 10px 20px;
   border-radius: 15px;
   font-size: 2em;
@@ -989,21 +1025,21 @@ textarea{height:100px; resize:vertical;}
   animation: slideIn 1s ease-out forwards;
 }
 
-/* ==================== Champion page ================ */
+/* ==================== Gallery page ================ */
 
 /* Create four equal columns that sits next to each other */
 .img-column {
-  -ms-flex: 25%; /* IE10 */
   flex: 25%;
   max-width: 25%;
   padding: 0 4px;
+  box-sizing: border-box;
 }
 
 .img-row {
   display: -ms-flexbox; /* IE10 */
   display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
-  /* flex-wrap: wrap; */
+  /* -ms-flex-wrap: wrap; IE10 */
+  flex-wrap: wrap;
   padding: 0 4px;
 }
 
@@ -1080,7 +1116,7 @@ textarea{height:100px; resize:vertical;}
 }
 .reviews {
   max-width: 100%;
-  width: 400px;
+  width: 450px;
   padding: 5px;
 }
  .parent-home-reviews {
@@ -1175,7 +1211,7 @@ textarea{height:100px; resize:vertical;}
     top: -60px;
     /* display: inline-block; */
     color: var(--white);
-    background-color: rgba(0, 0, 0, 0.7);
+    /* background-color: rgba(0, 0, 0, 0.7); */
     /* padding: 10px 20px; */
     border-radius: 15px;
     font-size: 2em;
@@ -1769,7 +1805,7 @@ textarea{height:100px; resize:vertical;}
     width: 100%;
     height: auto;                     /* 👈 ensures full image is visible */
     object-fit: contain;              /* 👈 prevents any cropping */
-    border-radius: 0;                 /* optional — keep edges clean */
+    border-radius: 15px;                 /* optional — keep edges clean */
     display: block;
   }
 
@@ -1777,7 +1813,7 @@ textarea{height:100px; resize:vertical;}
     position: static;                 /* removes offset so it won’t overlap */
     margin-top: 1rem;
     font-size: clamp(1.2rem, 2.5vw, 2rem);
-    background-color: rgba(0, 0, 0, 0.8);
+    /* background-color: rgba(0, 0, 0, 0.8); */
     display: inline-block;
     border-radius: 10px;
   }
@@ -1877,12 +1913,12 @@ textarea{height:100px; resize:vertical;}
 
 /* Tablet & below */
 @media (max-width: 768px) {
-
+/* 
   .img-column {
     -ms-flex: 50%;
-    flex: 50%;
-    max-width: 50%;
-  }
+    flex: 100%;
+    max-width: 100%;
+  } */
 
 
   .image2-container .benefits {
@@ -1942,7 +1978,7 @@ textarea{height:100px; resize:vertical;}
 /* ========================================== */
 @media (max-width: 600px) {
   .img-column {
-    -ms-flex: 100%;
+    /* -ms-flex: 100%; */
     flex: 100%;
     max-width: 100%;
   }

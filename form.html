@@ -2,54 +2,130 @@
 <html>
 <head>
   <title>Form</title>
+
+  <style>
+    /* Align checkbox + label */
+    .checkbox-group {
+      display: flex;
+      align-items: flex-start;   /* important */
+      gap: 10px;
+      padding: 8px 0;
+    }
+
+    .checkbox-group input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    .checkbox-group label {
+      line-height: 1.3;
+    }
+    form label {
+      display: block;
+      margin-top: 14px;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    textarea {
+      height: 120px;
+      resize: vertical;
+    }
+
+    input[type="submit"] {
+      padding: 12px 20px;
+      background: #0074ff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+
+    input[type="submit"]:hover {
+      background: #005fcc;
+    }
+  </style>
 </head>
-  <body>
-    <form id="signupForm" action="process.php" method="POST">
-      <label for="fname">First Name</label>
-      <input type="text" id="firstname" name="firstname" required placeholder="First Name">
 
-      <label for="lname">Last Name</label>
-      <input type="text" id="lastname" name="lastname" required placeholder="Last Name">
+<body>
+  <form id="signupForm" action="process.php" method="POST">
 
-      <label for="phone">Phone</label>
-      <input type="text" id="phone" name="phone" required placeholder="(###) ### - ####">
+    <label for="firstname">First Name</label>
+    <input type="text" id="firstname" name="firstname" required placeholder="First Name">
 
-      <label for="email">Email*</label>
-      <input type="email" id="email" name="email" required placeholder="example@domain.com"><br><br><br>
+    <label for="lastname">Last Name</label>
+    <input type="text" id="lastname" name="lastname" required placeholder="Last Name">
 
-      <label for="options">Areas of interest (Select all that apply)</label><br>
+    <label for="phone">Phone</label>
+    <input type="text" id="phone" name="phone" required placeholder="(###) ### - ####">
+
+    <label for="email">Email*</label>
+    <input type="email" id="email" name="email" required placeholder="example@domain.com">
+
+    <label>Areas of interest (Select all that apply)</label>
+
+    <div class="checkbox-group">
       <input type="checkbox" id="adultsjj" name="adultsjiujitsu" value="1">
-      <label for="adultsjj">Adult Jiu Jitsu</label><br>
+      <label for="adultsjj">Adult Jiu Jitsu</label>
+    </div>
 
+    <div class="checkbox-group">
       <input type="checkbox" id="teensjj" name="teensjiujitsu" value="1">
-      <label for="teensjj">Teen Jiu Jitsu (age 14+)</label><br>
+      <label for="teensjj">Teen Jiu Jitsu (age 14+)</label>
+    </div>
 
+    <div class="checkbox-group">
       <input type="checkbox" id="kidsjj" name="kidsjiujitsu" value="1">
-      <label for="kidsjj">Kids Jiu Jitsu (age 7 - 13)</label><br>
+      <label for="kidsjj">Kids Jiu Jitsu (age 7 - 13)</label>
+    </div>
 
+    <div class="checkbox-group">
       <input type="checkbox" id="youngjj" name="youngjiujitsu" value="1">
-      <label for="youngjj">Youngsters Jiu Jitsu (age 3-6)</label><br>
+      <label for="youngjj">Youngsters Jiu Jitsu (age 3-6)</label>
+    </div>
 
+    <div class="checkbox-group">
       <input type="checkbox" id="mma" name="mma" value="1">
-      <label for="mma">Intro to MMA</label><br>
+      <label for="mma">Intro to MMA</label>
+    </div>
 
+    <div class="checkbox-group">
       <input type="checkbox" id="boxing" name="boxing" value="1">
-      <label for="boxing">Adult & Teen Boxing</label><br>
+      <label for="boxing">Adult & Teen Boxing</label>
+    </div>
 
+    <div class="checkbox-group">
       <input type="checkbox" id="sombo" name="sombo" value="1">
-      <label for="sombo">Sombo</label><br><br>
+      <label for="sombo">Sombo</label>
+    </div>
 
-      <label for="subject">Voice your concerns and questions below...</label>
-      <textarea id="subject" name="subject" placeholder="Ask us anything!"></textarea>
+    <label for="subject">Voice your concerns and questions below...</label>
+    <textarea id="subject" name="subject" placeholder="Ask us anything!"></textarea>
 
+    <div class="checkbox-group">
       <input type="checkbox" id="sms" name="sms" value="1">
-      <label for="sms">I Consent to Receive SMS Notifications...</label><br><br>
+      <label for="sms">I Consent to Receive SMS Notifications...</label>
+    </div>
 
+    <div class="checkbox-group">
       <input type="checkbox" id="marketing" name="marketing" value="1">
-      <label for="marketing">I agree to receive Marketing and Promotional messages...</label><br><br>
+      <label for="marketing">I agree to receive Marketing and Promotional messages...</label>
+    </div>
 
-      <input type="submit" value="Submit">
-    </form>
-
-  </body>
+    <input type="submit" value="Submit">
+  </form>
+</body>
 </html>
