@@ -740,6 +740,8 @@ h3.class-item {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+margin-top: 20px;
+margin-bottom: 20px;
 }
 .programs-home-container {
   text-align: center;
@@ -869,24 +871,24 @@ h3.class-item {
   font-size:1.4rem;
   text-align:center;
 }
-
+/* 
 label{
-  display:block;
+  display:inline-block;
   margin-bottom:5px;
   font-size:.9rem;
   font-weight:600;
-}
+} */
 
-input, textarea, select{
+/* input, textarea, select{
   width:100%;
   padding:10px;
   margin-bottom:15px;
   border:1px solid #ccc;
   border-radius:6px;
   font-size:1rem;
-}
+} */
 
-textarea{height:100px; resize:vertical;}
+/* textarea{height:100px; resize:vertical;} */
 
 .feedback-button{
   width:100%;
@@ -1070,8 +1072,8 @@ textarea{height:100px; resize:vertical;}
   color: white;
   text-align: center;
   flex: 1;
-  margin-top: 0; /* reset */
-  padding: 20px; /* optional */
+  margin-top: 0;
+  /* padding: 20px;  */
 }
 .reviews {
   max-width: 100%;
@@ -1378,6 +1380,7 @@ textarea{height:100px; resize:vertical;}
     border-radius: 15px;
     width: 100%;
     max-width: 1100px;
+  
     }
 
   .bullets {

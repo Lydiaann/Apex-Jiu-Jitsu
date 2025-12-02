@@ -101,7 +101,7 @@
       e.preventDefault();
       const formData = new FormData(form);
 
-      fetch("php/process.php", { method: "POST", body: formData })
+      fetch("process.php", { method: "POST", body: formData })
         .then(res => res.text())        // <-- IMPORTANT: convert Response -> text
         .then(text => {
           // show server response
