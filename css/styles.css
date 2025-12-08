@@ -695,7 +695,6 @@ h3.class-item {
 
 .class-name {
   margin-top: 15px;
-  margin-bottom: -15px;
 }
 
 /* ================= Search bar ================= */
@@ -992,7 +991,7 @@ textarea{
   top: -60px;
   /* display: inline-block; */
   color: var(--white);
-  /* background-color: rgba(0, 0, 0, 0.7); */
+  background-color: rgba(0, 0, 0, 0.7);
   padding: 10px 20px;
   border-radius: 15px;
   font-size: 2em;
@@ -1005,8 +1004,8 @@ textarea{
   margin-top: -40px;
   padding: 20px;
   text-align: left;
-  /* background-color: rgba(15, 72, 179, 0.7); */
   border-radius: 10px;
+  font-size: 20px;
 }
 .belt-color {
   display: block;
