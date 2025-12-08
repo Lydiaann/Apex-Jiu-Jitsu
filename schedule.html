@@ -23,11 +23,7 @@
         <a class="faq" href="faq.html">FAQ</a>
       </div>
     </nav>
-    <div class="search-container">
-      <input type="text" id="searchInput" placeholder="Search this page..." />
-      <button onclick="searchPage()" id="searchbutton" class="search-button">Search</button>
-    </div>
-    <div id="searchResults"></div>
+  
     <!-- <div class="nav-button-container">
       <a class="cta-nav-button" href="index.html" id="openFormBtn" type="button">BOOK A FREE TRIAL HERE!</a>
     </div> -->
@@ -56,7 +52,7 @@
           <h4 class="class-time">5:00 PM - 5:30 PM</h4>
         </div>
       </div>
-  <br>
+
       <div class="class-row">
         <div class="class-column"><strong>ADULTS JIU JITSU NO-GI</strong>
           <h3 class="class-item">Tuesday & Thursday</h3>
@@ -84,7 +80,7 @@
           <h4 class="class-time">6:30 PM - 7:30 PM</h4>
         </div>
       </div>
-        <br>
+        
       <div class="class-row">
         <div class="class-column"><strong>SOMBO</strong>
           <h3 class="class-item">Friday</h3>
@@ -108,195 +104,6 @@
       </div>
     </div>
     <br><br>
-    <script>
-    (function () {
-      // grab elements (script should be placed at end of body)
-      const input = document.getElementById('searchInput');
-      const resultsBox = document.getElementById('searchResults');
-      const searchButton = document.getElementById('searchbutton');
-
-      if (!input || !resultsBox) {
-        console.error('Missing #searchInput or #searchResults in DOM.');
-        return;
-      }
-
-      // utility: escape for regex
-      function escapeRegex(s) {
-        return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-      }
-
-      // remove existing marks without touching other structure
-      function removeHighlights() {
-        const marks = Array.from(document.querySelectorAll('mark.page-search-highlight'));
-        marks.forEach(mark => {
-          // replace mark with its text content nodes, preserving inline structure
-          const parent = mark.parentNode;
-          while (mark.firstChild) parent.insertBefore(mark.firstChild, mark);
-          parent.removeChild(mark);
-          parent.normalize();
-        });
-      }
-
-      // gather visible candidate elements (narrow scope to schedule-container to be faster)
-      function getCandidates() {
-        // prefer searching inside .schedule-container to avoid nav/footer noise
-        const container = document.querySelector('.schedule-container') || document.body;
-        return Array.from(container.querySelectorAll('*')).filter(el => {
-          // skip elements we don't want to search
-          if (!el.innerText || !el.innerText.trim()) return false;
-          const tag = el.tagName;
-          if (['SCRIPT','STYLE','INPUT','TEXTAREA','SELECT'].includes(tag)) return false;
-          // ignore search UI
-          if (el.id === 'searchResults' || el.id === 'searchInput') return false;
-          return true;
-        });
-      }
-
-      // walk text nodes inside an element and return array with text nodes + cumulative lengths
-      function gatherTextNodes(el) {
-        const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, {
-          acceptNode(node) {
-            if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
-            // skip nodes that are already highlighted (shouldn't happen after removeHighlights)
-            if (node.parentElement && node.parentElement.classList && node.parentElement.classList.contains('page-search-highlight')) {
-              return NodeFilter.FILTER_REJECT;
-            }
-            return NodeFilter.FILTER_ACCEPT;
-          }
-        });
-        const nodes = [];
-        let n;
-        let total = 0;
-        while ((n = walker.nextNode())) {
-          nodes.push({ node: n, length: n.nodeValue.length });
-          total += n.nodeValue.length;
-        }
-        return { nodes, total };
-      }
-
-      // highlight a range of text inside element (indices measured over element.innerText)
-      function highlightRangeInElement(el, startIndex, endIndex) {
-        const { nodes } = gatherTextNodes(el);
-        if (!nodes.length) return false;
-
-        let cur = 0;
-        let startNode = null, endNode = null;
-        let startOffset = 0, endOffset = 0;
-
-        for (const pair of nodes) {
-          const len = pair.length;
-          if (startNode == null && startIndex < cur + len) {
-            startNode = pair.node;
-            startOffset = Math.max(0, startIndex - cur);
-          }
-          if (endNode == null && endIndex <= cur + len) {
-            endNode = pair.node;
-            endOffset = Math.max(0, endIndex - cur);
-            break;
-          }
-          cur += len;
-        }
-
-        if (!startNode || !endNode) return false;
-
-        const range = document.createRange();
-        range.setStart(startNode, startOffset);
-        range.setEnd(endNode, endOffset);
-
-        const contents = range.extractContents();
-        const mark = document.createElement('mark');
-        mark.className = 'page-search-highlight';
-        mark.appendChild(contents);
-        range.insertNode(mark);
-
-        // normalize to merge text nodes
-        mark.parentNode.normalize();
-        return true;
-      }
-
-      // perform the search
-      function performSearch(query) {
-        removeHighlights();
-
-        if (!query || !query.trim()) {
-          resultsBox.textContent = '';
-          return;
-        }
-
-        const safe = escapeRegex(query);
-        const regex = new RegExp(safe, 'gi');
-
-        const candidates = getCandidates();
-        let total = 0;
-
-        candidates.forEach(el => {
-          // use innerText for human-visible text and find matches with indices
-          const text = el.innerText;
-          if (!text) return;
-
-          // collect matches (matchAll)
-          const matches = [...text.matchAll(regex)];
-          if (!matches.length) return;
-
-          // highlight from last to first to avoid index shifting issues
-          for (let i = matches.length - 1; i >= 0; i--) {
-            const m = matches[i];
-            const start = m.index;
-            const end = start + m[0].length;
-            const ok = highlightRangeInElement(el, start, end);
-            if (ok) total++;
-          }
-        });
-
-        resultsBox.textContent = total === 0 ? 'No results found.' : `Found ${total} match${total > 1 ? 'es' : ''}.`;
-      }
-
-      // debounce helper
-      function debounce(fn, wait = 160) {
-        let t;
-        return (...args) => {
-          clearTimeout(t);
-          t = setTimeout(() => fn(...args), wait);
-        };
-      }
-
-      const live = debounce(() => performSearch(input.value.trim()), 160);
-      input.addEventListener('input', live);
-
-      // hook up search button safely (if button exists)
-      if (searchButton) {
-        searchButton.addEventListener('click', () => performSearch(input.value.trim()));
-        // also remove inline onclick to fail-safe older handler
-        searchButton.onclick = null;
-      }
-
-      // Enter to scroll to first result
-      input.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') {
-          performSearch(input.value.trim());
-          const first = document.querySelector('mark.page-search-highlight');
-          if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          e.preventDefault();
-        }
-      });
-
-      // Re-run search when DOM changes (small throttle)
-      const observer = new MutationObserver(() => {
-        if (input.value.trim()) {
-          Promise.resolve().then(() => performSearch(input.value.trim()));
-        }
-      });
-      observer.observe(document.body, { childList: true, subtree: true, characterData: true });
-
-      // expose a safe API
-      window.pageSearch = {
-        doSearch: (q) => performSearch(String(q || '').trim()),
-        clear: () => { input.value = ''; removeHighlights(); resultsBox.textContent = ''; }
-      };
-
-    })();
-    </script>
-
 
     <footer>
       <img src="images/logo2.jpg" class="footer-logo">

@@ -29,7 +29,7 @@ body {
 
 html, body {
   max-width: 100%;
-  /* overflow-x: hidden;  */
+  overflow-x: hidden; 
   box-sizing: border-box;
 }
 a {
@@ -656,6 +656,7 @@ iframe {
   -ms-flex-wrap: wrap; /* IE10 */
   padding: 0 4px;
   border-radius: 15px;
+  margin: 10px;
 }
 
 .class-column {
@@ -667,10 +668,12 @@ iframe {
   text-align: center;
   border: solid 2px black;
   border-radius: 15px;
-  background-color: var(--lightblue);
+  background-color: rgb(21, 21, 28);
   font-weight: 700;
   padding-top: 18px;
-  
+  color: white;
+  border: 2px solid var(--lightorange);
+  margin: 10px;
 }
 
 h3.class-item {
@@ -684,7 +687,7 @@ h3.class-item {
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 .class-time {
-  color: rgb(22, 1, 255);
+  color: var(--lightorange);
   font-size: 16px;
   margin: 0px 0px;
 }
@@ -892,14 +895,15 @@ margin-bottom: 20px;
 /* ================= Feedback Form ==================== */
 
 .form-container{
-  width:100%;
+  width:90%;
   max-width:460px;
   background:#fff;
   padding:20px;
   border-radius:10px;
   box-shadow:0 4px 12px rgba(0,0,0,0.1);
-  /* margin-left: auto;
-  margin-right: auto; */
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .feedback-header{
@@ -946,9 +950,7 @@ textarea{
   background-color: #3B5998;
 }
 
-@media(max-width:450px){
-.form-container{padding:15px;}
-}
+
 
 /* ================= Instructors page ================= */
 .coaches-wrapper {
@@ -1109,13 +1111,6 @@ textarea{
 }
 
 /* ==================== Reviews ======================*/
-.reviews-container {
-  color: white;
-  text-align: center;
-  flex: 1;
-  margin-top: 0;
-  /* padding: 20px;  */
-}
 .reviews {
   max-width: 100%;
   width: 450px;
@@ -1145,7 +1140,9 @@ textarea{
   background: #222;
   color: white;
   /* padding: 20px; */
-  text-align: center;
+    text-align: center;
+  flex: 1;
+  margin-top: 0;
 }
 .programs-home-container,
 .parent-home-reviews {
@@ -1912,6 +1909,17 @@ textarea{
     width: 100%;
     margin-top: 5px;
   }
+  .class-row {
+    flex-direction: column;   /* stack vertically */
+  }
+
+  .class-column {
+    flex: 100%;
+    max-width: 100%;
+    margin-bottom: 15px;       /* add spacing between boxes */
+
+}
+
 }
 
 /* Tablet & below */
@@ -1954,6 +1962,7 @@ textarea{
     width: 100%;
     max-width: 700px;             /* optional: limit width */
   }
+  
   .bio {
     font-size: clamp(1.1rem, 2vw, 1.1rem);
     padding: 3vw;
@@ -2036,8 +2045,6 @@ textarea{
     font-weight: 100;
     margin: -10px;
   }
-}
-  @media (max-width: 480px) {
   .desktop-heading {
     font-size: 1.4rem;
   }
