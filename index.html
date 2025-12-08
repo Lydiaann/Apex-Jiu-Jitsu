@@ -2,8 +2,7 @@
 <html lang="en">
  <head>
   <meta charset="utf-8">
-  <title>Apex Jiu Jitsu
-  </title> 
+  <title>Apex Jiu Jitsu</title> 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/styles.css">      
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -11,252 +10,271 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- <link rel="stylesheet" href="css/small.css"> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </head>
-    <body>
+</head>
+<body>
+  <nav class="nav"> 
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="hamburger">☰</label>
+    <img src="images/logo.jpg" class="logo" alt="Company Logo">
+        
+    <div class="nav-links">
+      <a class="home" href="index.html">Home</a>
+      <a class="instructors" href="instructors.html">Instructors</a>
+      <a class="programs" href="programs.html">Programs</a>
+      <a class="schedule" href="schedule.html">Schedule</a>
+      <a class="contact" href="contact.html">Contact</a>
+      <a class="shop" href="https://www.breakpointfc.com/collections/apex">Shop</a>
+      <!-- <a class="comp" href="champ.html">Champions</a> -->
+      <a class="gallery" href="gallery.html">Gallery</a>
+      <a class="faq" href="faq.html">FAQ</a>
+    </div>
+    <div class="nav-button-container">
+      <a class="cta-nav-button" id="openFormBtn" type="button">BOOK A FREE TRIAL HERE!</a>
+    </div>
+  </nav>
+  <header> 
+    <p class="mobile-welcome-msg">Welcome! <br><br></p>
+    <p class="mobile-welcome-msg-smaller">Step into an environment where <b class="bold">champions</b> are made.</p>
+  </header>
       
-      <nav class="nav"> 
-        <input type="checkbox" id="menu-toggle" />
-        <label for="menu-toggle" class="hamburger">☰</label>
-        <img src="images/logo.jpg" class="logo" >
-        
-        <div class="nav-links">
-          <a class="home" href="index.html">Home</a>
-          <a class="instructors" href="instructors.html">Instructors</a>
-          <a class="programs" href="programs.html">Programs</a>
-          <a class="schedule" href="schedule.html">Schedule</a>
-          <a class="contact" href="contact.html">Contact</a>
-          <a class="shop" href="https://www.breakpointfc.com/collections/apex">Shop</a>
-          <!-- <a class="comp" href="champ.html">Champions</a> -->
-          <a class="gallery" href="gallery.html">Gallery</a>
-          <a class="faq" href="faq.html">FAQ</a>
-        </div>
-        
-        <div class="nav-button-container">
-          <a class="cta-nav-button" id="openFormBtn" type="button">BOOK A FREE TRIAL HERE!</a>
-        </div>
+  <div id="comfirmation-popup" class="confirmation-popup"></div>
+  <div id="modal-container"></div>
 
-      </nav>
-      <header> 
-        
-        <p class="mobile-welcome-msg">Welcome! <br><br></p>
-          <p class="mobile-welcome-msg-smaller">Step into an environment where <b class="bold">champions</b> are made.</p>
-      </header>
+  <div class="home-container">
+    <img src="images/IMG_6424.jpg" class="home-image" alt="Group Photo at APEX Sterling">
+    <div class="home-image-text-container">
+      <h1 class="HIT">The #1 Jiu Jitsu Academy in Sterling, VA!</h1>
+    </div>
+    <div class="content-row">
+      <div class="welcome-msg">
+        <h4 class="wel-msg">
+          <span class="desktop-only">Experience world-class martial arts training for kids, teens, 
+          and adults!
+          </span>
+        </h4>
+        <h3 class="why">Why Choose Us?</h3>
+          <aside class="image2-container">
+            <img src="images/2025-05-16.webp" class="home-image2" alt="Coach Jamil">
+
+            <div class="benefits">
+              <h3 id="list-headings">Build Confidence & Discipline</h3><br>
+                <ul class="list">Master real-time decision making during live sparring.</ul>
+                <ul class="list">Develop striking defense & awareness against attacks.</ul>
+                
+              <h3 id="list-headings">Real Skills For Real Situations</h3><br>
+                <ul class="list">Clinches, takedowns, & ground control teaches you to escape bad positions and take control.</ul>
+                <ul class="list">Learn to make critical decisions under pressure (literally).</ul>
+              
+              <h3 id="list-headings">Train With Friends & Family</h3><br>
+                <ul class="list">Train as a family, grow as a team — fitness, fun, and skills for every age!</ul>
+                <ul class="list">Build stronger bonds while learning technique from world class coaches.</ul> 
+          </aside>
+      </div>
+    </div>
+    <!-- <div class="button-container"> -->
+      <!-- <a class="cta-button" href="index.html" id="openFormBtn" type="button">FREE TRIAL SIGN UP!</a> -->
+    <!-- </div> -->
+
+    <div class="program-overview">
+      <h4 class="prog-overview">
+          At APEX Jiu Jitsu, we bring energy, discipline, and community 
+          to every class! Train with us throughout the week in both Gi and No-Gi sessions, led by 
+          passionate instructors dedicated to helping you grow on and off the mats. 
+          <br><br>
+          Join the APEX family today and discover the incredible benefits of Jiu Jitsu — fitness, focus, and a 
+          community that pushes you to be your best!</h4>
+      <a class="sched-button" href="schedule.html">View Schedule</a>
+      <div class="nav-button-container2">
+      <a class="cta-nav-button2" id="openFormBtn" type="button">BOOK A FREE TRIAL HERE!</a>
+      </div>
+    </div>
+      <!-- DESKTOP ONLY -->
+    <h1 class="why-desktop">WHY US?</h1>
+    <div class="desktop-benefits">
+      <div class="overlay-text">
+        <h2 class="desktop-heading">Build Confidence & Discipline</h2>
+          <p class="desktop-list">
+          Master real-time decision making during live sparring sessions — sharpen your instincts, improve your timing,
+          and gain the confidence to react under pressure with precision and control.
+          <br><br>
+          Develop striking defense and situational awareness to recognize, anticipate, and counter attacks effectively,
+          turning challenges into opportunities for growth and mastery.</p>
+
+        <h2 class="desktop-heading">Real Skills For Real Situations</h2>
+          <p class="desktop-list">
+          Learn essential clinches, takedowns, and ground control techniques that prepare you to stay calm, escape bad
+          positions, and gain the upper hand whether you’re training or facing real-world situations.
+          <br><br>
+          Build the ability to make critical decisions under intense pressure — training both your body and mind to stay
+          focused, adapt quickly, and overcome adversity with confidence.</p>
+
+        <h2 class="desktop-heading">Train With Friends & Family</h2>
+          <p class="desktop-list">
+          Experience the joy of training as a family and growing together as a team — share progress, celebrate victories,
+          and strengthen bonds through discipline, teamwork, and fitness.
+          <br><br>
+          Build stronger connections while learning world-class techniques from experienced coaches dedicated to helping
+          every student reach their full potential, no matter their age or skill level.</p>
+      </div>
+    </div>
+  
+    <br><br><br>
+
+    <div class="parent-home-reviews">
+      <div class="programs-home-container">
+        <h2 class="white-text-programs">APEX STERLING PROGRAMS</h2>
+          <a href="programs.html#adultsbjj"><h2 class="programs-home-content-items">ADULTS JIU JITSU</h2></a>
+          <h3 class="blurb">Tailored for practitioners of all experience levels — 
+            from complete beginners to seasoned grapplers — 
+            our program focuses on practical self-defense, 
+            building strength and endurance, and developing mental discipline....<a href="programs.html#adultsbjj" class="readmore">read more</a>
+          </h3>
+
+          <a href="programs.html#teensbjj">
+            <h2 class="programs-home-content-items">TEENS JIU JITSU</h2></a>
+              <h3 class="blurb">
+                Designed for students ages 14 and up, this program blends self-defense 
+                training, physical conditioning, and personal development into one powerful experience. 
+                Whether you’re stepping onto the mat for the first time or refining existing skills, 
+                classes are structured to support every level of learning....<a href="programs.html#teensbjj" class="readmore">read more</a>
+              </h3>
+
+
+          <a href="programs.html#kidsbjj">
+            <h2 class="programs-home-content-items">KIDS JIU JITSU</h2></a>
+              <h3 class="blurb">
+                A fun and dynamic program designed for kids ages 7 to 13, 
+                helping them build confidence, discipline, and real self-defense skills.
+                Our curriculum focuses on respect, teamwork, and physical fitness, creating a safe, 
+                structured, and encouraging environment where young...<a href="programs.html#kidsbjj" class="readmore">read more</a>
+              </h3>
+
+          <a href="programs.html#ECJJ">
+            <h2 class="programs-home-content-items">EARLY CHILDHOOD JIU JITSU</h2></a>
+              <h3 class="blurb">
+                Designed for children ages 3 to 5, this program helps little ones build coordination, 
+                focus, and confidence through fun, interactive activities. 
+                Each class uses games and simple movement exercises to gently introduce the 
+                fundamentals of Jiu Jitsu in a safe, playful, and encouraging...<a href="programs.html#ECJJ" class="readmore">read more</a>
+              </h3>
+
+
+          <a href="programs.html#intromma">
+            <h2 class="programs-home-content-items"> INTRO TO MMA</h2></a>
+              <h3 class="blurb">
+                The Intro to MMA Program is designed for beginners ready to step 
+                confidently into the world of mixed martial arts. 
+                Students build a well-rounded foundation in striking, grappling, and takedown techniques,
+                while developing real-world self-defense skills, conditioning, and fight 
+                strategies in a structured, supportive environment...<a href="programs.html#intromma" class="readmore">read more</a>
+              </h3>
+
+          <a href="programs.html#youthmma">
+            <h2 class="programs-home-content-items"> YOUTH MMA</h2></a>
+              <h3 class="blurb">
+                Our Youth MMA Program is designed for students ages 8 to 13 who want to
+                build confidence, strength, and focus while learning real martial arts skills. 
+                This program introduces young athletes to the fundamentals of striking, grappling, 
+                and takedowns in a safe, structured, and supportive environment. Each class focuses 
+                on improving coordination, discipline, and resilience, helping students grow both on
+                and off the mats. ...<a href="programs.html#youthmma" class="readmore">read more</a>
+              </h3>
+
+          <a href="programs.html#adultskickboxing">
+            <h2 class="programs-home-content-items"> ADULTS KICKBOXING</h2></a>
+              <h3 class="blurb">
+                Our Kickboxing Program delivers high-energy workouts 
+                that build strength, stamina, and real self-defense skills.
+                Each class blends the best of Muay Thai and Western Kickboxing techniques, 
+                helping you sharpen your striking, improve your conditioning,
+                and boost your confidence....<a href="programs.html#adultskickboxing" class="readmore">read more</a>
+              </h3>
+
+          <a href="programs.html#youthkickboxing">
+            <h2 class="programs-home-content-items">KIDS MUAY THAI</h2></a>
+              <h3 class="blurb">
+                Proudly presenting Kids Muay Thai program, specifically 
+                designed for kids ages 8 to 13 to help young athletes build striking skills, fitness, and self-confidence. 
+                Program focuses on building strong striking 
+                fundamentals, boosting fitness, and instilling confidence and discipline. ...<a href="programs.html#youthkickboxing" class="readmore">read more</a>
+              </h3><br>
+      </div>
+<br><br>
+      <div class="reviews-container">
+        <h2 class="white-text">VARIFIED GOOGLE REVIEWS</h2>
+          <h3 class="review-intro">Find out what others say about APEX in Sterling, VA.</h3>
+            <img class="reviews" src="images/review1.jpg" alt="Google Review">
+            <img class="reviews" src="images/review2.jpg" alt="Google Review">
+            <img class="reviews" src="images/review3.jpg" alt="Google Review">
+            <img class="reviews" src="images/review4.jpg" alt="Google Review">
+            <img class="reviews" src="images/review5.jpg" alt="Google Review">
+            <img class="reviews" src="images/review6.jpg" alt="Google Review">
       
-      <div id="comfirmation-popup" class="confirmation-popup"></div>
-      <!-- <div id="confirmation" ></div> -->
-      <div id="modal-container"></div>
+<br><br>
+            <div class="mission">
+              <section class="hours">
+                <table>
+                  <caption class="table-title">Contact information:</caption>
+                  <tr>
+                    <th>ADDRESS:</th>
+                    <th>PHONE:</th>
+                  </tr>
 
-        <div class="home-container">
-          <img src="images/IMG_6424.jpg" class="home-image" alt="Group Photo at APEX Sterling">
-          <div class="home-image-text-container">
-            <h1 class="HIT">The #1 Jiu Jitsu Academy in Sterling, VA!</h1>
-          </div>
-          <div class="content-row">
-            <div class="welcome-msg">
-              <h4 class="wel-msg"><span class="desktop-only">Experience world-class martial arts training for kids, teens, 
-                and adults!</span></h4>
-                <h3 class="why">Why Choose Us?</h3>
-                <aside class="image2-container">
-                  <img src="images/2025-05-16.webp" class="home-image2" alt="Coach Jamil">
+                  <tr>
+                    <td>
+                      <a href="https://www.google.com/maps?q=45714+Oakbrook+Ct+%23160,+Sterling,+VA+20166" 
+                      target="_blank">45714 Oakbrook Ct #160, Sterling, VA 20166</a>
+                    <td>
+                      <a href="tel:+1571520-3911">(571) 250-3911</a>
+                    </td>
+                  </tr>
 
-                  <div class="benefits">
-                    <h3 id="list-headings">Build Confidence & Discipline</h3><br>
-                      <ul class="list">Master real-time decision making during live sparring.</ul>
-                      <ul class="list">Develop striking defense & awareness against attacks.</ul>
-                      
-                    <h3 id="list-headings">Real Skills For Real Situations</h3><br>
-                      <ul class="list">Clinches, takedowns, & ground control teaches you to escape bad positions and take control.</ul>
-                      <ul class="list">Learn to make critical decisions under pressure (literally).</ul>
-                    
-                    <h3 id="list-headings">Train With Friends & Family</h3><br>
-                      <ul class="list">Train as a family, grow as a team — fitness, fun, and skills for every age!</ul>
-                      <ul class="list">Build stronger bonds while learning technique from world class coaches.</ul>
-                  </div>
-                </aside>
+                  <th colspan="2">
+                      <details>
+                        <summary>HOURS OF OPERATION:</summary>
+                          <table>
+                            <tr><td>Monday</td><td>12:00–1:00, 4:30–8:30</td></tr>
+                            <tr><td>Tuesday</td><td>7:00am–8:00am, 12:00–1:00, 5:15–9:00</td></tr>
+                            <tr><td>Wednesday</td><td>7:00am–8:00am, 4:30–8:30</td></tr>
+                            <tr><td>Thursday</td><td>7:00am–8:00am, 12:00–1:00, 5:15–9:00</td></tr>
+                            <tr><td>Friday</td><td>12:00–1:00, 5:15–7:30</td></tr>
+                            <tr><td>Saturday</td><td>10:00am–1:00</td></tr>
+                            <tr><td>Sunday</td><td>CLOSED</td></tr>
+                          </table>
+                      </details>
+                  </th>
+                </table>
+              </section>
             </div>
-            <div class="button-container">
-              <a class="cta-button" href="index.html" id="openFormBtn" type="button">FREE TRIAL SIGN UP!</a>
-            </div>
-          </div>
+      </div>
+    </div>
+    <!-- Load modal, then form logic -->
+    <script>
+      fetch("modal.html")
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById("modal-container").innerHTML = html;
 
-            <div class="program-overview">
-              <h4 class="prog-overview">At APEX Jiu Jitsu, we bring energy, discipline, and community 
-                to every class! Train with us throughout the week in both Gi and No-Gi sessions, led by 
-                  passionate instructors dedicated to helping you grow on and off the mats. 
-                  <br><br>
-                  Join the APEX family today and discover the incredible benefits of Jiu Jitsu — fitness, focus, and a 
-                  community that pushes you to be your best!</h4>
-                  <a class="sched-button" href="schedule.html">View Schedule</a>
-                  <!-- <a class="cta-button" href="form.html" id="openFormBtn" type="button">TRY A FREE CLASS</a>
-                </div> -->
-              <div class="nav-button-container2">
-                <a class="cta-nav-button2" id="openFormBtn" type="button">BOOK A FREE TRIAL HERE!</a>
-              </div>
-                <!-- DESKTOP ONLY -->
-                <h1 class="why-desktop">WHY US?</h1>
-                <div class="desktop-benefits">
-
-                  <div class="overlay-text">
-                    <h2 class="desktop-heading">Build Confidence & Discipline</h2>
-                    <p class="desktop-list">
-                      Master real-time decision making during live sparring sessions — sharpen your instincts, improve your timing,
-                      and gain the confidence to react under pressure with precision and control.
-                      <br><br>
-                      Develop striking defense and situational awareness to recognize, anticipate, and counter attacks effectively,
-                      turning challenges into opportunities for growth and mastery.
-                    </p>
-
-                    <h2 class="desktop-heading">Real Skills For Real Situations</h2>
-                    <p class="desktop-list">
-                      Learn essential clinches, takedowns, and ground control techniques that prepare you to stay calm, escape bad
-                      positions, and gain the upper hand whether you’re training or facing real-world situations.
-                      <br><br>
-                      Build the ability to make critical decisions under intense pressure — training both your body and mind to stay
-                      focused, adapt quickly, and overcome adversity with confidence.
-                    </p>
-
-                    <h2 class="desktop-heading">Train With Friends & Family</h2>
-                    <p class="desktop-list">
-                      Experience the joy of training as a family and growing together as a team — share progress, celebrate victories,
-                      and strengthen bonds through discipline, teamwork, and fitness.
-                      <br><br>
-                      Build stronger connections while learning world-class techniques from experienced coaches dedicated to helping
-                      every student reach their full potential, no matter their age or skill level.
-                    </p>
-                  </div>
-                </div>
-              </div>
-          <br><br><br>
-          <div class="parent-home-reviews">
-              <div class="programs-home-container">
-                <h2 class="white-text-programs">APEX STERLING PROGRAMS</h2>
-                  <a href="programs.html#adultsbjj"><h2 class="programs-home-content-items">ADULTS JIU JITSU</h2></a>
-                  <h4 class="blurb">Tailored for practitioners of all experience levels — 
-                    from complete beginners to seasoned grapplers — 
-                    our program focuses on practical self-defense, 
-                    building strength and endurance, and developing mental discipline....<a href="programs.html#adultsbjj" class="readmore">read more</a></h4>
-
-                  <a href="programs.html#teensbjj"><h2 class="programs-home-content-items">TEENS JIU JITSU</h2></a>
-                  <h4 class="blurb">Designed for students ages 14 and up, this program blends self-defense 
-                  training, physical conditioning, and personal development into one powerful experience. 
-                  Whether you’re stepping onto the mat for the first time or refining existing skills, 
-                  classes are structured to support every level of learning....<a href="programs.html#teensbjj" class="readmore">read more</a></h4>
-
-
-                  <a href="programs.html#kidsbjj"><h2 class="programs-home-content-items">KIDS JIU JITSU</h2></a>
-                  <h4 class="blurb">A fun and dynamic program designed for kids ages 7 to 13, 
-                  helping them build confidence, discipline, and real self-defense skills.
-                  Our curriculum focuses on respect, teamwork, and physical fitness, creating a safe, 
-                  structured, and encouraging environment where young...<a href="programs.html#kidsbjj" class="readmore">read more</a></h4>
-
-                  <a href="programs.html#ECJJ"><h2 class="programs-home-content-items">EARLY CHILDHOOD JIU JITSU</h2></a>
-                  <h4 class="blurb">Designed for children ages 3 to 5, this program helps little ones build coordination, 
-                  focus, and confidence through fun, interactive activities. 
-                  Each class uses games and simple movement exercises to gently introduce the 
-                  fundamentals of Jiu Jitsu in a safe, playful, and encouraging...<a href="programs.html#ECJJ" class="readmore">read more</a></h4>
-
-
-                  <a href="programs.html#intromma"><h2 class="programs-home-content-items"> INTRO TO MMA</h2></a>
-                  <h4 class="blurb">The Intro to MMA Program is designed for beginners ready to step 
-                  confidently into the world of mixed martial arts. 
-                  Students build a well-rounded foundation in striking, grappling, and takedown techniques,
-                  while developing real-world self-defense skills, conditioning, and fight 
-                  strategies in a structured, supportive environment...<a href="programs.html#intromma" class="readmore">read more</a></h4>
-
-                  <a href="programs.html#youthmma"><h2 class="programs-home-content-items"> YOUTH MMA</h2></a>
-                  <h4 class="blurb">Our Youth MMA Program is designed for students ages 8 to 13 who want to
-                  build confidence, strength, and focus while learning real martial arts skills. 
-                  This program introduces young athletes to the fundamentals of striking, grappling, 
-                  and takedowns in a safe, structured, and supportive environment. Each class focuses 
-                  on improving coordination, discipline, and resilience, helping students grow both on
-                  and off the mats. ...<a href="programs.html#youthmma" class="readmore">read more</a></h4>
-
-                  <a href="programs.html#adultskickboxing"><h2 class="programs-home-content-items"> ADULTS KICKBOXING</h2></a>
-                  <h4 class="blurb">Our Kickboxing Program delivers high-energy workouts 
-                  that build strength, stamina, and real self-defense skills.
-                  Each class blends the best of Muay Thai and Western Kickboxing techniques, 
-                  helping you sharpen your striking, improve your conditioning,
-                  and boost your confidence....<a href="programs.html#adultskickboxing" class="readmore">read more</a></h4>
-
-                  <a href="programs.html#youthkickboxing"><h2 class="programs-home-content-items">KIDS MUAY THAI</h2></a>
-                  <h4 class="blurb">Proudly presenting Kids Muay Thai program, specifically 
-                  designed for kids ages 8 to 13 to help young athletes build striking skills, fitness, and self-confidence. 
-                  Program focuses on building strong striking 
-                  fundamentals, boosting fitness, and instilling confidence and discipline. ...<a href="programs.html#youthkickboxing" class="readmore">read more</a></h4>
-                <br><br>
-                  </div>
-                  <br><br>
-                  <div class="reviews-container">
-                  <h2 class="white-text">VARIFIED GOOGLE REVIEWS</h2>
-                  <h3 class="review-intro">Find out what others say about APEX in Sterling, VA.</h3>
-                    <img class="reviews" src="images/review1.jpg">
-                    <img class="reviews" src="images/review2.jpg">
-                    <img class="reviews" src="images/review3.jpg">
-                    <img class="reviews" src="images/review4.jpg">
-                    <img class="reviews" src="images/review5.jpg">
-                    <img class="reviews" src="images/review6.jpg">
-                    <!-- <a href="faq.html"><img class="reviews" src="images/FAQ-image.jpg"></a> -->
-                     <br><br><br>
-                    <div class="mission">
-                      <h4 class="mis">Call or text for more information!</h4>
-                      <section class="hours">
-                        <table>
-                          <caption class="table-title">Contact information:</caption>
-                          <tr>
-                            <th>ADDRESS:</th>
-                            <th>PHONE:</th>
-                          </tr>
-                          <tr>
-                            <td>
-                            <a href="https://www.google.com/maps?q=45714+Oakbrook+Ct+%23160,+Sterling,+VA+20166" 
-                            target="_blank">45714 Oakbrook Ct #160, Sterling, VA 20166</a><td><a href="tel:+1571520-3911">(571) 250-3911</a></td></tr>
-                            <th colspan="2">
-                              <details>
-                                <summary>HOURS OF OPERATION:</summary>
-                                <table>
-                                  <tr><td>Monday</td><td>12:00–1:00, 4:30–8:30</td></tr>
-                                  <tr><td>Tuesday</td><td>7:00am–8:00am, 12:00–1:00, 5:15–9:00</td></tr>
-                                  <tr><td>Wednesday</td><td>7:00am–8:00am, 4:30–8:30</td></tr>
-                                  <tr><td>Thursday</td><td>7:00am–8:00am, 12:00–1:00, 5:15–9:00</td></tr>
-                                  <tr><td>Friday</td><td>12:00–1:00, 5:15–7:30</td></tr>
-                                  <tr><td>Saturday</td><td>10:00am–1:00</td></tr>
-                                  <tr><td>Sunday</td><td>CLOSED</td></tr>
-                                </table>
-                              </details>
-                            </th>
-                          </tr>
-                        </table>
-                      </section>
-                    </div>
-                  </div>
-                </div>
-              <!-- Load modal, then form logic -->
-              <script>
-                fetch("modal.html")
-                  .then(res => res.text())
-                  .then(html => {
-                    document.getElementById("modal-container").innerHTML = html;
-
-                    // ✅ Load form.js *after* modal is added to DOM
-                    const script = document.createElement("script");
-                    script.src = "form.js";
-                    document.body.appendChild(script);
-                  })
-                  .catch(err => console.error("Error loading modal:", err));
-              </script>
-              <footer>
-                <img src="images/logo2.jpg" class="footer-logo">
-                <br>
-                <div class="footer-column-left">
-                  <a href="contact.html">Contact</a>
-                  <a href="faq.html">FAQ's</a>
-                  <a href="privacypolicy.html">Privacy policy</a>
-                  <a href="contact.html">Support</a>
-                  <a href="https://www.instagram.com/apexjjmma_sterling/">Social media</a>
-                </div>
-                <div>
-                  <p>45714 Oakbrook Ct Unit 160, Sterling, Virginia 20166</p>
-                  <p>© 2025 Apex Jiu Jitsu & MMA | All Rights Reserved</p>
-              </footer>
-            </body>
+          // ✅ Load form.js *after* modal is added to DOM
+          const script = document.createElement("script");
+          script.src = "form.js";
+          document.body.appendChild(script);
+        })
+        .catch(err => console.error("Error loading modal:", err));
+    </script>
+    <footer>
+      <img src="images/logo2.jpg" class="footer-logo" alt="Company Logo">
+<br>
+      <div class="footer-column-left">
+        <a href="contact.html">Contact</a>
+        <a href="faq.html">FAQ's</a>
+        <a href="privacypolicy.html">Privacy policy</a>
+        <a href="contact.html">Support</a>
+        <a href="https://www.instagram.com/apexjjmma_sterling/">Social media</a>
+      </div>
+      <div>
+        <p>45714 Oakbrook Ct Unit 160, Sterling, Virginia 20166</p>
+        <p>© 2025 Apex Jiu Jitsu & MMA | All Rights Reserved</p>
+    </footer>
+  </body>
 </html>
