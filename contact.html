@@ -41,34 +41,37 @@
           <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3100.2035417009565!2d-77.42002902478386!3d39.01067017170008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b6387b27f05d43%3A0xe0392b3fbc5d5c17!2sApex%20Jiu%20Jitsu%20and%20MMA%3A%20Sterling!5e0!3m2!1sen!2sus!4v1762359329279!5m2!1sen!2sus" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       <br><br><br>
-        <div class="form-container">
+        <div class="form-container"> 
           <h2 class="feedback-header">Feedback Form</h2>
-            <form action="feedback.php" method="POST" enctype="multipart/form-data">
-              <label for="name">Name</label>
-              <input id="name" type="text" placeholder="Your name" required>
 
-              <label for="email">Email</label>
-              <input id="email" type="email" placeholder="you@example.com" required>
+          <form action="feedback.php" method="POST" enctype="multipart/form-data">
 
-              <label for="category">Category</label>
-              <select id="category">
-                <option>General</option>
-                <option>Incident</option>
-                <option>Request</option>
-              </select>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required>
 
-              <label for="screenshot">Attach Image (optional)</label>
-              <input id="screenshot" type="file" accept="image/*">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required>
 
-              <label for="message">Message</label>
-              <textarea id="message" placeholder="Write your feedback..." required></textarea>
+            <label for="category">Category</label>
+            <select id="category" name="category">
+              <option>General</option>
+              <option>Incident</option>
+              <option>Request</option>
+            </select>
+
+            <label for="screenshot">Attach Image (optional)</label>
+            <input id="screenshot" name="screenshot" type="file" accept="image/*">
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Write your feedback..." required></textarea>
 
             <button type="submit" class="feedback-button">Send</button>
-            
           </form>
         </div>
+
       </section>
 <br>
+
       <script>
         fetch("modal.html")
           .then(res => res.text())
@@ -82,7 +85,20 @@
           })
           .catch(err => console.error("Error loading modal:", err));
       </script>
-    </body>
+      <script>
+      // Show success popup
+      const urlParams = new URLSearchParams(window.location.search);
+
+      if (urlParams.has("success")) {
+        alert("Thank you! Your feedback has been sent.");
+      }
+
+      if (urlParams.has("error")) {
+        alert("Something went wrong. Please try again.");
+      }
+    </script>
+
+    
   <footer>
     <img src="images/logo2.jpg" class="footer-logo">
     <br>
@@ -98,4 +114,5 @@
       <p>© 2025 Apex Jiu Jitsu & MMA | All Rights Reserved</p>
 <a href="https://www.flaticon.com/free-icons/info" title="info icons">Icons created by Sagarkumar Gopani - Flaticon</a>    </div>
   </footer>
+  </body>
 </html>

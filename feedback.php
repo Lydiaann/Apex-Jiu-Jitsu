@@ -3,7 +3,7 @@
 $host = "localhost";
 $port = "5432";
 $dbname = "apexforms";
-$user = "lydia";
+$user = "postgres";
 $pass = "password";
 
 $conn = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$pass");
@@ -13,10 +13,11 @@ if (!$conn) {
 }
 
 // FORM FIELDS
-$name = $_POST['name'];
-$email = $_POST['email'];
-$category = $_POST['category'];
-$message = $_POST['message'];
+$name     = $_POST['name'] ?? null;
+$email    = $_POST['email'] ?? null;
+$category = $_POST['category'] ?? null;
+$message  = $_POST['message'] ?? null;
+
 
 // HANDLE IMAGE UPLOAD
 $uploadPath = "uploads/";
@@ -48,8 +49,11 @@ $result = pg_query_params($conn, $query, array(
 ));
 
 if ($result) {
-    echo "Success! Your feedback was saved.";
+    header("Location: contact.html?success=1");
+    exit();
 } else {
-    echo "Error saving feedback.";
+    header("Location: contact.html?error=1");
+    exit();
 }
+
 ?>
