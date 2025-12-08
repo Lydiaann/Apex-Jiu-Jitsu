@@ -220,6 +220,7 @@ a {
   padding: 12px;
 }
 
+
 /* ================= Logo ================= */
 .logo {
   position: absolute;
@@ -236,7 +237,7 @@ a {
   text-align: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  /* padding: 0 20px; */
 }
 .text-block {
   width: 90%;
@@ -612,7 +613,7 @@ caption {
   color: var(--white);
 }
 .hours table {
-  width: 100%;
+  width: 95%;
   border-collapse: collapse;
   border-radius: 8px;
   overflow: hidden;
@@ -1044,7 +1045,7 @@ textarea{
   display: flex;
   /* -ms-flex-wrap: wrap; IE10 */
   flex-wrap: wrap;
-  padding: 0 4px;
+  /* padding: 0 4px; */
 }
 
 .img-column img {
@@ -1381,7 +1382,7 @@ textarea{
   }
   .reviews {
     /* width: 600px; */
-    padding: 5px;
+    /* padding: 5px; */
     margin-left: auto;
     margin-right: auto;
   }
@@ -1530,6 +1531,9 @@ textarea{
     /* display: none; */
     color: white;
   }
+    .cta-nav-button2 {
+    display: none;
+}
 }
 
 /* Up to 1080px */
@@ -1548,7 +1552,7 @@ textarea{
     display: none;
   }
   .home-image2 { 
-    width: 100vw; 
+    width: 100%; 
     height: auto; 
     display: block; 
   }
@@ -1860,6 +1864,7 @@ textarea{
   .calendar, .day {
     display: none;
   }
+
   
 }
 
@@ -1892,6 +1897,19 @@ textarea{
 
   .cta-nav-button {
     display: none;
+  }
+  .cta-nav-button2 {
+    display: block;
+    background-color: var(--lightblue);
+    color: black;
+    animation: pulse 2s ease-in-out infinite;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 20px;
+    padding: 12px;
+    max-width: 40%;
+    margin-left: auto;
+    margin-right: auto;
   }
   .search-container {
     width: 100%;
@@ -1953,13 +1971,13 @@ textarea{
     position: relative;
   } */
   .parent-home-reviews {
-    flex-direction: column;       /* stack vertically */
+    flex-direction: column;       
     align-items: center;
   }
 
   .programs-home-container,
   .reviews-container {
-    width: 100%;
+    width: 90%;
     max-width: 700px;             /* optional: limit width */
   }
   
@@ -2144,7 +2162,7 @@ textarea{
 /* Mobile phones */
 @media (max-width: 480px) {
   .prog-overview {
-    width: 100%;
+    width: 80%;
     font-size: 16px;
     padding: 0 10px;
     line-height: 1.25;
@@ -2181,5 +2199,6 @@ textarea{
     transform: scale(1); /* Back to original size */
   }
 }
+
 
 
