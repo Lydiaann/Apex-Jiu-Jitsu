@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="APEX Jiu Jitsu & MMA in Sterling, VA offers world-class Brazilian Jiu Jitsu, MMA, boxing, and kids classes. Book a free trial today!">
     
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
 
   <link rel="stylesheet" href="css/styles.css">    
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -42,18 +42,7 @@
   <div id="modal-container"></div>
 
   <div class="home-container">
-    <img 
-      src="images/IMG_6424.jpg"
-      class="home-image"
-      alt="Group Photo at APEX Sterling"
-      srcset="
-        images/IMG_6424-480.jpg 480w,
-        images/IMG_6424-800.jpg 800w,
-        images/IMG_6424.jpg 1200w
-      "
-      sizes="100vw"
-    >
-
+    <img src="images/hero.jpg" class="home-image" alt="Group Photo at APEX Sterling">
     <div class="home-image-text-container">
       <h1 class="HIT">The #1 Jiu Jitsu Academy in Sterling, VA!</h1>
     </div>
@@ -261,7 +250,7 @@
       </div>
     </div>
     <!-- Load modal, then form logic -->
-    <script>
+    <script async>
       fetch("modal.html")
         .then(res => res.text())
         .then(html => {
@@ -275,7 +264,7 @@
         .catch(err => console.error("Error loading modal:", err));
     </script>
     <footer>
-      <img src="images/logo2.jpg" class="footer-logo" alt="Company Logo">
+      <img src="images/logo3.JPEG" class="footer-logo" alt="Company Logo">
 <br>
       <div class="footer-column-left">
         <a href="contact.html">Contact</a>
