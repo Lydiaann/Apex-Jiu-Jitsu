@@ -203,6 +203,15 @@ a {
   margin: 0 auto;
   /* padding: 0 20px; */
 }
+.home-image {
+  max-width: 100%;
+  /* opacity: 80%; */
+  width: 1200px;
+  height: auto;
+  display: block;
+  border-radius: 15px;
+}
+
 /* .text-block {
   width: 90%;
   position: absolute;
@@ -214,48 +223,47 @@ a {
   padding: 0 30px;
   height: 100%;
 } */
-.intro {
+
+/* .intro {
   font-weight: bolder;
   text-align: center;
   font-size: 4em;
   padding: 10%;
   text-shadow: 2px 2px var(--black);
-  border: 2px solid red;
-}
-.top-page-intros {
+  border: 5px solid red;
+} */
+
+/* .top-page-intros {
   text-align: center;
   font-size: 4em;
   color: var(--blue);
-}
-.top-page-intros2 {
+  border: 5px solid red;
+} */
+/* .top-page-intros2 {
   text-align: center;
   font-size: 18px;
   color: var(--white);
   font-weight: lighter;
-}
-.home-image {
-  max-width: 100%;
-  /* opacity: 80%; */
-  width: 1200px;
-  height: auto;
-  display: block;
-  border-radius: 15px;
-}
+} */
+
 
 /* ================= Image2 + Overlay ================= */
-/* .image2-container {
+ .homepage-container2 {
   position: relative;
-  display: inline-block;
-  max-width: 900px;
   width: 100%;
-  height: auto;
-} */
-.image2-container img {
-  display: block;
-  width: 100%;
-  height: auto;
+  max-width: 600px; /* adjust as needed */
+  margin: 0 auto;
+  overflow: hidden; /* ensures nothing spills outside */
+  border-radius: 15px
 }
-.image2-container .benefits {
+.homepage-container2 img {
+  display: block;
+  max-width: 100%;
+  width: 1200px;
+  height: auto;
+  
+}
+.homepage-container2 .benefits {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.67);
@@ -268,7 +276,7 @@ a {
   box-sizing: border-box;
 
 }
-.why { 
+.why-choose-us { 
   font-size: 30px; 
 }
 
@@ -306,92 +314,29 @@ a {
   align-items: flex-start; /* or center if you prefer */
   text-align: left;
 }
-.image2-container {
-  position: relative;
-  width: 100%;
-  max-width: 600px; /* adjust as needed */
-  margin: 0 auto;
-  overflow: hidden; /* ensures nothing spills outside */
-  border-radius: 15px
-}
 
-.home-image2 {
-  max-width: 100%;
-  width: 1200px;
-  height: auto;
-  display: block;
-  border-radius: 15px;
-} 
-#list-headings {
-  list-style: none;
-  margin: 10px 0;
-  padding: 0;
-  font-weight: bold;
-  color: var(--benefitsorange);
-}
-.list {
-  font-weight: normal;
-  font-size: 2.5rem;
-  margin-left: 15px;
-  list-style-type: disc;
-  white-space: normal; /* allows wrapping */
-  word-wrap: break-word;
-  padding: 10px 10px;
-}
-.benefits {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-  color: white;
-  font-size: 1rem;
-  background: rgba(0, 0, 0, 0.5); /* optional overlay */
-  box-sizing: border-box;
-  overflow: hidden; /* ensures no overflow beyond image */
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* centers content vertically */
-  align-items: flex-start; /* or center if you prefer */
-  text-align: left;
-}
-.image2-container {
-  position: relative;
-  width: 100%;
-  max-width: 600px; /* adjust as needed */
-  margin: 0 auto;
-  overflow: hidden; /* ensures nothing spills outside */
-  border-radius: 12px;
-}
 
-/* .home-image2 {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 12px;
-} */
-
-li {
+/* li {
   color: var(--white);
   font-weight: lighter;
   padding: 5px 0;
   font-size: 17px;
   text-align: left;
-}
+} */
 /* ================= Image3 + Overlay ================= */
-.image3-container {
+/* .image3-container {
   position: relative;
   display: inline-block;
   max-width: 900px;
   width: 100%;
-}
-.image3-container img {
+  border: solid 2px red;
+} */
+/* .image3-container img {
   display: block;
   width: 100%;
   height: auto;
-}
-.image3-container .sched-button{
+} */
+/* .image3-container .sched-button{
   position: absolute;
   top: 10%;
   left: 50%;
@@ -405,11 +350,11 @@ li {
   box-shadow:  0 0 5px rgba(0, 0, 0, 0.8),
                0 0 6px rgb(0, 0, 0),
                0 0 12px rgba(0,0,0,0.7);
-}
-.here {
+} */
+/* .here {
   text-decoration: none;
-}
-/* ================= Content Layout ================= */
+} */
+/* ================= Homepage intro line 50 ================= */
 .content-row {
   display: flex;
   justify-content: center;
@@ -597,32 +542,31 @@ caption {
  
 /* ================= Schedule page ================= */
 
-.calendar {
+/* .calendar {
   position: relative;
   top: 400px;
   max-width: 100%;
   width: 100vw;
-  /* display: none; */
-}
+  display: none; 
+} */
 
-iframe {
+/* iframe {
   width: 80%;
   height: 700px;
   margin-right: auto;
   margin-left: auto;
-}
-.class-schedule {
+} */
+/* .class-schedule {
   text-align: center;
   display: flex;
   justify-content: center;
 }
 .day {
   color: white;
-}
+} */
 .class-row {
   display: -ms-flexbox; /* IE10 */
   display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
   padding: 0 4px;
   border-radius: 15px;
   margin: 10px;
@@ -645,7 +589,7 @@ iframe {
   margin: 10px;
 }
 
-h3.class-item {
+h3.class-item {       /* Day of week */
   margin-top: 5px;
   margin-bottom: 1px;
   vertical-align: middle;
@@ -661,9 +605,7 @@ h3.class-item {
   margin: 0px 0px;
 }
 
-.class-name {
-  margin-top: 15px;
-}
+
 
 /* ================= Search bar ================= */
 .search-container {
@@ -762,6 +704,10 @@ margin-bottom: 20px;
 .program-container:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.class-name {
+  margin-top: 15px;
 }
 
 .program-img {
@@ -917,8 +863,6 @@ textarea{
 .feedback-button:hover {
   background-color: #3B5998;
 }
-
-
 
 /* ================= Instructors page ================= */
 .coaches-wrapper {
@@ -1109,10 +1053,11 @@ textarea{
   background: #222;
   color: white;
   /* padding: 20px; */
-    text-align: center;
+  text-align: center;
   flex: 1;
   margin-top: 0;
 }
+
 .programs-home-container,
 .parent-home-reviews {
   max-width: 1200px;
@@ -1120,6 +1065,7 @@ textarea{
   padding: 0 20px;
   box-sizing: border-box;
 }
+
 .parent-home-reviews {
   display: flex;
   justify-content: space-between;
