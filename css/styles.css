@@ -480,7 +480,8 @@ footer {
   z-index: 0;
 }
 .footer-logo { 
-  max-width: 80px; 
+  width: 80px;
+  height: auto;
   margin-top: 100px;
 }
 
@@ -1383,7 +1384,8 @@ textarea{
     /* margin-top: 1000px; */
   }
   .reviews {
-    /* width: 600px; */
+    width: 450px;
+    height: auto;
     /* padding: 5px; */
     margin-left: auto;
     margin-right: auto;
@@ -2060,7 +2062,7 @@ textarea{
   .blurb {
     color: white;
     width: 100%;
-    text-align: start;
+    text-align: center;
     /* font-size: 18px; */
     font-weight: 100;
     margin: -10px;
