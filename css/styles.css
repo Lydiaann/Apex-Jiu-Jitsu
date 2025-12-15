@@ -1173,7 +1173,8 @@ textarea{
     width: 800px;
   }
   .reviews {
-    /* width: 600px; */
+    width: 450px;
+    height: auto;
     display:grid;
     margin-left: auto;
     margin-right: auto;
