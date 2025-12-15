@@ -47,34 +47,8 @@ a {
   transform: scale(1.05);
 }
 
-.day {
-  display: none;
-}
-/* #faq-img {
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-} */
-/* ================= Icons ================= */
-.fa {
-  padding: 20px;
-  font-size: 30px;
-  width: 30px;
-  text-align: center;
-  text-decoration: none;
-  margin: 5px 2px;
-}
-.fa-facebook {
-  background: var(--facebook);
-  color: white;
-}
-.fa-instagram {
-  background: var(--instagram);
-  color: white;
-}
-
 /* ================= Buttons ================= */
-.cta-button {
+/* .cta-button {
   display: inline-block;
   cursor: pointer;
   text-decoration: none;
@@ -89,32 +63,21 @@ a {
 .cta-button:hover {
   transform: scale(1.1);
   background-color: rgb(247, 198, 109);
-}
+} */
 
-.button-container {
+/* .button-container {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 1.5rem 0;
-}
-.mobile-cta {
+} */
+/* .mobile-cta {
   display: none; /* hide by default */
-  text-align: center;
+  /* text-align: center;
   margin-top: 1rem;
-}
-
-/* .sched-button {
-  display: inline-block;
-  cursor: pointer;
-  text-decoration: none;
-  border-radius: 15px;
-  color: var(--black);
-  font-size: 1.2rem;
-  background-color: var(--lightorange);
-  padding: 1em;
 } */
 
-.sched-button {
+/* .sched-button {
   position: relative;
   z-index: 2;
   margin-top: 1.5rem;
@@ -125,13 +88,13 @@ a {
   font-weight: bold;
   text-decoration: none;
   transition: background 0.3s ease;
-}
+} */
 
-.sched-button:hover {
+/* .sched-button:hover {
   background: #0077cc;
-}
+} */
 
-.animated-btn {
+/* .animated-btn {
   margin-top: 5px;
   margin-bottom: 20px;
   text-align: center;
@@ -148,7 +111,7 @@ a {
   padding: 1em 2em;
   background-color: var(--lightorange);
   animation: pulse 2s ease-in-out infinite;
-}
+} */
 
 /* ================= Navigation ================= */
 .nav {
@@ -203,7 +166,8 @@ a {
   border-radius: 6px;
 }
 
-.nav-button-container  {
+/* Button to sign up */
+.nav-button-container  {  
   float: right;
   margin-left: auto;
   margin-right: 15px;
@@ -222,7 +186,7 @@ a {
 
 
 /* ================= Logo ================= */
-.logo {
+.nav-logo {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -232,14 +196,14 @@ a {
 }
 
 /* ================= Hero / Intro ================= */
-.home-container {
+.homepage-container {
   position: relative;
   text-align: center;
   max-width: 1200px;
   margin: 0 auto;
   /* padding: 0 20px; */
 }
-.text-block {
+/* .text-block {
   width: 90%;
   position: absolute;
   top: 60%;
@@ -249,13 +213,14 @@ a {
   transform: translate(-50%, -50%);
   padding: 0 30px;
   height: 100%;
-}
+} */
 .intro {
   font-weight: bolder;
   text-align: center;
   font-size: 4em;
   padding: 10%;
   text-shadow: 2px 2px var(--black);
+  border: 2px solid red;
 }
 .top-page-intros {
   text-align: center;
