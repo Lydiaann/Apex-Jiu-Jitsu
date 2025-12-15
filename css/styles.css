@@ -48,70 +48,7 @@ a {
 }
 
 /* ================= Buttons ================= */
-/* .cta-button {
-  display: inline-block;
-  cursor: pointer;
-  text-decoration: none;
-  border-radius: 15px;
-  color: white;
-  font-weight: bold;
-  font-size: 1.2rem;
-  padding: 1em 2em;
-  background-color: var(--lightorange);
-  animation: pulse 2s ease-in-out infinite;
-}
-.cta-button:hover {
-  transform: scale(1.1);
-  background-color: rgb(247, 198, 109);
-} */
 
-/* .button-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 1.5rem 0;
-} */
-/* .mobile-cta {
-  display: none; /* hide by default */
-  /* text-align: center;
-  margin-top: 1rem;
-} */
-
-/* .sched-button {
-  position: relative;
-  z-index: 2;
-  margin-top: 1.5rem;
-  background: #45a8ff;
-  color: white;
-  padding: 0.9rem 2rem;
-  border-radius: 40px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background 0.3s ease;
-} */
-
-/* .sched-button:hover {
-  background: #0077cc;
-} */
-
-/* .animated-btn {
-  margin-top: 5px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.cta-button-animated {
-  display: inline-block;
-  cursor: pointer;
-  text-decoration: none;
-  border-radius: 15px;
-  color: var(--black);
-  font-weight: bold;
-  font-size: 1.2rem;
-  padding: 1em 2em;
-  background-color: var(--lightorange);
-  animation: pulse 2s ease-in-out infinite;
-} */
 
 /* ================= Navigation ================= */
 .nav {
@@ -212,39 +149,6 @@ a {
   border-radius: 15px;
 }
 
-/* .text-block {
-  width: 90%;
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  color: var(--white);
-  opacity: 95%;
-  transform: translate(-50%, -50%);
-  padding: 0 30px;
-  height: 100%;
-} */
-
-/* .intro {
-  font-weight: bolder;
-  text-align: center;
-  font-size: 4em;
-  padding: 10%;
-  text-shadow: 2px 2px var(--black);
-  border: 5px solid red;
-} */
-
-/* .top-page-intros {
-  text-align: center;
-  font-size: 4em;
-  color: var(--blue);
-  border: 5px solid red;
-} */
-/* .top-page-intros2 {
-  text-align: center;
-  font-size: 18px;
-  color: var(--white);
-  font-weight: lighter;
-} */
 
 
 /* ================= Image2 + Overlay ================= */
@@ -315,45 +219,6 @@ a {
   text-align: left;
 }
 
-
-/* li {
-  color: var(--white);
-  font-weight: lighter;
-  padding: 5px 0;
-  font-size: 17px;
-  text-align: left;
-} */
-/* ================= Image3 + Overlay ================= */
-/* .image3-container {
-  position: relative;
-  display: inline-block;
-  max-width: 900px;
-  width: 100%;
-  border: solid 2px red;
-} */
-/* .image3-container img {
-  display: block;
-  width: 100%;
-  height: auto;
-} */
-/* .image3-container .sched-button{
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: black;
-  padding: 16px 30px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  text-align: center;
-  box-shadow:  0 0 5px rgba(0, 0, 0, 0.8),
-               0 0 6px rgb(0, 0, 0),
-               0 0 12px rgba(0,0,0,0.7);
-} */
-/* .here {
-  text-decoration: none;
-} */
 /* ================= Homepage intro line 50 ================= */
 .content-row {
   display: flex;
@@ -393,6 +258,11 @@ footer {
   width: 80px;
   height: auto;
   margin-top: 100px;
+}
+.footer-column-left {
+  font-size: 24px;
+  margin: 10px;
+  
 }
 
 /* ================= Forms ================= */
@@ -541,29 +411,6 @@ caption {
 }
  
 /* ================= Schedule page ================= */
-
-/* .calendar {
-  position: relative;
-  top: 400px;
-  max-width: 100%;
-  width: 100vw;
-  display: none; 
-} */
-
-/* iframe {
-  width: 80%;
-  height: 700px;
-  margin-right: auto;
-  margin-left: auto;
-} */
-/* .class-schedule {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-}
-.day {
-  color: white;
-} */
 .class-row {
   display: -ms-flexbox; /* IE10 */
   display: flex;
@@ -826,23 +673,6 @@ margin-bottom: 20px;
   font-size:1.4rem;
   text-align:center;
 }
-/* 
-label{
-  display:inline-block;
-  margin-bottom:5px;
-  font-size:.9rem;
-  font-weight:600;
-  float: inline-start;
-}
-
-/* input, textarea, select{
-  width:100%;
-  padding:10px;
-  margin-bottom:15px;
-  border:1px solid #ccc;
-  border-radius:6px;
-  font-size:1rem;
-} */
 
 textarea{
   height:100px; 
@@ -1644,32 +1474,7 @@ textarea{
     color: white;
     text-align: center;
   }
-  /* .program-overview {
-    background-image: url("../images/992img2.jpg");
-    background-position: center center;
-    background-repeat: no-repeat;
-    width: 100%;
-    min-height: 80vh;
-    height: auto;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  } */
 
-  /* .prog-overview {
-    position: relative;
-    z-index: 2;
-    flex-direction: column;
-    justify-content: center;   
-    align-items: center;       
-    text-align: center;
-    height: 80vh;              
-    background-color: #00000061;
-    border-radius: 50px;
-  } */
 
   .program-container .bio {
     font-size: clamp(0.9rem, 2vw, 1.1rem);
