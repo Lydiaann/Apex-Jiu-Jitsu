@@ -214,7 +214,7 @@
     form.addEventListener("submit", (e) => {
       e.preventDefault();
 
-      fetch("process.php", {
+      fetch("/process.php", {
         method: "POST",
         body: new FormData(form)
       })
