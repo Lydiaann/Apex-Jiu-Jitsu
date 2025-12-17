@@ -1024,7 +1024,7 @@ textarea{
     margin-right: auto;
     display: grid;
     font-size: 24px;
-    
+    color: white;
   }
 
   .desktop-benefits, .desktop-list, #desktop-list-headings {
@@ -1092,6 +1092,10 @@ textarea{
 }
 
 @media only screen and (min-width:1080px) {
+
+  .mobile-logo {
+    display: none;
+  }
   .table-title, .review-intro {
     color: white;
     font-size: 22px;
@@ -1147,6 +1151,7 @@ textarea{
     width: 85%;
     margin-left: auto;
     margin-right: auto;
+    color: white;
   }
   .program-img {
     width: 100%;
@@ -1291,6 +1296,7 @@ textarea{
     width: 35vw; 
     margin-top: 15px; 
   }
+
   .home-image { 
     display: none; 
   }
@@ -1585,7 +1591,11 @@ textarea{
   .calendar, .day {
     display: none;
   }
-
+ .prog-overview {
+    width: 100%;
+    color: white;
+    margin-top: 100px;
+  }
   
 }
 
@@ -1614,6 +1624,7 @@ textarea{
   }
   .prog-overview {
     width: 100%;
+    color: white;
   }
 
   .cta-nav-button {
@@ -1724,6 +1735,20 @@ textarea{
     flex-direction: column;  
     display: none;
   }
+  .mobile-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40vw;
+    max-width: 100%;
+    max-height: 150px;
+    pointer-events: none;
+    margin-top: 100px;
+    padding-bottom: 100px;
+  }
+    .nav-logo {
+    display: none;
+  } 
 }
 
 /* ========================================== */
