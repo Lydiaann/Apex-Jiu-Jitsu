@@ -1598,6 +1598,11 @@ textarea{
   
 }
 
+@media (min-width:992px) {
+  .mobile-logo {
+    display: none;
+  }
+}
 /* Up to 900px */
 @media (max-width: 992px) {
     .mobile-logo {
@@ -1610,6 +1615,7 @@ textarea{
     pointer-events: none;
     margin-top: 100px;
     padding-bottom: 100px;
+
   }
   .content-row { 
     flex-direction: column; 
@@ -1934,6 +1940,4 @@ textarea{
     transform: scale(1); /* Back to original size */
   }
 }
-
-
-
+}
