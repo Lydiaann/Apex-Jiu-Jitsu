@@ -121,7 +121,6 @@ a {
   padding: 12px;
 }
 
-
 /* ================= Logo ================= */
 .nav-logo {
   position: absolute;
@@ -1093,9 +1092,6 @@ textarea{
 
 @media only screen and (min-width:1080px) {
 
-  .mobile-logo {
-    display: none;
-  }
   .table-title, .review-intro {
     color: white;
     font-size: 22px;
@@ -1282,13 +1278,17 @@ textarea{
     /* display: none; */
     color: white;
   }
-    .cta-nav-button2 {
+  .cta-nav-button2 {
     display: none;
 }
+  .mobile-logo {
+    display: none;
+  }
 }
 
 /* Up to 1080px */
 @media (max-width: 1080px) {
+
   .desktop-list, .desktop-benefits, .why-desktop {
     display: none;
   }
@@ -1481,7 +1481,6 @@ textarea{
     text-align: center;
   }
 
-
   .program-container .bio {
     font-size: clamp(0.9rem, 2vw, 1.1rem);
     padding: 3vw;
@@ -1601,6 +1600,17 @@ textarea{
 
 /* Up to 900px */
 @media (max-width: 992px) {
+    .mobile-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30vw;
+    max-width: 100%;
+    max-height: 150px;
+    pointer-events: none;
+    margin-top: 100px;
+    padding-bottom: 100px;
+  }
   .content-row { 
     flex-direction: column; 
     align-items: center; 
@@ -1626,7 +1636,6 @@ textarea{
     width: 100%;
     color: white;
   }
-
   .cta-nav-button {
     display: none;
   }
@@ -1643,44 +1652,19 @@ textarea{
     margin-left: auto;
     margin-right: auto;
   }
-  .search-container {
-    width: 100%;
-    margin-top: 10px;
-    display: flex;
-    justify-content: flex-end;
-    order: 999;       /* pushes it to the bottom visually */
-  }
 
-  /* Search input smaller for mobile */
-  .search-container input {
-    width: 150px;
-  }
-    #searchResults {
-    width: 100%;
-    margin-top: 5px;
-  }
   .class-row {
     flex-direction: column;   /* stack vertically */
   }
-
   .class-column {
     flex: 100%;
     max-width: 100%;
     margin-bottom: 15px;       /* add spacing between boxes */
+  }
 
-}
-
-}
 
 /* Tablet & below */
 @media (max-width: 768px) {
-/* 
-  .img-column {
-    -ms-flex: 50%;
-    flex: 100%;
-    max-width: 100%;
-  } */
-
 
   .image2-container .benefits {
     font-size: 16px;
@@ -1824,7 +1808,12 @@ textarea{
   .nav-button-container {
     display: none;
   }
-
+  .nav-button-container2 {
+    margin-left: auto;
+    margin-right: 15px;
+    display: flex;
+  }
+  
 }
 
 /* ======================================== */
