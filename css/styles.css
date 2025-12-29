@@ -19,7 +19,7 @@ html {
   height: 100%;
   margin: 0;
   
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  /* font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; */
 
 
 }
@@ -1038,21 +1038,21 @@ textarea{
     margin-right: auto;
     /* font-size: 30px; */
   }
-
+/* 
   .desktop-heading {
     font-size: 2rem;
     line-height: 1.2;
     margin: 0;
-  }
+  } */
 
   .desktop-list {
     max-width: 75%;
     background-color: #0000009c;
     padding: 20px;
     border-radius: 15px;
-    margin: 0;
+    /* margin: 0;
     font-size: 1rem;
-    line-height: 1.6;
+    line-height: 1.6; */
   }
 
   #desktop-list-headings {
