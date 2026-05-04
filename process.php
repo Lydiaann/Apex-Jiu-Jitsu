@@ -5,7 +5,7 @@ ini_set('display_errors', 1);
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     // PostgreSQL connection
-    $conn = pg_connect("host=localhost port=5432 dbname=apexforms user=postgres password=password");
+   
 
     if (!$conn) {
         die("DB connection failed: " . pg_last_error());
